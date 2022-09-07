@@ -8,24 +8,36 @@
 
 /* Begin PBXBuildFile section */
 		F63E661328C7313B000CC541 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F63E661228C7313B000CC541 /* AppDelegate.swift */; };
-		F63E661528C7313B000CC541 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F63E661428C7313B000CC541 /* SceneDelegate.swift */; };
-		F63E661728C7313B000CC541 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F63E661628C7313B000CC541 /* ViewController.swift */; };
-		F63E661A28C7313B000CC541 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F63E661828C7313B000CC541 /* Main.storyboard */; };
 		F63E661D28C7313B000CC541 /* cs_zadatak2.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F63E661B28C7313B000CC541 /* cs_zadatak2.xcdatamodeld */; };
 		F63E661F28C7313B000CC541 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F63E661E28C7313B000CC541 /* Assets.xcassets */; };
 		F63E662228C7313B000CC541 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F63E662028C7313B000CC541 /* LaunchScreen.storyboard */; };
+		F63E665C28C882FA000CC541 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F63E665B28C882FA000CC541 /* UIViewController.swift */; };
+		F63E665F28C88359000CC541 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F63E665D28C88359000CC541 /* HomeViewController.swift */; };
+		F63E666028C88359000CC541 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F63E665E28C88359000CC541 /* HomeViewController.xib */; };
+		F63E666328C88426000CC541 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F63E666228C88426000CC541 /* Coordinator.swift */; };
+		F63E666528C8842D000CC541 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = F63E666428C8842D000CC541 /* Router.swift */; };
+		F63E666728C8848B000CC541 /* AppDelegateRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F63E666628C8848B000CC541 /* AppDelegateRouter.swift */; };
+		F63E666928C8849C000CC541 /* NavigationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F63E666828C8849C000CC541 /* NavigationRouter.swift */; };
+		F63E666B28C884C4000CC541 /* ModalNavigationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F63E666A28C884C4000CC541 /* ModalNavigationRouter.swift */; };
+		F63E666D28C884EA000CC541 /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F63E666C28C884EA000CC541 /* HomeCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		F63E660F28C7313B000CC541 /* cs-zadatak2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "cs-zadatak2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F63E661228C7313B000CC541 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F63E661428C7313B000CC541 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		F63E661628C7313B000CC541 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		F63E661928C7313B000CC541 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F63E661C28C7313B000CC541 /* cs_zadatak2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = cs_zadatak2.xcdatamodel; sourceTree = "<group>"; };
 		F63E661E28C7313B000CC541 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F63E662128C7313B000CC541 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F63E662328C7313B000CC541 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F63E665B28C882FA000CC541 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
+		F63E665D28C88359000CC541 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		F63E665E28C88359000CC541 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
+		F63E666228C88426000CC541 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		F63E666428C8842D000CC541 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		F63E666628C8848B000CC541 /* AppDelegateRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegateRouter.swift; sourceTree = "<group>"; };
+		F63E666828C8849C000CC541 /* NavigationRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationRouter.swift; sourceTree = "<group>"; };
+		F63E666A28C884C4000CC541 /* ModalNavigationRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalNavigationRouter.swift; sourceTree = "<group>"; };
+		F63E666C28C884EA000CC541 /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,16 +70,110 @@
 		F63E661128C7313B000CC541 /* cs-zadatak2 */ = {
 			isa = PBXGroup;
 			children = (
-				F63E661228C7313B000CC541 /* AppDelegate.swift */,
-				F63E661428C7313B000CC541 /* SceneDelegate.swift */,
-				F63E661628C7313B000CC541 /* ViewController.swift */,
-				F63E661828C7313B000CC541 /* Main.storyboard */,
-				F63E661E28C7313B000CC541 /* Assets.xcassets */,
-				F63E662028C7313B000CC541 /* LaunchScreen.storyboard */,
+				F63E665428C8828F000CC541 /* Views */,
+				F63E665528C8829F000CC541 /* Controllers */,
+				F63E665628C882B1000CC541 /* Navigation */,
+				F63E665928C882D8000CC541 /* Protocols */,
+				F63E665328C8827F000CC541 /* Data */,
+				F63E665A28C882E4000CC541 /* Extensions */,
+				F63E665128C88268000CC541 /* AppDelegate */,
+				F63E665228C88272000CC541 /* Assets */,
 				F63E662328C7313B000CC541 /* Info.plist */,
-				F63E661B28C7313B000CC541 /* cs_zadatak2.xcdatamodeld */,
 			);
 			path = "cs-zadatak2";
+			sourceTree = "<group>";
+		};
+		F63E665128C88268000CC541 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				F63E661228C7313B000CC541 /* AppDelegate.swift */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		F63E665228C88272000CC541 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				F63E661E28C7313B000CC541 /* Assets.xcassets */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		F63E665328C8827F000CC541 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				F63E661B28C7313B000CC541 /* cs_zadatak2.xcdatamodeld */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		F63E665428C8828F000CC541 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F63E662028C7313B000CC541 /* LaunchScreen.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		F63E665528C8829F000CC541 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				F63E666128C8835F000CC541 /* HomeViewController */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		F63E665628C882B1000CC541 /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				F63E665828C882C2000CC541 /* Routers */,
+				F63E665728C882B8000CC541 /* Coordinators */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
+		F63E665728C882B8000CC541 /* Coordinators */ = {
+			isa = PBXGroup;
+			children = (
+				F63E666C28C884EA000CC541 /* HomeCoordinator.swift */,
+			);
+			path = Coordinators;
+			sourceTree = "<group>";
+		};
+		F63E665828C882C2000CC541 /* Routers */ = {
+			isa = PBXGroup;
+			children = (
+				F63E666628C8848B000CC541 /* AppDelegateRouter.swift */,
+				F63E666828C8849C000CC541 /* NavigationRouter.swift */,
+				F63E666A28C884C4000CC541 /* ModalNavigationRouter.swift */,
+			);
+			path = Routers;
+			sourceTree = "<group>";
+		};
+		F63E665928C882D8000CC541 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				F63E666228C88426000CC541 /* Coordinator.swift */,
+				F63E666428C8842D000CC541 /* Router.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		F63E665A28C882E4000CC541 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				F63E665B28C882FA000CC541 /* UIViewController.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		F63E666128C8835F000CC541 /* HomeViewController */ = {
+			isa = PBXGroup;
+			children = (
+				F63E665D28C88359000CC541 /* HomeViewController.swift */,
+				F63E665E28C88359000CC541 /* HomeViewController.xib */,
+			);
+			path = HomeViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -130,7 +236,7 @@
 			files = (
 				F63E662228C7313B000CC541 /* LaunchScreen.storyboard in Resources */,
 				F63E661F28C7313B000CC541 /* Assets.xcassets in Resources */,
-				F63E661A28C7313B000CC541 /* Main.storyboard in Resources */,
+				F63E666028C88359000CC541 /* HomeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -141,24 +247,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F63E661728C7313B000CC541 /* ViewController.swift in Sources */,
+				F63E666728C8848B000CC541 /* AppDelegateRouter.swift in Sources */,
 				F63E661328C7313B000CC541 /* AppDelegate.swift in Sources */,
-				F63E661528C7313B000CC541 /* SceneDelegate.swift in Sources */,
+				F63E666928C8849C000CC541 /* NavigationRouter.swift in Sources */,
 				F63E661D28C7313B000CC541 /* cs_zadatak2.xcdatamodeld in Sources */,
+				F63E666328C88426000CC541 /* Coordinator.swift in Sources */,
+				F63E666B28C884C4000CC541 /* ModalNavigationRouter.swift in Sources */,
+				F63E665C28C882FA000CC541 /* UIViewController.swift in Sources */,
+				F63E666D28C884EA000CC541 /* HomeCoordinator.swift in Sources */,
+				F63E666528C8842D000CC541 /* Router.swift in Sources */,
+				F63E665F28C88359000CC541 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		F63E661828C7313B000CC541 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F63E661928C7313B000CC541 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		F63E662028C7313B000CC541 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -297,7 +401,6 @@
 				INFOPLIST_FILE = "cs-zadatak2/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -324,7 +427,6 @@
 				INFOPLIST_FILE = "cs-zadatak2/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
