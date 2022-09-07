@@ -10,7 +10,7 @@ import UIKit
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-    public lazy var coordinator = HomeCoordinator(router: router)
+    public lazy var coordinator = TabBarCoordinator(router: router)
     public lazy var router = AppDelegateRouter(window: window!)
     public lazy var window: UIWindow? = UIWindow(frame: UIScreen.main.bounds)
 

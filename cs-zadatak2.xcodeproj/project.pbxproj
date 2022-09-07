@@ -20,6 +20,14 @@
 		F63E666928C8849C000CC541 /* NavigationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F63E666828C8849C000CC541 /* NavigationRouter.swift */; };
 		F63E666B28C884C4000CC541 /* ModalNavigationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F63E666A28C884C4000CC541 /* ModalNavigationRouter.swift */; };
 		F63E666D28C884EA000CC541 /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F63E666C28C884EA000CC541 /* HomeCoordinator.swift */; };
+		F63E66CD28C8C25D000CC541 /* ContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F63E66CB28C8C25D000CC541 /* ContactViewController.swift */; };
+		F63E66CE28C8C25D000CC541 /* ContactViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F63E66CC28C8C25D000CC541 /* ContactViewController.xib */; };
+		F63E66D228C8C27F000CC541 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F63E66D028C8C27F000CC541 /* SearchViewController.swift */; };
+		F63E66D328C8C27F000CC541 /* SearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F63E66D128C8C27F000CC541 /* SearchViewController.xib */; };
+		F63E66D628C8C295000CC541 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F63E66D428C8C295000CC541 /* SettingsViewController.swift */; };
+		F63E66D728C8C295000CC541 /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F63E66D528C8C295000CC541 /* SettingsViewController.xib */; };
+		F63E66DB28C8C2D2000CC541 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F63E66DA28C8C2D2000CC541 /* TabBarController.swift */; };
+		F63E66DF28C8C353000CC541 /* TabBarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F63E66DE28C8C353000CC541 /* TabBarCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +46,14 @@
 		F63E666828C8849C000CC541 /* NavigationRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationRouter.swift; sourceTree = "<group>"; };
 		F63E666A28C884C4000CC541 /* ModalNavigationRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalNavigationRouter.swift; sourceTree = "<group>"; };
 		F63E666C28C884EA000CC541 /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
+		F63E66CB28C8C25D000CC541 /* ContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactViewController.swift; sourceTree = "<group>"; };
+		F63E66CC28C8C25D000CC541 /* ContactViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContactViewController.xib; sourceTree = "<group>"; };
+		F63E66D028C8C27F000CC541 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		F63E66D128C8C27F000CC541 /* SearchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchViewController.xib; sourceTree = "<group>"; };
+		F63E66D428C8C295000CC541 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		F63E66D528C8C295000CC541 /* SettingsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsViewController.xib; sourceTree = "<group>"; };
+		F63E66DA28C8C2D2000CC541 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		F63E66DE28C8C353000CC541 /* TabBarCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +86,7 @@
 		F63E661128C7313B000CC541 /* cs-zadatak2 */ = {
 			isa = PBXGroup;
 			children = (
+				F63E66DD28C8C325000CC541 /* Models */,
 				F63E665428C8828F000CC541 /* Views */,
 				F63E665528C8829F000CC541 /* Controllers */,
 				F63E665628C882B1000CC541 /* Navigation */,
@@ -118,7 +135,11 @@
 		F63E665528C8829F000CC541 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				F63E66D928C8C2B0000CC541 /* TabBarController */,
 				F63E666128C8835F000CC541 /* HomeViewController */,
+				F63E66D828C8C299000CC541 /* SettingsViewController */,
+				F63E66CA28C8C23C000CC541 /* ContactViewController */,
+				F63E66CF28C8C265000CC541 /* SearchViewController */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -136,6 +157,7 @@
 			isa = PBXGroup;
 			children = (
 				F63E666C28C884EA000CC541 /* HomeCoordinator.swift */,
+				F63E66DE28C8C353000CC541 /* TabBarCoordinator.swift */,
 			);
 			path = Coordinators;
 			sourceTree = "<group>";
@@ -174,6 +196,48 @@
 				F63E665E28C88359000CC541 /* HomeViewController.xib */,
 			);
 			path = HomeViewController;
+			sourceTree = "<group>";
+		};
+		F63E66CA28C8C23C000CC541 /* ContactViewController */ = {
+			isa = PBXGroup;
+			children = (
+				F63E66CB28C8C25D000CC541 /* ContactViewController.swift */,
+				F63E66CC28C8C25D000CC541 /* ContactViewController.xib */,
+			);
+			path = ContactViewController;
+			sourceTree = "<group>";
+		};
+		F63E66CF28C8C265000CC541 /* SearchViewController */ = {
+			isa = PBXGroup;
+			children = (
+				F63E66D028C8C27F000CC541 /* SearchViewController.swift */,
+				F63E66D128C8C27F000CC541 /* SearchViewController.xib */,
+			);
+			path = SearchViewController;
+			sourceTree = "<group>";
+		};
+		F63E66D828C8C299000CC541 /* SettingsViewController */ = {
+			isa = PBXGroup;
+			children = (
+				F63E66D428C8C295000CC541 /* SettingsViewController.swift */,
+				F63E66D528C8C295000CC541 /* SettingsViewController.xib */,
+			);
+			path = SettingsViewController;
+			sourceTree = "<group>";
+		};
+		F63E66D928C8C2B0000CC541 /* TabBarController */ = {
+			isa = PBXGroup;
+			children = (
+				F63E66DA28C8C2D2000CC541 /* TabBarController.swift */,
+			);
+			path = TabBarController;
+			sourceTree = "<group>";
+		};
+		F63E66DD28C8C325000CC541 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -235,7 +299,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				F63E662228C7313B000CC541 /* LaunchScreen.storyboard in Resources */,
+				F63E66D728C8C295000CC541 /* SettingsViewController.xib in Resources */,
+				F63E66CE28C8C25D000CC541 /* ContactViewController.xib in Resources */,
 				F63E661F28C7313B000CC541 /* Assets.xcassets in Resources */,
+				F63E66D328C8C27F000CC541 /* SearchViewController.xib in Resources */,
 				F63E666028C88359000CC541 /* HomeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -253,8 +320,13 @@
 				F63E661D28C7313B000CC541 /* cs_zadatak2.xcdatamodeld in Sources */,
 				F63E666328C88426000CC541 /* Coordinator.swift in Sources */,
 				F63E666B28C884C4000CC541 /* ModalNavigationRouter.swift in Sources */,
+				F63E66D228C8C27F000CC541 /* SearchViewController.swift in Sources */,
+				F63E66CD28C8C25D000CC541 /* ContactViewController.swift in Sources */,
+				F63E66DF28C8C353000CC541 /* TabBarCoordinator.swift in Sources */,
 				F63E665C28C882FA000CC541 /* UIViewController.swift in Sources */,
 				F63E666D28C884EA000CC541 /* HomeCoordinator.swift in Sources */,
+				F63E66D628C8C295000CC541 /* SettingsViewController.swift in Sources */,
+				F63E66DB28C8C2D2000CC541 /* TabBarController.swift in Sources */,
 				F63E666528C8842D000CC541 /* Router.swift in Sources */,
 				F63E665F28C88359000CC541 /* HomeViewController.swift in Sources */,
 			);
