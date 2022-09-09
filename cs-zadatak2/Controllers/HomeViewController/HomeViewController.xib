@@ -10,6 +10,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="cs_zadatak2" customModuleProvider="target">
             <connections>
+                <outlet property="cvCategories" destination="AW1-mD-Zo1" id="iOD-JY-Hq6"/>
+                <outlet property="nbNews" destination="hlT-DD-EDP" id="dQa-JB-9Pg"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -17,12 +19,57 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pqi-0N-nOq" userLabel="vwPortraitView">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                    <subviews>
+                        <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hlT-DD-EDP" userLabel="nbNews">
+                            <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                            <items>
+                                <navigationItem title="Vijesti" id="Cr3-2w-eFK"/>
+                            </items>
+                        </navigationBar>
+                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="AW1-mD-Zo1" userLabel="cvCategories">
+                            <rect key="frame" x="0.0" y="88" width="414" height="50"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="50" id="mea-IJ-PwI"/>
+                            </constraints>
+                            <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="GFB-cd-C7I">
+                                <size key="itemSize" width="128" height="128"/>
+                                <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            </collectionViewFlowLayout>
+                        </collectionView>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="AW1-mD-Zo1" firstAttribute="centerX" secondItem="pqi-0N-nOq" secondAttribute="centerX" id="0K3-W5-QLh"/>
+                        <constraint firstItem="AW1-mD-Zo1" firstAttribute="top" secondItem="hlT-DD-EDP" secondAttribute="bottom" priority="999" id="YxJ-vc-zD4"/>
+                        <constraint firstItem="hlT-DD-EDP" firstAttribute="centerX" secondItem="pqi-0N-nOq" secondAttribute="centerX" id="tFp-Mr-6vL"/>
+                    </constraints>
+                </view>
+            </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemTealColor"/>
-            <point key="canvasLocation" x="132" y="126"/>
+            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="pqi-0N-nOq" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="0ct-s1-Vif"/>
+                <constraint firstItem="pqi-0N-nOq" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="KEq-Fb-c7v"/>
+                <constraint firstItem="AW1-mD-Zo1" firstAttribute="width" secondItem="fnl-2z-Ty3" secondAttribute="width" id="LR7-a0-THJ"/>
+                <constraint firstItem="pqi-0N-nOq" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="WlQ-qC-RgO"/>
+                <constraint firstItem="hlT-DD-EDP" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="deD-LR-0Ha"/>
+                <constraint firstItem="hlT-DD-EDP" firstAttribute="width" secondItem="fnl-2z-Ty3" secondAttribute="width" id="gwU-T4-Bmi"/>
+                <constraint firstItem="pqi-0N-nOq" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" id="kJW-bT-0g2"/>
+            </constraints>
+            <point key="canvasLocation" x="214" y="129"/>
         </view>
     </objects>
     <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemTealColor">
             <color red="0.18823529411764706" green="0.69019607843137254" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

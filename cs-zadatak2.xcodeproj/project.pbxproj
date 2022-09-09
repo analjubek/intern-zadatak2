@@ -28,6 +28,10 @@
 		F63E66D728C8C295000CC541 /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F63E66D528C8C295000CC541 /* SettingsViewController.xib */; };
 		F63E66DB28C8C2D2000CC541 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F63E66DA28C8C2D2000CC541 /* TabBarController.swift */; };
 		F63E66DF28C8C353000CC541 /* TabBarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F63E66DE28C8C353000CC541 /* TabBarCoordinator.swift */; };
+		F63E66E228C8CED2000CC541 /* LeakedViewControllerDetector in Frameworks */ = {isa = PBXBuildFile; productRef = F63E66E128C8CED2000CC541 /* LeakedViewControllerDetector */; };
+		F63E66E428C8CFA7000CC541 /* CategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F63E66E328C8CFA7000CC541 /* CategoryModel.swift */; };
+		F63E66FE28CA14CB000CC541 /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F63E66FC28CA14CB000CC541 /* CategoryCell.swift */; };
+		F63E66FF28CA14CB000CC541 /* CategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F63E66FD28CA14CB000CC541 /* CategoryCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +58,9 @@
 		F63E66D528C8C295000CC541 /* SettingsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsViewController.xib; sourceTree = "<group>"; };
 		F63E66DA28C8C2D2000CC541 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		F63E66DE28C8C353000CC541 /* TabBarCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarCoordinator.swift; sourceTree = "<group>"; };
+		F63E66E328C8CFA7000CC541 /* CategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryModel.swift; sourceTree = "<group>"; };
+		F63E66FC28CA14CB000CC541 /* CategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
+		F63E66FD28CA14CB000CC541 /* CategoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F63E66E228C8CED2000CC541 /* LeakedViewControllerDetector in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,8 +94,8 @@
 		F63E661128C7313B000CC541 /* cs-zadatak2 */ = {
 			isa = PBXGroup;
 			children = (
+				F63E66E828C8D18D000CC541 /* ViewModels */,
 				F63E66DD28C8C325000CC541 /* Models */,
-				F63E665428C8828F000CC541 /* Views */,
 				F63E665528C8829F000CC541 /* Controllers */,
 				F63E665628C882B1000CC541 /* Navigation */,
 				F63E665928C882D8000CC541 /* Protocols */,
@@ -96,6 +104,7 @@
 				F63E665128C88268000CC541 /* AppDelegate */,
 				F63E665228C88272000CC541 /* Assets */,
 				F63E662328C7313B000CC541 /* Info.plist */,
+				F63E662028C7313B000CC541 /* LaunchScreen.storyboard */,
 			);
 			path = "cs-zadatak2";
 			sourceTree = "<group>";
@@ -122,14 +131,6 @@
 				F63E661B28C7313B000CC541 /* cs_zadatak2.xcdatamodeld */,
 			);
 			path = Data;
-			sourceTree = "<group>";
-		};
-		F63E665428C8828F000CC541 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				F63E662028C7313B000CC541 /* LaunchScreen.storyboard */,
-			);
-			path = Views;
 			sourceTree = "<group>";
 		};
 		F63E665528C8829F000CC541 /* Controllers */ = {
@@ -236,8 +237,26 @@
 		F63E66DD28C8C325000CC541 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				F63E66E328C8CFA7000CC541 /* CategoryModel.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		F63E66E528C8D15C000CC541 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				F63E66FC28CA14CB000CC541 /* CategoryCell.swift */,
+				F63E66FD28CA14CB000CC541 /* CategoryCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		F63E66E828C8D18D000CC541 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				F63E66E528C8D15C000CC541 /* Cells */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -256,6 +275,9 @@
 			dependencies = (
 			);
 			name = "cs-zadatak2";
+			packageProductDependencies = (
+				F63E66E128C8CED2000CC541 /* LeakedViewControllerDetector */,
+			);
 			productName = "cs-zadatak2";
 			productReference = F63E660F28C7313B000CC541 /* cs-zadatak2.app */;
 			productType = "com.apple.product-type.application";
@@ -284,6 +306,9 @@
 				Base,
 			);
 			mainGroup = F63E660628C7313B000CC541;
+			packageReferences = (
+				F63E66E028C8CED2000CC541 /* XCRemoteSwiftPackageReference "LeakedViewControllerDetector" */,
+			);
 			productRefGroup = F63E661028C7313B000CC541 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -299,6 +324,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F63E662228C7313B000CC541 /* LaunchScreen.storyboard in Resources */,
+				F63E66FF28CA14CB000CC541 /* CategoryCell.xib in Resources */,
 				F63E66D728C8C295000CC541 /* SettingsViewController.xib in Resources */,
 				F63E66CE28C8C25D000CC541 /* ContactViewController.xib in Resources */,
 				F63E661F28C7313B000CC541 /* Assets.xcassets in Resources */,
@@ -314,6 +340,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F63E66FE28CA14CB000CC541 /* CategoryCell.swift in Sources */,
 				F63E666728C8848B000CC541 /* AppDelegateRouter.swift in Sources */,
 				F63E661328C7313B000CC541 /* AppDelegate.swift in Sources */,
 				F63E666928C8849C000CC541 /* NavigationRouter.swift in Sources */,
@@ -327,6 +354,7 @@
 				F63E666D28C884EA000CC541 /* HomeCoordinator.swift in Sources */,
 				F63E66D628C8C295000CC541 /* SettingsViewController.swift in Sources */,
 				F63E66DB28C8C2D2000CC541 /* TabBarController.swift in Sources */,
+				F63E66E428C8CFA7000CC541 /* CategoryModel.swift in Sources */,
 				F63E666528C8842D000CC541 /* Router.swift in Sources */,
 				F63E665F28C88359000CC541 /* HomeViewController.swift in Sources */,
 			);
@@ -536,6 +564,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		F63E66E028C8CED2000CC541 /* XCRemoteSwiftPackageReference "LeakedViewControllerDetector" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Janneman84/LeakedViewControllerDetector";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F63E66E128C8CED2000CC541 /* LeakedViewControllerDetector */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F63E66E028C8CED2000CC541 /* XCRemoteSwiftPackageReference "LeakedViewControllerDetector" */;
+			productName = LeakedViewControllerDetector;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		F63E661B28C7313B000CC541 /* cs_zadatak2.xcdatamodeld */ = {
