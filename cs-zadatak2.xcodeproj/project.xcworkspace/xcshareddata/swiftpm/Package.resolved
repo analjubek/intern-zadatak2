@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "LeakedViewControllerDetector",
+        "repositoryURL": "https://github.com/Janneman84/LeakedViewControllerDetector",
+        "state": {
+          "branch": null,
+          "revision": "9e43e969694be5e374f0067f21685e5385ffadac",
+          "version": "1.2.0"
+        }
+      }
+    ]
+  },
+  "version": 1
+}

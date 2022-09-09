@@ -19,7 +19,7 @@ class HomeViewController: UIViewController {
     @IBOutlet var cvCategories: UICollectionView!
     
     var cellCategory: UICollectionViewCell?
-    let categories = ["Naslovnica", "Sport", "Magazin", "Video"]
+    var categories = [CategoryModel(categoryName: "Naslovnica", isSelected: true), CategoryModel(categoryName: "Sport", isSelected: false), CategoryModel(categoryName: "Magazin", isSelected: false), CategoryModel(categoryName: "Video", isSelected: false)]
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -49,13 +49,8 @@ class HomeViewController: UIViewController {
     }
     
     func makeCategoryCollection(){
-        
-        print(cvCategories.bounds)
-        
         let flowLayout = UICollectionViewFlowLayout()
         flowLayout.itemSize = CGSize(width: cvCategories.bounds.width/4, height: cvCategories.bounds.height)
-//        flowLayout.itemSize.height = cvCategories.bounds.height
-//        flowLayout.itemSize.width = cvCategories.bounds.width/4
         flowLayout.minimumLineSpacing = 0
         flowLayout.minimumInteritemSpacing = 0
         self.cvCategories.collectionViewLayout = flowLayout
@@ -76,7 +71,7 @@ extension HomeViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CategoryCell.identifier, for: indexPath) as! CategoryCell
         
-        let categoryModel = CategoryModel(categoryName: categories[indexPath.row], isSelected: false)
+        let categoryModel = CategoryModel(categoryName: categories[indexPath.row].categoryName, isSelected: categories[indexPath.row].isSelected)
         
         cell.setupCell(categoryData: categoryModel)
         
@@ -86,7 +81,12 @@ extension HomeViewController: UICollectionViewDataSource {
 
 extension HomeViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        for i in 0...3{
+            categories[i].isSelected = false
+        }
+        categories[indexPath.row].isSelected = true
         let cell = collectionView.cellForItem(at: indexPath) as! CategoryCell
-        cell.setupCell(categoryData: CategoryModel(categoryName: categories[indexPath.row], isSelected: true))
+        cell.setupCell(categoryData: CategoryModel(categoryName: categories[indexPath.row].categoryName, isSelected: categories[indexPath.row].isSelected))
+        cvCategories.reloadData()
     }
 }
