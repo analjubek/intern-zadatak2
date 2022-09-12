@@ -13,6 +13,8 @@ protocol HomeViewControllerDelegate: AnyObject{
 
 class HomeViewController: UIViewController {
     
+    private var newsItems: [NewsModel]?
+    
     weak var delegate: HomeViewControllerDelegate?
     
     @IBOutlet var nbNews: UINavigationBar!
@@ -25,6 +27,9 @@ class HomeViewController: UIViewController {
         super.viewDidAppear(animated)
         controllNavBar()
         makeCategoryCollection()
+        
+        //print("Data from CoreData")
+        //print(SingletonData.shared.fetchNewsFromCoreData())
     }
     
     override func viewDidLoad() {
@@ -90,3 +95,4 @@ extension HomeViewController: UICollectionViewDelegate {
         cvCategories.reloadData()
     }
 }
+

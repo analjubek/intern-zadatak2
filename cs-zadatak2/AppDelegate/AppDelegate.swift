@@ -16,7 +16,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     public lazy var window: UIWindow? = UIWindow(frame: UIScreen.main.bounds)
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-
+        SingletonData.shared.start()
+        
         coordinator.push(animated: true, onDismissed: nil)
         
         LeakedViewControllerDetector.onDetect() { leakedViewController, leakedView, message in

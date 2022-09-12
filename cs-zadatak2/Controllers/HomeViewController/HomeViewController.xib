@@ -42,11 +42,23 @@
                                 <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                             </collectionViewFlowLayout>
                         </collectionView>
+                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="jII-xG-rPX" userLabel="cvHome">
+                            <rect key="frame" x="0.0" y="138" width="414" height="724"/>
+                            <color key="backgroundColor" systemColor="systemTealColor"/>
+                            <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Gf8-KG-f1W">
+                                <size key="itemSize" width="128" height="128"/>
+                                <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            </collectionViewFlowLayout>
+                        </collectionView>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
                         <constraint firstItem="AW1-mD-Zo1" firstAttribute="centerX" secondItem="pqi-0N-nOq" secondAttribute="centerX" id="0K3-W5-QLh"/>
+                        <constraint firstItem="jII-xG-rPX" firstAttribute="top" secondItem="AW1-mD-Zo1" secondAttribute="bottom" id="2WU-4D-ccn"/>
                         <constraint firstItem="AW1-mD-Zo1" firstAttribute="top" secondItem="hlT-DD-EDP" secondAttribute="bottom" priority="999" id="YxJ-vc-zD4"/>
+                        <constraint firstItem="jII-xG-rPX" firstAttribute="centerX" secondItem="pqi-0N-nOq" secondAttribute="centerX" id="rZ9-bQ-DKy"/>
                         <constraint firstItem="hlT-DD-EDP" firstAttribute="centerX" secondItem="pqi-0N-nOq" secondAttribute="centerX" id="tFp-Mr-6vL"/>
                     </constraints>
                 </view>
@@ -58,10 +70,12 @@
                 <constraint firstItem="pqi-0N-nOq" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="0ct-s1-Vif"/>
                 <constraint firstItem="pqi-0N-nOq" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="KEq-Fb-c7v"/>
                 <constraint firstItem="AW1-mD-Zo1" firstAttribute="width" secondItem="fnl-2z-Ty3" secondAttribute="width" id="LR7-a0-THJ"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="jII-xG-rPX" secondAttribute="bottom" id="Q3Q-yW-3rd"/>
                 <constraint firstItem="pqi-0N-nOq" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="WlQ-qC-RgO"/>
                 <constraint firstItem="hlT-DD-EDP" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="deD-LR-0Ha"/>
                 <constraint firstItem="hlT-DD-EDP" firstAttribute="width" secondItem="fnl-2z-Ty3" secondAttribute="width" id="gwU-T4-Bmi"/>
                 <constraint firstItem="pqi-0N-nOq" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" id="kJW-bT-0g2"/>
+                <constraint firstItem="jII-xG-rPX" firstAttribute="width" secondItem="fnl-2z-Ty3" secondAttribute="width" id="y8b-uE-fZB"/>
             </constraints>
             <point key="canvasLocation" x="214" y="129"/>
         </view>
