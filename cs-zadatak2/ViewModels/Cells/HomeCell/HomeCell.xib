@@ -16,20 +16,20 @@
                 <rect key="frame" x="0.0" y="0.0" width="492" height="368"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="252" translatesAutoresizingMaskIntoConstraints="NO" id="sE4-vn-1M4" userLabel="image">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="252" translatesAutoresizingMaskIntoConstraints="NO" id="sE4-vn-1M4" userLabel="image">
                         <rect key="frame" x="5" y="5" width="482" height="250"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="250" id="x2c-0Q-95O"/>
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3PC-0g-W7t" userLabel="lblTitle">
-                        <rect key="frame" x="5" y="260" width="37" height="25"/>
+                        <rect key="frame" x="5" y="260" width="482" height="25"/>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GQj-fy-mkO" userLabel="lblDescription">
-                        <rect key="frame" x="5" y="290" width="78.5" height="18"/>
+                        <rect key="frame" x="5" y="290" width="482" height="18"/>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -53,8 +53,10 @@
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="3PC-0g-W7t" firstAttribute="leading" secondItem="ZTg-uK-7eu" secondAttribute="leading" constant="5" id="0ft-fJ-QCj"/>
+                <constraint firstItem="ZTg-uK-7eu" firstAttribute="trailing" secondItem="3PC-0g-W7t" secondAttribute="trailing" constant="5" id="6wl-eL-rV2"/>
                 <constraint firstItem="kWq-43-Lms" firstAttribute="top" secondItem="Q18-fV-rMK" secondAttribute="bottom" constant="5" id="88d-W1-USh"/>
                 <constraint firstItem="kWq-43-Lms" firstAttribute="width" secondItem="ZTg-uK-7eu" secondAttribute="width" constant="5" id="DlP-5L-vlT"/>
+                <constraint firstItem="ZTg-uK-7eu" firstAttribute="trailing" secondItem="GQj-fy-mkO" secondAttribute="trailing" constant="5" id="JGu-vi-a6M"/>
                 <constraint firstItem="kWq-43-Lms" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="Jc1-wY-mS2"/>
                 <constraint firstItem="ZTg-uK-7eu" firstAttribute="bottom" secondItem="kWq-43-Lms" secondAttribute="bottom" id="Lnb-3F-CLV"/>
                 <constraint firstItem="ZTg-uK-7eu" firstAttribute="trailing" secondItem="sE4-vn-1M4" secondAttribute="trailing" constant="5" id="Scn-aS-RIU"/>
@@ -67,6 +69,12 @@
                 <constraint firstItem="GQj-fy-mkO" firstAttribute="top" secondItem="3PC-0g-W7t" secondAttribute="bottom" constant="5" id="zav-aS-Wj7"/>
             </constraints>
             <size key="customSize" width="492" height="368"/>
+            <connections>
+                <outlet property="imgNewsImage" destination="sE4-vn-1M4" id="kcv-d1-vfv"/>
+                <outlet property="lblDate" destination="Q18-fV-rMK" id="1AP-ze-LC6"/>
+                <outlet property="lblDescription" destination="GQj-fy-mkO" id="XBV-GJ-2mm"/>
+                <outlet property="lblTitle" destination="3PC-0g-W7t" id="D1w-Sv-gQg"/>
+            </connections>
             <point key="canvasLocation" x="140.57971014492756" y="102.45535714285714"/>
         </collectionViewCell>
     </objects>

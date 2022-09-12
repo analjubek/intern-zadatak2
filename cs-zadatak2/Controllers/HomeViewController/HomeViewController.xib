@@ -10,7 +10,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="cs_zadatak2" customModuleProvider="target">
             <connections>
-                <outlet property="cvCategories" destination="AW1-mD-Zo1" id="iOD-JY-Hq6"/>
+                <outlet property="cvCategories" destination="AW1-mD-Zo1" id="CNo-TO-I7x"/>
+                <outlet property="cvHome" destination="jII-xG-rPX" id="YCp-kn-RMx"/>
                 <outlet property="nbNews" destination="hlT-DD-EDP" id="dQa-JB-9Pg"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -44,7 +45,7 @@
                         </collectionView>
                         <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="jII-xG-rPX" userLabel="cvHome">
                             <rect key="frame" x="0.0" y="138" width="414" height="724"/>
-                            <color key="backgroundColor" systemColor="systemTealColor"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Gf8-KG-f1W">
                                 <size key="itemSize" width="128" height="128"/>
                                 <size key="headerReferenceSize" width="0.0" height="0.0"/>

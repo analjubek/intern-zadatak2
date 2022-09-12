@@ -19,7 +19,7 @@ class CategoryCell: UICollectionViewCell {
         super.awakeFromNib()
     }
     
-    func setupCell(categoryData: CategoryModel){
+    func setupCategoryCell(categoryData: CategoryModel){
         lblTitle.text = categoryData.categoryName
         if(categoryData.isSelected){
             lblTitle.textColor = .black
