@@ -26,11 +26,19 @@ class HomeViewController: UIViewController {
     var cellCategory: UICollectionViewCell?
     var categories = [CategoryModel(categoryName: "Naslovnica", isSelected: true), CategoryModel(categoryName: "Sport", isSelected: false), CategoryModel(categoryName: "Magazin", isSelected: false), CategoryModel(categoryName: "Video", isSelected: false)]
     
+    var height: Float?
+    var width: Float?
+    
+    let newsLayout = UICollectionViewFlowLayout()
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         controllNavBar()
-        makeCategoryCollection()
-        makeNewsCollection()
+        makeCategoryCollection(){
+            DispatchQueue.main.async {
+                self.makeNewsCollection()
+            }
+        }
 //        print("News with id = 0")
 //        print(SingletonData.shared.fetchNewsByIdFromCoreData(newsId: 0))
     }
@@ -43,7 +51,19 @@ class HomeViewController: UIViewController {
         super.viewWillTransition(to: size, with: coordinator)
         coordinator.animate(alongsideTransition: nil) { [self] _ in
             controllNavBar()
-            makeCategoryCollection()
+            setupNewsSize()
+            makeCategoryCollection(){
+                makeNewsCollection()
+            }
+        }
+    }
+    
+    func setupNewsSize(){
+        if (UIApplication.shared.statusBarOrientation.isPortrait){
+            newsLayout.itemSize = CGSize(width: cvHome.bounds.width, height: cvHome.bounds.height/2+20)
+        }
+        else{
+            newsLayout.itemSize = CGSize(width: cvHome.frame.width/2-10, height: 330)
         }
     }
     
@@ -56,7 +76,7 @@ class HomeViewController: UIViewController {
         }
     }
     
-    func makeCategoryCollection(){
+    func makeCategoryCollection(completion: @escaping () -> ()){
         let flowLayout = UICollectionViewFlowLayout()
         flowLayout.itemSize = CGSize(width: cvCategories.bounds.width/4, height: cvCategories.bounds.height)
         flowLayout.minimumLineSpacing = 0
@@ -66,11 +86,12 @@ class HomeViewController: UIViewController {
         self.cvCategories.register(UINib(nibName: CategoryCell.identifier, bundle: Bundle.main), forCellWithReuseIdentifier: CategoryCell.identifier)
         self.cvCategories.dataSource = self
         self.cvCategories.delegate = self
+        
+        completion()
     }
     
     func makeNewsCollection(){
-        let newsLayout = UICollectionViewFlowLayout()
-        newsLayout.itemSize = CGSize(width: cvHome.bounds.width, height: cvHome.bounds.height/2+20)
+        setupNewsSize()
         newsLayout.minimumLineSpacing = 0
         newsLayout.minimumInteritemSpacing = 0
         self.cvHome.collectionViewLayout = newsLayout
@@ -106,7 +127,7 @@ extension HomeViewController: UICollectionViewDataSource {
         }
         if (collectionView == cvHome){
             let homeCell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeCell.identifier, for: indexPath) as! HomeCell
-            let newsModel = SingletonData.shared.fetchNewsByIdFromCoreData(newsId: indexPath.row)
+            let newsModel = DataFunctions().fetchNewsByIdFromCoreData(newsId: indexPath.row)
             
             homeCell.setupHomeCell(newsData: newsModel)
             

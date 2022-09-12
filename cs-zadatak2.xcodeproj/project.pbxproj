@@ -38,7 +38,7 @@
 		F63E671628CB2238000CC541 /* HomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F63E671428CB2238000CC541 /* HomeCell.swift */; };
 		F63E671728CB2238000CC541 /* HomeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F63E671528CB2238000CC541 /* HomeCell.xib */; };
 		F63E671F28CB44F3000CC541 /* XMLParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F63E671E28CB44F3000CC541 /* XMLParser.swift */; };
-		F63E672B28CB50F7000CC541 /* SingletonData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F63E672A28CB50F7000CC541 /* SingletonData.swift */; };
+		F63E672B28CB50F7000CC541 /* DataFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F63E672A28CB50F7000CC541 /* DataFunctions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -74,7 +74,7 @@
 		F63E671428CB2238000CC541 /* HomeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCell.swift; sourceTree = "<group>"; };
 		F63E671528CB2238000CC541 /* HomeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeCell.xib; sourceTree = "<group>"; };
 		F63E671E28CB44F3000CC541 /* XMLParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XMLParser.swift; sourceTree = "<group>"; };
-		F63E672A28CB50F7000CC541 /* SingletonData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingletonData.swift; sourceTree = "<group>"; };
+		F63E672A28CB50F7000CC541 /* DataFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataFunctions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,7 +114,6 @@
 				F63E665628C882B1000CC541 /* Navigation */,
 				F63E665928C882D8000CC541 /* Protocols */,
 				F63E665328C8827F000CC541 /* Data */,
-				F63E672928CB50DA000CC541 /* Singleton */,
 				F63E665A28C882E4000CC541 /* Extensions */,
 				F63E665128C88268000CC541 /* AppDelegate */,
 				F63E665228C88272000CC541 /* Assets */,
@@ -144,6 +143,7 @@
 			isa = PBXGroup;
 			children = (
 				F63E671E28CB44F3000CC541 /* XMLParser.swift */,
+				F63E672A28CB50F7000CC541 /* DataFunctions.swift */,
 				F63E672028CB4501000CC541 /* CoreData */,
 			);
 			path = Data;
@@ -304,14 +304,6 @@
 			path = CoreData;
 			sourceTree = "<group>";
 		};
-		F63E672928CB50DA000CC541 /* Singleton */ = {
-			isa = PBXGroup;
-			children = (
-				F63E672A28CB50F7000CC541 /* SingletonData.swift */,
-			);
-			path = Singleton;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -410,7 +402,7 @@
 				F63E666D28C884EA000CC541 /* HomeCoordinator.swift in Sources */,
 				F63E670D28CB1DF8000CC541 /* NewsModel.swift in Sources */,
 				F633C86B28CF13E200B462BA /* News+CoreDataProperties.swift in Sources */,
-				F63E672B28CB50F7000CC541 /* SingletonData.swift in Sources */,
+				F63E672B28CB50F7000CC541 /* DataFunctions.swift in Sources */,
 				F633C86A28CF13E200B462BA /* News+CoreDataClass.swift in Sources */,
 				F63E66D628C8C295000CC541 /* SettingsViewController.swift in Sources */,
 				F63E66DB28C8C2D2000CC541 /* TabBarController.swift in Sources */,

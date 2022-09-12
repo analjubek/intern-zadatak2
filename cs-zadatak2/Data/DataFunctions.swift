@@ -10,14 +10,8 @@ import UIKit
 import SwiftUI
 import CoreData
 
-class SingletonData {
-    static let shared = SingletonData()
-    
+class DataFunctions {
     var newsItems: [NewsModel]?
-    
-    private init(){
-        
-    }
     
     func start(){
         let feedParser = FeedParser()
@@ -52,13 +46,15 @@ class SingletonData {
     }
     
     func saveXmlToCoreData(newsItems: [NewsModel]){
+        print("Saving XML into CoreData...")
         for news in newsItems{
             self.saveNewsToCoreData(title: news.title, article: news.article, image: news.image, date: news.date)
         }
+        print("All news saved.")
     }
     
     func saveNewsToCoreData(title: String, article: String, image: String, date: String){
-        
+        print("Saving one news into CoreData...")
         let context = persistentContainer.viewContext
         
         let entity = NSEntityDescription.entity(forEntityName: "News", in: context)!
@@ -75,13 +71,16 @@ class SingletonData {
         } catch let error as NSError {
             print("Could not save. \(error), \(error.userInfo)")
         }
+        print("One news saved.")
     }
     
     func fetchNewsFromCoreData() -> [NSManagedObject]?{
+        print("Fetching news from CoreData...")
         let context = persistentContainer.viewContext
         let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "News")
         
         do {
+            print("News fetched.")
             return try context.fetch(fetchRequest)
         } catch let error as NSError {
             print("Could not fetch. \(error), \(error.userInfo)")
@@ -90,6 +89,7 @@ class SingletonData {
     }
     
     func fetchNewsByIdFromCoreData(newsId: Int) -> NewsModel{
+        print("Fetching news with id", newsId)
         let context = persistentContainer.viewContext
         var news = NewsModel(title: "", article: "", date: "", image: "")
         let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "News")
@@ -108,11 +108,11 @@ class SingletonData {
         }
     }
     
-    func deleteAllCoreData(entity: String){
-        let context = persistentContainer.viewContext
-        let ReqVar = NSFetchRequest<NSFetchRequestResult>(entityName: entity)
-        let DelAllReqVar = NSBatchDeleteRequest(fetchRequest: ReqVar)
-        do { try context.execute(DelAllReqVar) }
-        catch { print(error) }
-    }
+//    func deleteAllCoreData(entity: String){
+//        let context = persistentContainer.viewContext
+//        let ReqVar = NSFetchRequest<NSFetchRequestResult>(entityName: entity)
+//        let DelAllReqVar = NSBatchDeleteRequest(fetchRequest: ReqVar)
+//        do { try context.execute(DelAllReqVar) }
+//        catch { print(error) }
+//    }
 }
