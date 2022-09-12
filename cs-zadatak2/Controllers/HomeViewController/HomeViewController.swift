@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreData
 
 protocol HomeViewControllerDelegate: AnyObject{
     func viewController(didRequestProceed vc: UIViewController)
@@ -13,6 +14,7 @@ protocol HomeViewControllerDelegate: AnyObject{
 
 class HomeViewController: UIViewController {
     
+    private var newsCoreData: [NSManagedObject]?
     private var newsItems: [NewsModel]?
     
     weak var delegate: HomeViewControllerDelegate?
@@ -28,8 +30,8 @@ class HomeViewController: UIViewController {
         controllNavBar()
         makeCategoryCollection()
         
-        //print("Data from CoreData")
-        //print(SingletonData.shared.fetchNewsFromCoreData())
+//        print("News with id = 0")
+//        print(SingletonData.shared.fetchNewsByIdFromCoreData(newsId: 0))
     }
     
     override func viewDidLoad() {

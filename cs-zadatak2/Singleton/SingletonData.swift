@@ -24,7 +24,6 @@ class SingletonData {
         feedParser.parseFeed(url: "https://feed.hrt.hr/vijesti/page.xml"){ (newsItems) in
             self.newsItems = newsItems
             OperationQueue.main.addOperation {
-                print("Data from XML fetched.")
                 self.saveXmlToCoreData(newsItems: newsItems)
             }
         }
@@ -53,15 +52,12 @@ class SingletonData {
     }
     
     func saveXmlToCoreData(newsItems: [NewsModel]){
-        print("Saving XML into CoreData...")
         for news in newsItems{
             self.saveNewsToCoreData(title: news.title, article: news.article, image: news.image, date: news.date)
         }
-        print("All news saved into CoreData.")
     }
     
     func saveNewsToCoreData(title: String, article: String, image: String, date: String){
-        print("Trying to save one news into CoreData...")
         
         let context = persistentContainer.viewContext
         
@@ -76,7 +72,6 @@ class SingletonData {
           
         do {
             try context.save()
-            print("One news saved into CoreData.")
         } catch let error as NSError {
             print("Could not save. \(error), \(error.userInfo)")
         }
@@ -93,41 +88,23 @@ class SingletonData {
             return nil
         }
     }
-    /*
-    func fetchNewsByIdFromCoreData(colorId: Int) -> NewsModel{
+    
+    func fetchNewsByIdFromCoreData(newsId: Int) -> NewsModel{
         let context = persistentContainer.viewContext
-        var rgb = Rgb(r: -1, g: -1, b: -1)
-        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "CoreColor")
+        var news = NewsModel(title: "", article: "", date: "", image: "")
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "News")
         
         do {
-            let coreColors = try context.fetch(fetchRequest)
-            rgb.r = (coreColors[colorId].value(forKey: "r") as? Int)!
-            rgb.g = (coreColors[colorId].value(forKey: "g") as? Int)!
-            rgb.b = (coreColors[colorId].value(forKey: "b") as? Int)!
+            let newsDataCore = try context.fetch(fetchRequest)
+            news.title = (newsDataCore[newsId].value(forKey: "title") as? String)!
+            news.article = (newsDataCore[newsId].value(forKey: "article") as? String)!
+            news.date = (newsDataCore[newsId].value(forKey: "date") as? String)!
+            news.image = (newsDataCore[newsId].value(forKey: "image") as? String)!
             
-            return rgb
+            return news
         } catch let error as NSError {
             print("Could not fetch. \(error), \(error.userInfo)")
-            return rgb
-        }
-    }*/
-    
-    
-    /*func fetchColorByIdFromCoreData(colorId: Int) -> Rgb{
-        let context = persistentContainer.viewContext
-        var rgb = Rgb(r: -1, g: -1, b: -1)
-        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "CoreColor")
-        
-        do {
-            let coreColors = try context.fetch(fetchRequest)
-            rgb.r = (coreColors[colorId].value(forKey: "r") as? Int)!
-            rgb.g = (coreColors[colorId].value(forKey: "g") as? Int)!
-            rgb.b = (coreColors[colorId].value(forKey: "b") as? Int)!
-            
-            return rgb
-        } catch let error as NSError {
-            print("Could not fetch. \(error), \(error.userInfo)")
-            return rgb
+            return news
         }
     }
     
@@ -137,5 +114,5 @@ class SingletonData {
         let DelAllReqVar = NSBatchDeleteRequest(fetchRequest: ReqVar)
         do { try context.execute(DelAllReqVar) }
         catch { print(error) }
-    }*/
+    }
 }
