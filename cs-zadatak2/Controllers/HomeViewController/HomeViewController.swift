@@ -5,6 +5,8 @@
 //  Created by Ana Ljubek on 07.09.2022..
 //
 
+// TODO: Filip - pokazati kako napraviti 2 CollectionViewa na istom screenu
+
 import UIKit
 import CoreData
 
@@ -44,6 +46,10 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    deinit{
+        print("Deinited:", self)
     }
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
@@ -129,7 +135,7 @@ extension HomeViewController: UICollectionViewDataSource {
         if (collectionView == cvHome){
             let homeCell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeCell.identifier, for: indexPath) as! HomeCell
             let newsModel = DataFunctions().fetchNewsByIdFromCoreData(newsId: indexPath.row)
-            print(newsModel)
+            
             homeCell.setupHomeCell(newsData: newsModel)
             
             return homeCell
@@ -150,6 +156,12 @@ extension HomeViewController: UICollectionViewDelegate {
             let cell = collectionView.cellForItem(at: indexPath) as! CategoryCell
             cell.setupCategoryCell(categoryData: CategoryModel(categoryName: categories[indexPath.row].categoryName, isSelected: categories[indexPath.row].isSelected))
             cvCategories.reloadData()
+        }
+        if(collectionView == cvHome){
+            let newsLink = DataFunctions().fetchNewsByIdFromCoreData(newsId: indexPath.row).link
+            print(newsLink)
+            
+            self.delegate?.viewController(didRequestProceed: self)
         }
     }
 }

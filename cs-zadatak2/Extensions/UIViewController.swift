@@ -11,6 +11,6 @@ import UIKit
 extension UIViewController{
     
     class func fromNib(bundle: Bundle) -> Self {
-        return self.init(nibName: String(describing:self), bundle: bundle)
+        return self.init(nibName: String(describing: self), bundle: bundle)
     }
 }

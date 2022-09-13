@@ -15,7 +15,7 @@ public class TabBarCoordinator: Coordinator{
     
     private lazy var tabBarController: TabBarController = {
         let vc = TabBarController.fromNib(bundle: Bundle.main)
-        vc.title = "HomeViewController"
+        vc.title = "TabViewController"
         //vc.delegate = self
         return vc
     }()
@@ -32,8 +32,8 @@ public class TabBarCoordinator: Coordinator{
 extension TabBarCoordinator: TabBarControllerDelegate{
     func viewController(didRequestProceed vc: UIViewController) {
         let router = ModalNavigationRouter(parentViewController: vc)
-        //let coordinator = AppointmentCoordinator(router: router)
+        let coordinator = TabBarCoordinator(router: router)
         //coordinator.delegate = self
-        //presentChild(coordinator, animated: true) { print("fucn tou") }
+        presentChild(coordinator, animated: true) { print("fucn tou") }
     }
 }

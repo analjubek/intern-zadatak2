@@ -11,15 +11,12 @@ protocol TabBarControllerDelegate: AnyObject{
     func viewController(didRequestProceed vc: UIViewController)
 }
 
-
 class TabBarController: UITabBarController {
     let homeViewController = HomeViewController()
     let settingsViewController = SettingsViewController()
     let contactViewController = ContactViewController()
     let searchViewController = SearchViewController()
-    
-    //weak var delegate: UITabBarControllerDelegate?
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -34,9 +31,15 @@ class TabBarController: UITabBarController {
         
         self.setViewControllers([homeViewController, settingsViewController, contactViewController, searchViewController], animated: true)
         
-        
         self.tabBar.backgroundColor = .white
         self.tabBar.tintColor = .black
         self.tabBar.unselectedItemTintColor = .gray
     }
+    
+    
+}
+
+extension TabBarController: UITabBarControllerDelegate{
+    
+    
 }

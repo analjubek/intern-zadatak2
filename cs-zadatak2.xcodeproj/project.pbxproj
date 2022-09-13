@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		F62E856028D0668800248EC5 /* News+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62E855E28D0668800248EC5 /* News+CoreDataClass.swift */; };
 		F62E856128D0668800248EC5 /* News+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62E855F28D0668800248EC5 /* News+CoreDataProperties.swift */; };
+		F62E856528D06B1600248EC5 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62E856328D06B1600248EC5 /* WebViewController.swift */; };
+		F62E856628D06B1600248EC5 /* WebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F62E856428D06B1600248EC5 /* WebViewController.xib */; };
+		F62E856828D0778100248EC5 /* WebViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62E856728D0778100248EC5 /* WebViewCoordinator.swift */; };
 		F633C86728CF136A00B462BA /* News.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F633C86528CF136A00B462BA /* News.xcdatamodeld */; };
 		F63E661328C7313B000CC541 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F63E661228C7313B000CC541 /* AppDelegate.swift */; };
 		F63E661F28C7313B000CC541 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F63E661E28C7313B000CC541 /* Assets.xcassets */; };
@@ -44,6 +47,9 @@
 /* Begin PBXFileReference section */
 		F62E855E28D0668800248EC5 /* News+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "News+CoreDataClass.swift"; sourceTree = "<group>"; };
 		F62E855F28D0668800248EC5 /* News+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "News+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		F62E856328D06B1600248EC5 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		F62E856428D06B1600248EC5 /* WebViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WebViewController.xib; sourceTree = "<group>"; };
+		F62E856728D0778100248EC5 /* WebViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewCoordinator.swift; sourceTree = "<group>"; };
 		F633C86628CF136A00B462BA /* News.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = News.xcdatamodel; sourceTree = "<group>"; };
 		F63E660F28C7313B000CC541 /* cs-zadatak2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "cs-zadatak2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F63E661228C7313B000CC541 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -89,6 +95,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F62E856228D06AF000248EC5 /* WebViewController */ = {
+			isa = PBXGroup;
+			children = (
+				F62E856328D06B1600248EC5 /* WebViewController.swift */,
+				F62E856428D06B1600248EC5 /* WebViewController.xib */,
+			);
+			path = WebViewController;
+			sourceTree = "<group>";
+		};
 		F63E660628C7313B000CC541 = {
 			isa = PBXGroup;
 			children = (
@@ -152,6 +167,7 @@
 		F63E665528C8829F000CC541 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				F62E856228D06AF000248EC5 /* WebViewController */,
 				F63E66D928C8C2B0000CC541 /* TabBarController */,
 				F63E666128C8835F000CC541 /* HomeViewController */,
 				F63E66D828C8C299000CC541 /* SettingsViewController */,
@@ -173,8 +189,9 @@
 		F63E665728C882B8000CC541 /* Coordinators */ = {
 			isa = PBXGroup;
 			children = (
-				F63E666C28C884EA000CC541 /* HomeCoordinator.swift */,
 				F63E66DE28C8C353000CC541 /* TabBarCoordinator.swift */,
+				F63E666C28C884EA000CC541 /* HomeCoordinator.swift */,
+				F62E856728D0778100248EC5 /* WebViewCoordinator.swift */,
 			);
 			path = Coordinators;
 			sourceTree = "<group>";
@@ -369,6 +386,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F63E662228C7313B000CC541 /* LaunchScreen.storyboard in Resources */,
+				F62E856628D06B1600248EC5 /* WebViewController.xib in Resources */,
 				F63E66FF28CA14CB000CC541 /* CategoryCell.xib in Resources */,
 				F63E66D728C8C295000CC541 /* SettingsViewController.xib in Resources */,
 				F63E66CE28C8C25D000CC541 /* ContactViewController.xib in Resources */,
@@ -391,7 +409,9 @@
 				F63E671628CB2238000CC541 /* HomeCell.swift in Sources */,
 				F63E661328C7313B000CC541 /* AppDelegate.swift in Sources */,
 				F63E671F28CB44F3000CC541 /* XMLParser.swift in Sources */,
+				F62E856828D0778100248EC5 /* WebViewCoordinator.swift in Sources */,
 				F63E666928C8849C000CC541 /* NavigationRouter.swift in Sources */,
+				F62E856528D06B1600248EC5 /* WebViewController.swift in Sources */,
 				F63E666328C88426000CC541 /* Coordinator.swift in Sources */,
 				F63E666B28C884C4000CC541 /* ModalNavigationRouter.swift in Sources */,
 				F63E66D228C8C27F000CC541 /* SearchViewController.swift in Sources */,
