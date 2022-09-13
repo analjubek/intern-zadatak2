@@ -16,9 +16,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     public lazy var window: UIWindow? = UIWindow(frame: UIScreen.main.bounds)
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        DataFunctions().start()
-        
-        coordinator.push(animated: true, onDismissed: nil)
+        DataFunctions().start(){
+            DispatchQueue.main.async {
+                self.coordinator.push(animated: true, onDismissed: nil)
+            }
+        }
         
         LeakedViewControllerDetector.onDetect() { leakedViewController, leakedView, message in
             #if DEBUG

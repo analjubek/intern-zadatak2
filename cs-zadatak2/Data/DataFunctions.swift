@@ -13,12 +13,17 @@ import CoreData
 class DataFunctions {
     var newsItems: [NewsModel]?
     
-    func start(){
-        let feedParser = FeedParser()
-        feedParser.parseFeed(url: "https://feed.hrt.hr/vijesti/page.xml"){ (newsItems) in
-            self.newsItems = newsItems
-            OperationQueue.main.addOperation {
-                self.saveXmlToCoreData(newsItems: newsItems)
+    func start(completion: @escaping () -> ()){
+        deleteAllCoreData(entity: "News"){
+            DispatchQueue.main.async {
+                let feedParser = FeedParser()
+                feedParser.parseFeed(url: "https://feed.hrt.hr/vijesti/page.xml"){ (newsItems) in
+                    self.newsItems = newsItems
+                    OperationQueue.main.addOperation {
+                        self.saveXmlToCoreData(newsItems: newsItems)
+                    }
+                    completion()
+                }
             }
         }
     }
@@ -48,12 +53,12 @@ class DataFunctions {
     func saveXmlToCoreData(newsItems: [NewsModel]){
         print("Saving XML into CoreData...")
         for news in newsItems{
-            self.saveNewsToCoreData(title: news.title, article: news.article, image: news.image, date: news.date)
+            self.saveNewsToCoreData(title: news.title, article: news.article, image: news.image, date: news.date, link: news.link)
         }
         print("All news saved.")
     }
     
-    func saveNewsToCoreData(title: String, article: String, image: String, date: String){
+    func saveNewsToCoreData(title: String, article: String, image: String, date: String, link: String){
         print("Saving one news into CoreData...")
         let context = persistentContainer.viewContext
         
@@ -65,6 +70,7 @@ class DataFunctions {
         news.setValue(article, forKey: "article")
         news.setValue(image, forKey: "image")
         news.setValue(date, forKey: "date")
+        news.setValue(link, forKey: "link")
           
         do {
             try context.save()
@@ -89,9 +95,9 @@ class DataFunctions {
     }
     
     func fetchNewsByIdFromCoreData(newsId: Int) -> NewsModel{
-        print("Fetching news with id", newsId)
+        print("Fetching news #", newsId)
         let context = persistentContainer.viewContext
-        var news = NewsModel(title: "", article: "", date: "", image: "")
+        var news = NewsModel(title: "", article: "", date: "", image: "", link: "")
         let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "News")
         
         do {
@@ -100,6 +106,7 @@ class DataFunctions {
             news.article = (newsDataCore[newsId].value(forKey: "article") as? String)!
             news.date = (newsDataCore[newsId].value(forKey: "date") as? String)!
             news.image = (newsDataCore[newsId].value(forKey: "image") as? String)!
+            news.link = (newsDataCore[newsId].value(forKey: "link") as? String)!
             
             return news
         } catch let error as NSError {
@@ -108,11 +115,13 @@ class DataFunctions {
         }
     }
     
-//    func deleteAllCoreData(entity: String){
-//        let context = persistentContainer.viewContext
-//        let ReqVar = NSFetchRequest<NSFetchRequestResult>(entityName: entity)
-//        let DelAllReqVar = NSBatchDeleteRequest(fetchRequest: ReqVar)
-//        do { try context.execute(DelAllReqVar) }
-//        catch { print(error) }
-//    }
+    func deleteAllCoreData(entity: String, completion: @escaping () -> ()){
+        print("Deleting CoreData...")
+        let context = persistentContainer.viewContext
+        let ReqVar = NSFetchRequest<NSFetchRequestResult>(entityName: entity)
+        let DelAllReqVar = NSBatchDeleteRequest(fetchRequest: ReqVar)
+        do { try context.execute(DelAllReqVar) }
+        catch { print(error) }
+        completion()
+    }
 }

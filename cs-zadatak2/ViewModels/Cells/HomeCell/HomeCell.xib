@@ -41,7 +41,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kWq-43-Lms" userLabel="vwLine">
-                        <rect key="frame" x="-2.5" y="333" width="497" height="1"/>
+                        <rect key="frame" x="5" y="333" width="482" height="1"/>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="1" id="Cil-M9-fP2"/>
@@ -55,7 +55,7 @@
                 <constraint firstItem="3PC-0g-W7t" firstAttribute="leading" secondItem="ZTg-uK-7eu" secondAttribute="leading" constant="5" id="0ft-fJ-QCj"/>
                 <constraint firstItem="ZTg-uK-7eu" firstAttribute="trailing" secondItem="3PC-0g-W7t" secondAttribute="trailing" constant="5" id="6wl-eL-rV2"/>
                 <constraint firstItem="kWq-43-Lms" firstAttribute="top" secondItem="Q18-fV-rMK" secondAttribute="bottom" constant="5" id="88d-W1-USh"/>
-                <constraint firstItem="kWq-43-Lms" firstAttribute="width" secondItem="ZTg-uK-7eu" secondAttribute="width" constant="5" id="DlP-5L-vlT"/>
+                <constraint firstItem="kWq-43-Lms" firstAttribute="width" secondItem="ZTg-uK-7eu" secondAttribute="width" constant="-10" id="DlP-5L-vlT"/>
                 <constraint firstItem="ZTg-uK-7eu" firstAttribute="trailing" secondItem="GQj-fy-mkO" secondAttribute="trailing" constant="5" id="JGu-vi-a6M"/>
                 <constraint firstItem="kWq-43-Lms" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="Jc1-wY-mS2"/>
                 <constraint firstItem="ZTg-uK-7eu" firstAttribute="bottom" secondItem="kWq-43-Lms" secondAttribute="bottom" id="Lnb-3F-CLV"/>

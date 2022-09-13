@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F62E856028D0668800248EC5 /* News+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62E855E28D0668800248EC5 /* News+CoreDataClass.swift */; };
+		F62E856128D0668800248EC5 /* News+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62E855F28D0668800248EC5 /* News+CoreDataProperties.swift */; };
 		F633C86728CF136A00B462BA /* News.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F633C86528CF136A00B462BA /* News.xcdatamodeld */; };
-		F633C86A28CF13E200B462BA /* News+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = F633C86828CF13E200B462BA /* News+CoreDataClass.swift */; };
-		F633C86B28CF13E200B462BA /* News+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F633C86928CF13E200B462BA /* News+CoreDataProperties.swift */; };
 		F63E661328C7313B000CC541 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F63E661228C7313B000CC541 /* AppDelegate.swift */; };
 		F63E661F28C7313B000CC541 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F63E661E28C7313B000CC541 /* Assets.xcassets */; };
 		F63E662228C7313B000CC541 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F63E662028C7313B000CC541 /* LaunchScreen.storyboard */; };
@@ -42,9 +42,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F62E855E28D0668800248EC5 /* News+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "News+CoreDataClass.swift"; sourceTree = "<group>"; };
+		F62E855F28D0668800248EC5 /* News+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "News+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		F633C86628CF136A00B462BA /* News.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = News.xcdatamodel; sourceTree = "<group>"; };
-		F633C86828CF13E200B462BA /* News+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "News+CoreDataClass.swift"; sourceTree = "<group>"; };
-		F633C86928CF13E200B462BA /* News+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "News+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		F63E660F28C7313B000CC541 /* cs-zadatak2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "cs-zadatak2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F63E661228C7313B000CC541 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F63E661E28C7313B000CC541 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -297,8 +297,8 @@
 		F63E672028CB4501000CC541 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
-				F633C86828CF13E200B462BA /* News+CoreDataClass.swift */,
-				F633C86928CF13E200B462BA /* News+CoreDataProperties.swift */,
+				F62E855E28D0668800248EC5 /* News+CoreDataClass.swift */,
+				F62E855F28D0668800248EC5 /* News+CoreDataProperties.swift */,
 				F633C86528CF136A00B462BA /* News.xcdatamodeld */,
 			);
 			path = CoreData;
@@ -400,14 +400,14 @@
 				F633C86728CF136A00B462BA /* News.xcdatamodeld in Sources */,
 				F63E665C28C882FA000CC541 /* UIViewController.swift in Sources */,
 				F63E666D28C884EA000CC541 /* HomeCoordinator.swift in Sources */,
+				F62E856028D0668800248EC5 /* News+CoreDataClass.swift in Sources */,
 				F63E670D28CB1DF8000CC541 /* NewsModel.swift in Sources */,
-				F633C86B28CF13E200B462BA /* News+CoreDataProperties.swift in Sources */,
 				F63E672B28CB50F7000CC541 /* DataFunctions.swift in Sources */,
-				F633C86A28CF13E200B462BA /* News+CoreDataClass.swift in Sources */,
 				F63E66D628C8C295000CC541 /* SettingsViewController.swift in Sources */,
 				F63E66DB28C8C2D2000CC541 /* TabBarController.swift in Sources */,
 				F63E66E428C8CFA7000CC541 /* CategoryModel.swift in Sources */,
 				F63E666528C8842D000CC541 /* Router.swift in Sources */,
+				F62E856128D0668800248EC5 /* News+CoreDataProperties.swift in Sources */,
 				F63E665F28C88359000CC541 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

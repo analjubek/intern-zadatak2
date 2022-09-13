@@ -4,9 +4,10 @@
         <attribute name="article" optional="YES" attributeType="String"/>
         <attribute name="date" optional="YES" attributeType="String"/>
         <attribute name="image" optional="YES" attributeType="String"/>
+        <attribute name="link" optional="YES" attributeType="String"/>
         <attribute name="title" optional="YES" attributeType="String"/>
     </entity>
     <elements>
-        <element name="News" positionX="-63" positionY="-18" width="128" height="89"/>
+        <element name="News" positionX="-63" positionY="-18" width="128" height="104"/>
     </elements>
 </model>

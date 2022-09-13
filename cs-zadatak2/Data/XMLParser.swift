@@ -32,6 +32,11 @@ class FeedParser: NSObject, XMLParserDelegate{
             currentImage = currentImage.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
         }
     }
+    private var currentLink: String = ""{
+        didSet{
+            currentLink = currentLink.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
+        }
+    }
     private var parserCompletionHandler: (([NewsModel]) -> ())?
     
     func parseFeed(url: String, completionHandler: (([NewsModel]) -> ())?){
@@ -62,6 +67,7 @@ class FeedParser: NSObject, XMLParserDelegate{
             currentArticle = ""
             currentDate = ""
             currentImage = ""
+            currentLink = ""
         }
     }
     
@@ -71,6 +77,7 @@ class FeedParser: NSObject, XMLParserDelegate{
         case "description": currentArticle += string
         case "pubDate": currentDate += string
         case "image": currentImage += string
+        case "link": currentLink += string
         default: break
         }
     }
@@ -78,7 +85,7 @@ class FeedParser: NSObject, XMLParserDelegate{
     
     func parser(_ parser: XMLParser, didEndElement elementName: String, namespaceURI: String?, qualifiedName qName: String?) {
         if elementName == "item"{
-            let newsItem = NewsModel(title: currentTitle, article: currentArticle, date: currentDate, image: currentImage)
+            let newsItem = NewsModel(title: currentTitle, article: currentArticle, date: currentDate, image: currentImage, link: currentLink)
             self.newsItems.append(newsItem)
         }
     }

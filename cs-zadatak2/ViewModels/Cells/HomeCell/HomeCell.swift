@@ -34,7 +34,7 @@ class HomeCell: UICollectionViewCell {
         
         var time = 0
         var stringTime = ""
-        if (elapsedTime/60 < 1){
+        if (elapsedTime/60 < 60){
             time = Int(elapsedTime/60.0)
             stringTime = ("Prije \(time) m")
         }

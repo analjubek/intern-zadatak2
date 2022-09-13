@@ -15,7 +15,6 @@ protocol HomeViewControllerDelegate: AnyObject{
 class HomeViewController: UIViewController {
     
     private var newsCoreData: [NSManagedObject]?
-    private var newsItems: [NewsModel]?
     
     weak var delegate: HomeViewControllerDelegate?
     
@@ -53,7 +52,9 @@ class HomeViewController: UIViewController {
             controllNavBar()
             setupNewsSize()
             makeCategoryCollection(){
-                makeNewsCollection()
+                DispatchQueue.main.async {
+                    self.makeNewsCollection()
+                }
             }
         }
     }
@@ -63,7 +64,7 @@ class HomeViewController: UIViewController {
             newsLayout.itemSize = CGSize(width: cvHome.bounds.width, height: cvHome.bounds.height/2+20)
         }
         else{
-            newsLayout.itemSize = CGSize(width: cvHome.frame.width/2-10, height: 330)
+            newsLayout.itemSize = CGSize(width: cvHome.frame.width/2, height: 330)
         }
     }
     
@@ -128,7 +129,7 @@ extension HomeViewController: UICollectionViewDataSource {
         if (collectionView == cvHome){
             let homeCell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeCell.identifier, for: indexPath) as! HomeCell
             let newsModel = DataFunctions().fetchNewsByIdFromCoreData(newsId: indexPath.row)
-            
+            print(newsModel)
             homeCell.setupHomeCell(newsData: newsModel)
             
             return homeCell
