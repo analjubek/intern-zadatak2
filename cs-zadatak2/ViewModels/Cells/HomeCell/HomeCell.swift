@@ -17,7 +17,6 @@ class HomeCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
     func setupHomeCell(newsData: NewsModel){
         self.lblTitle.text = newsData.title

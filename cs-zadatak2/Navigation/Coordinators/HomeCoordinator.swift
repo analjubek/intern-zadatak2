@@ -5,12 +5,11 @@
 //  Created by Ana Ljubek on 07.09.2022..
 //
 
-
-import Foundation
 import UIKit
+import Foundation
 
 protocol HomeCoordinatorDelegate: AnyObject{
-    func coordinator(didRequestSummary coordinator: Coordinator, router: Router)
+    func coordinator(didRequestWebView coordinator: Coordinator, router: Router)
 }
 
 public class HomeCoordinator: Coordinator{
@@ -35,14 +34,12 @@ public class HomeCoordinator: Coordinator{
     }
 
     public func push(animated: Bool, onDismissed: completion) {
-        router.push(homeViewController, animated: true, onDismissed: onDismissed)
+        router.push(homeViewController, animated: animated, onDismissed: onDismissed)
     }
 }
 
 extension HomeCoordinator: HomeViewControllerDelegate{
     func viewController(didRequestProceed vc: UIViewController) {
-        print("triggeres")
-        self.delegate?.coordinator(didRequestSummary: self, router: router)
+        self.delegate?.coordinator(didRequestWebView: self, router: router)
     }
 }
-

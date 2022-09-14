@@ -8,7 +8,7 @@
 import UIKit
 import WebKit
 
-class WebViewController: UIViewController {
+class NewsWebViewController: UIViewController {
     @IBOutlet var nbWebViewNavigation: UINavigationBar!
     @IBOutlet var vwNewsWebView: WKWebView!
     

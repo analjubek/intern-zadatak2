@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ContactViewController" customModule="cs_zadatak2" customModuleProvider="target">
             <connections>
+                <outlet property="tvContacts" destination="4uw-Ln-iIP" id="6Pv-PK-pXp"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -30,7 +31,7 @@
                 </navigationBar>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <color key="backgroundColor" systemColor="systemOrangeColor"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="1IC-tI-d3G" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="BKq-kX-HNA"/>
                 <constraint firstItem="4uw-Ln-iIP" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="SN8-jI-cqk"/>
@@ -46,9 +47,6 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemOrangeColor">
-            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

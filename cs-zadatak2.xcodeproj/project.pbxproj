@@ -9,9 +9,14 @@
 /* Begin PBXBuildFile section */
 		F62E856028D0668800248EC5 /* News+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62E855E28D0668800248EC5 /* News+CoreDataClass.swift */; };
 		F62E856128D0668800248EC5 /* News+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62E855F28D0668800248EC5 /* News+CoreDataProperties.swift */; };
-		F62E856528D06B1600248EC5 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62E856328D06B1600248EC5 /* WebViewController.swift */; };
+		F62E856528D06B1600248EC5 /* NewsWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62E856328D06B1600248EC5 /* NewsWebViewController.swift */; };
 		F62E856628D06B1600248EC5 /* WebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F62E856428D06B1600248EC5 /* WebViewController.xib */; };
-		F62E856828D0778100248EC5 /* WebViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62E856728D0778100248EC5 /* WebViewCoordinator.swift */; };
+		F62E856828D0778100248EC5 /* NewsWebViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62E856728D0778100248EC5 /* NewsWebViewCoordinator.swift */; };
+		F62E856A28D0BE0F00248EC5 /* SettingsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62E856928D0BE0F00248EC5 /* SettingsCoordinator.swift */; };
+		F62E856C28D0BE1F00248EC5 /* ContactCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62E856B28D0BE1F00248EC5 /* ContactCoordinator.swift */; };
+		F62E856E28D0BE2C00248EC5 /* SearchCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62E856D28D0BE2C00248EC5 /* SearchCoordinator.swift */; };
+		F62E857828D2069000248EC5 /* ContactCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62E857628D2069000248EC5 /* ContactCell.swift */; };
+		F62E857928D2069000248EC5 /* ContactCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F62E857728D2069000248EC5 /* ContactCell.xib */; };
 		F633C86728CF136A00B462BA /* News.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F633C86528CF136A00B462BA /* News.xcdatamodeld */; };
 		F63E661328C7313B000CC541 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F63E661228C7313B000CC541 /* AppDelegate.swift */; };
 		F63E661F28C7313B000CC541 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F63E661E28C7313B000CC541 /* Assets.xcassets */; };
@@ -47,9 +52,14 @@
 /* Begin PBXFileReference section */
 		F62E855E28D0668800248EC5 /* News+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "News+CoreDataClass.swift"; sourceTree = "<group>"; };
 		F62E855F28D0668800248EC5 /* News+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "News+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		F62E856328D06B1600248EC5 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		F62E856328D06B1600248EC5 /* NewsWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsWebViewController.swift; sourceTree = "<group>"; };
 		F62E856428D06B1600248EC5 /* WebViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WebViewController.xib; sourceTree = "<group>"; };
-		F62E856728D0778100248EC5 /* WebViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewCoordinator.swift; sourceTree = "<group>"; };
+		F62E856728D0778100248EC5 /* NewsWebViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsWebViewCoordinator.swift; sourceTree = "<group>"; };
+		F62E856928D0BE0F00248EC5 /* SettingsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCoordinator.swift; sourceTree = "<group>"; };
+		F62E856B28D0BE1F00248EC5 /* ContactCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactCoordinator.swift; sourceTree = "<group>"; };
+		F62E856D28D0BE2C00248EC5 /* SearchCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCoordinator.swift; sourceTree = "<group>"; };
+		F62E857628D2069000248EC5 /* ContactCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactCell.swift; sourceTree = "<group>"; };
+		F62E857728D2069000248EC5 /* ContactCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContactCell.xib; sourceTree = "<group>"; };
 		F633C86628CF136A00B462BA /* News.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = News.xcdatamodel; sourceTree = "<group>"; };
 		F63E660F28C7313B000CC541 /* cs-zadatak2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "cs-zadatak2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F63E661228C7313B000CC541 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -98,10 +108,19 @@
 		F62E856228D06AF000248EC5 /* WebViewController */ = {
 			isa = PBXGroup;
 			children = (
-				F62E856328D06B1600248EC5 /* WebViewController.swift */,
+				F62E856328D06B1600248EC5 /* NewsWebViewController.swift */,
 				F62E856428D06B1600248EC5 /* WebViewController.xib */,
 			);
 			path = WebViewController;
+			sourceTree = "<group>";
+		};
+		F62E857128D1F28000248EC5 /* ContactCell */ = {
+			isa = PBXGroup;
+			children = (
+				F62E857628D2069000248EC5 /* ContactCell.swift */,
+				F62E857728D2069000248EC5 /* ContactCell.xib */,
+			);
+			path = ContactCell;
 			sourceTree = "<group>";
 		};
 		F63E660628C7313B000CC541 = {
@@ -167,9 +186,9 @@
 		F63E665528C8829F000CC541 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				F62E856228D06AF000248EC5 /* WebViewController */,
 				F63E66D928C8C2B0000CC541 /* TabBarController */,
 				F63E666128C8835F000CC541 /* HomeViewController */,
+				F62E856228D06AF000248EC5 /* WebViewController */,
 				F63E66D828C8C299000CC541 /* SettingsViewController */,
 				F63E66CA28C8C23C000CC541 /* ContactViewController */,
 				F63E66CF28C8C265000CC541 /* SearchViewController */,
@@ -191,7 +210,10 @@
 			children = (
 				F63E66DE28C8C353000CC541 /* TabBarCoordinator.swift */,
 				F63E666C28C884EA000CC541 /* HomeCoordinator.swift */,
-				F62E856728D0778100248EC5 /* WebViewCoordinator.swift */,
+				F62E856728D0778100248EC5 /* NewsWebViewCoordinator.swift */,
+				F62E856928D0BE0F00248EC5 /* SettingsCoordinator.swift */,
+				F62E856B28D0BE1F00248EC5 /* ContactCoordinator.swift */,
+				F62E856D28D0BE2C00248EC5 /* SearchCoordinator.swift */,
 			);
 			path = Coordinators;
 			sourceTree = "<group>";
@@ -279,6 +301,7 @@
 		F63E66E528C8D15C000CC541 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				F62E857128D1F28000248EC5 /* ContactCell */,
 				F63E670F28CB1F83000CC541 /* HomeCell */,
 				F63E670E28CB1F73000CC541 /* CategoryCell */,
 			);
@@ -393,6 +416,7 @@
 				F63E661F28C7313B000CC541 /* Assets.xcassets in Resources */,
 				F63E66D328C8C27F000CC541 /* SearchViewController.xib in Resources */,
 				F63E671728CB2238000CC541 /* HomeCell.xib in Resources */,
+				F62E857928D2069000248EC5 /* ContactCell.xib in Resources */,
 				F63E666028C88359000CC541 /* HomeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -408,20 +432,24 @@
 				F63E666728C8848B000CC541 /* AppDelegateRouter.swift in Sources */,
 				F63E671628CB2238000CC541 /* HomeCell.swift in Sources */,
 				F63E661328C7313B000CC541 /* AppDelegate.swift in Sources */,
+				F62E856C28D0BE1F00248EC5 /* ContactCoordinator.swift in Sources */,
 				F63E671F28CB44F3000CC541 /* XMLParser.swift in Sources */,
-				F62E856828D0778100248EC5 /* WebViewCoordinator.swift in Sources */,
+				F62E856828D0778100248EC5 /* NewsWebViewCoordinator.swift in Sources */,
 				F63E666928C8849C000CC541 /* NavigationRouter.swift in Sources */,
-				F62E856528D06B1600248EC5 /* WebViewController.swift in Sources */,
+				F62E856528D06B1600248EC5 /* NewsWebViewController.swift in Sources */,
 				F63E666328C88426000CC541 /* Coordinator.swift in Sources */,
 				F63E666B28C884C4000CC541 /* ModalNavigationRouter.swift in Sources */,
+				F62E857828D2069000248EC5 /* ContactCell.swift in Sources */,
 				F63E66D228C8C27F000CC541 /* SearchViewController.swift in Sources */,
 				F63E66CD28C8C25D000CC541 /* ContactViewController.swift in Sources */,
 				F63E66DF28C8C353000CC541 /* TabBarCoordinator.swift in Sources */,
 				F633C86728CF136A00B462BA /* News.xcdatamodeld in Sources */,
 				F63E665C28C882FA000CC541 /* UIViewController.swift in Sources */,
+				F62E856A28D0BE0F00248EC5 /* SettingsCoordinator.swift in Sources */,
 				F63E666D28C884EA000CC541 /* HomeCoordinator.swift in Sources */,
 				F62E856028D0668800248EC5 /* News+CoreDataClass.swift in Sources */,
 				F63E670D28CB1DF8000CC541 /* NewsModel.swift in Sources */,
+				F62E856E28D0BE2C00248EC5 /* SearchCoordinator.swift in Sources */,
 				F63E672B28CB50F7000CC541 /* DataFunctions.swift in Sources */,
 				F63E66D628C8C295000CC541 /* SettingsViewController.swift in Sources */,
 				F63E66DB28C8C2D2000CC541 /* TabBarController.swift in Sources */,

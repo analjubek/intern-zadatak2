@@ -35,11 +35,28 @@ class TabBarController: UITabBarController {
         self.tabBar.tintColor = .black
         self.tabBar.unselectedItemTintColor = .gray
     }
-    
-    
 }
 
 extension TabBarController: UITabBarControllerDelegate{
+    override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem){
+        print("item")
+        print(item.title!)
+        if(item.title! == "Postavke"){
+            
+        }
+        else if(item.title! == "Kontakt"){
+            
+        }
+        else if(item.title! == "Pretraga"){
+            
+        }
+        else{
+            print(item.title!)
+        }
+    }
     
-    
+    func viewController(didRequestProceed vc: UIViewController){
+        
+    }
 }
+

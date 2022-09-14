@@ -7,17 +7,17 @@
 
 import Foundation
 
-protocol WebViewCoordinatorDelegate: AnyObject{
+protocol NewsWebViewCoordinatorDelegate: AnyObject{
     func coordinator(didRequestFinish coordinator: Coordinator, router: Router)
 }
 
-class WebViewCoordinator: Coordinator{
+class NewsWebViewCoordinator: Coordinator{
     var childCoordinators: [Coordinator] = []
     var router: Router
-    weak var delegate: WebViewCoordinatorDelegate?
+    weak var delegate: NewsWebViewCoordinatorDelegate?
     
-    private lazy var webViewController: WebViewController = {
-        let vc = WebViewController.fromNib(bundle: Bundle.main)
+    private lazy var webViewController: NewsWebViewController = {
+        let vc = NewsWebViewController.fromNib(bundle: Bundle.main)
         vc.urlString = "https://vijesti.hrt.hr/svijet/zelenski-ukrajina-vratila-kontrolu-nad-otprilike-6000-cetvornih-kilometara-teritorija-9541752"
         return vc
     }()

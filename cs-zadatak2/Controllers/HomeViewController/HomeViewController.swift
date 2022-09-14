@@ -34,6 +34,7 @@ class HomeViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        self.delegate?.viewController(didRequestProceed: self)
         controllNavBar()
         makeCategoryCollection(){
             DispatchQueue.main.async {
@@ -165,4 +166,3 @@ extension HomeViewController: UICollectionViewDelegate {
         }
     }
 }
-

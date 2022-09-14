@@ -7,7 +7,12 @@
 
 import UIKit
 
+protocol SearchViewControllerDelegate: AnyObject{
+    func viewController(didRequestProceed vc: UIViewController)
+}
+
 class SearchViewController: UIViewController {
+    weak var delegate: SearchViewControllerDelegate?
 
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -7,23 +7,17 @@
 
 import UIKit
 
-class SettingsViewController: UIViewController {
+protocol SettingsViewControllerDelegate: AnyObject{
+    func viewController(didRequestProceed vc: UIViewController)
+}
 
+class SettingsViewController: UIViewController {
+    
+    weak var delegate: SettingsViewControllerDelegate?
+        
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        
     }
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
