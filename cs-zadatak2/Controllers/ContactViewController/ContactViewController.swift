@@ -16,6 +16,7 @@ class ContactViewController: UIViewController {
     @IBOutlet var tvContacts: UITableView!
     
     let contacts = ["Email", "Facbook", "Twitter", "Instagram", "YouTube"]
+    let contactsUrl = ["mailto://hrtvijesti@hrt.hr", "https://www.facebook.com/HRTvijesti/", "https://twitter.com/hrtvijesti", "https://www.instagram.com/hrvatska_radiotelevizija/", "https://www.youtube.com/user/HRTnovimediji"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,7 +28,19 @@ class ContactViewController: UIViewController {
 }
 
 extension ContactViewController: UITableViewDelegate{
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if(indexPath.row != 0){
+            UIApplication.shared.open(URL(string: contactsUrl[indexPath.row])!)
+        }
+        else{
+            guard let email = URL(string: contactsUrl[indexPath.row]) else { return }
+                    if UIApplication.shared.canOpenURL(email) {
+                        UIApplication.shared.open(email)
+                    } else {
+                        print("Can't open url on this device")
+                    }
+        }
+    }
 }
 
 extension ContactViewController: UITableViewDataSource{
