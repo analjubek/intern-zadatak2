@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import WebKit
 
 protocol SearchViewControllerDelegate: AnyObject{
     func viewController(didRequestProceed vc: UIViewController)
@@ -13,22 +14,13 @@ protocol SearchViewControllerDelegate: AnyObject{
 
 class SearchViewController: UIViewController {
     weak var delegate: SearchViewControllerDelegate?
+    @IBOutlet var wvSearch: WKWebView!
+    
+    let url = URL(string: "https://www.hrt.hr/pretraga")
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        wvSearch.load(URLRequest(url: url!))
     }
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
