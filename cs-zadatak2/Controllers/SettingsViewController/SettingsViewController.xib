@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SettingsViewController" customModule="cs_zadatak2" customModuleProvider="target">
             <connections>
+                <outlet property="tvSettings" destination="FyU-X1-kaQ" id="yeO-4g-QMw"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -17,14 +18,35 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1e5-jC-vCT" userLabel="nbSettings">
+                    <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                    <items>
+                        <navigationItem title="Postavke" id="OrS-fY-Lbg"/>
+                    </items>
+                </navigationBar>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="FyU-X1-kaQ" userLabel="tvSettings">
+                    <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </tableView>
+            </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <color key="backgroundColor" systemColor="systemGreenColor"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="FyU-X1-kaQ" secondAttribute="trailing" id="4DG-rR-aO6"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="FyU-X1-kaQ" secondAttribute="bottom" id="F2p-tO-FfP"/>
+                <constraint firstItem="FyU-X1-kaQ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="V5x-jc-KnR"/>
+                <constraint firstItem="FyU-X1-kaQ" firstAttribute="top" secondItem="1e5-jC-vCT" secondAttribute="bottom" id="XO4-bY-SuH"/>
+                <constraint firstItem="1e5-jC-vCT" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="dFy-7N-1eW"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="1e5-jC-vCT" secondAttribute="trailing" id="vLj-54-Wn9"/>
+                <constraint firstItem="1e5-jC-vCT" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="vXJ-UD-80Q"/>
+            </constraints>
             <point key="canvasLocation" x="132" y="112"/>
         </view>
     </objects>
     <resources>
-        <systemColor name="systemGreenColor">
-            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
     </resources>
 </document>

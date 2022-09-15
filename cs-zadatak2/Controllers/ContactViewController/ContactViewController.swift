@@ -12,10 +12,11 @@ protocol ContactViewControllerDelegate: AnyObject{
 }
 
 class ContactViewController: UIViewController {
+    
     weak var delegate: ContactViewControllerDelegate?
     @IBOutlet var tvContacts: UITableView!
     
-    let contacts = ["Email", "Facbook", "Twitter", "Instagram", "YouTube"]
+    let contacts = ["Email", "Facebook", "Twitter", "Instagram", "YouTube"]
     let contactsUrl = ["mailto://hrtvijesti@hrt.hr", "https://www.facebook.com/HRTvijesti/", "https://twitter.com/hrtvijesti", "https://www.instagram.com/hrvatska_radiotelevizija/", "https://www.youtube.com/user/HRTnovimediji"]
     
     override func viewDidLoad() {
@@ -49,7 +50,7 @@ extension ContactViewController: UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ContactCell", for: indexPath) as! ContactCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: ContactCell.identifier, for: indexPath) as! ContactCell
         
         cell.lblContact.text = contacts[indexPath.row]
         
