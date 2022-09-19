@@ -12,19 +12,16 @@ public class TabBarCoordinator: Coordinator{
     
     public var childCoordinators: [Coordinator] = []
     public let router: Router
-    
-    //let coordinator = TabBarCoordinator(router: ModalNavigationRouter(parentViewController: HomeViewController()))
+    public let tabBarRouter = TabBarRouter(navigationController: UINavigationController())
 
     private lazy var tabBarController: TabBarController = {
         let vc = TabBarController.fromNib(bundle: Bundle.main)
-        vc.title = "TabBarController"
         //vc.delegate = self
         return vc
     }()
     
     public init(router: Router){
         self.router = router
-        //presentChild(coordinator, animated: true) { print("fucn tou") }
     }
     
     public func push(animated: Bool, onDismissed: completion) {
@@ -34,15 +31,6 @@ public class TabBarCoordinator: Coordinator{
 //extension TabBarCoordinator: TabBarCoordinator, UITabBarControllerDelegate{
 //    override func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
 //        <#code#>
-//    }
-//}
-
-//extension TabBarCoordinator: UITabBarControllerDelegate{
-//    func viewController(didRequestProceed vc: UIViewController) {
-//        let router = ModalNavigationRouter(parentViewController: vc)
-//        let coordinator = TabBarCoordinator(router: router)
-//        //coordinator.delegate = self
-//        presentChild(coordinator, animated: true) { print("fucn tou") }
 //    }
 //}
 

@@ -10,11 +10,11 @@ import LeakedViewControllerDetector
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
-    public lazy var coordinator = TabBarCoordinator(router: router)
-    public lazy var router = AppDelegateRouter(window: window!)
+    
     public lazy var window: UIWindow? = UIWindow(frame: UIScreen.main.bounds)
-
+    public lazy var router = AppDelegateRouter(window: window!)
+    public lazy var coordinator = AppCoordinator(router: router)
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         DataFunctions().start(){
             DispatchQueue.main.async {

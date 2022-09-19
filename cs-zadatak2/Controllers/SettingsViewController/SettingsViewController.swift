@@ -8,7 +8,7 @@
 import UIKit
 
 protocol SettingsViewControllerDelegate: AnyObject{
-    func viewController(didRequestProceed vc: UIViewController)
+    func viewController(didRequestOtherApps vc: UIViewController)
 }
 
 class SettingsViewController: UIViewController {
@@ -29,8 +29,11 @@ class SettingsViewController: UIViewController {
 
 extension SettingsViewController: UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if(indexPath.row == 0){
+        if (indexPath.row == 0){
             UIApplication.shared.open(URL(string: "https://o-nama.hrt.hr/zastita-privatnosti-i-pravo-na-pristup-informacijama/uvjeti-koristenja-sadrzaja-objavljenog-na-hrt-ovim-digitalnim-platformama-4423")!)
+        }
+        if (indexPath.row == 1){
+            self.delegate?.viewController(didRequestOtherApps: self)
         }
     }
 }

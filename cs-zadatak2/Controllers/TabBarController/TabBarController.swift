@@ -16,6 +16,8 @@ class TabBarController: UITabBarController {
     let settingsViewController = SettingsViewController()
     let contactViewController = ContactViewController()
     let searchViewController = SearchViewController()
+    
+    let controllers = [HomeViewController(), SettingsViewController(), ContactViewController(), SearchViewController()]
         
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,7 +31,9 @@ class TabBarController: UITabBarController {
         searchViewController.title = "Pretraga"
         searchViewController.tabBarItem.image = UIImage(systemName: "magnifyingglass")
         
-        self.setViewControllers([homeViewController, settingsViewController, contactViewController, searchViewController], animated: true)
+        let items = [homeViewController, settingsViewController, contactViewController, searchViewController]
+        
+        self.setViewControllers(items, animated: true)
         
         self.tabBar.backgroundColor = .white
         self.tabBar.tintColor = .black
@@ -51,7 +55,7 @@ extension TabBarController: UITabBarControllerDelegate{
             
         }
         else{
-            print(item.title!)
+            
         }
     }
     

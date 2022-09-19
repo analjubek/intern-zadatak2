@@ -14,7 +14,7 @@ public protocol RouterAlias{
 public protocol Router: AnyObject, RouterAlias{
     
     func push(_ viewController: UIViewController, animated: Bool)
-    
+
     func push(_ viewController: UIViewController, animated: Bool, onDismissed: completion)
     
     func dismiss(animated: Bool)

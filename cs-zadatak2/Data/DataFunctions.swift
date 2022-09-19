@@ -28,6 +28,21 @@ class DataFunctions {
         }
     }
     
+    func getNews(url: String, completion: @escaping () -> ()){
+        deleteAllCoreData(entity: "News"){
+            DispatchQueue.main.async {
+                let feedParser = FeedParser()
+                feedParser.parseFeed(url: url){ (newsItems) in
+                    self.newsItems = newsItems
+                    OperationQueue.main.addOperation {
+                        self.saveXmlToCoreData(newsItems: newsItems)
+                    }
+                    completion()
+                }
+            }
+        }
+    }
+    
     lazy var persistentContainer: NSPersistentContainer = {
         let container = NSPersistentContainer(name: "News")
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in

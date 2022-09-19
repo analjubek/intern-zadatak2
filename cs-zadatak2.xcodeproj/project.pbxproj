@@ -23,6 +23,11 @@
 		F62E858428D3044E00248EC5 /* OtherAppsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F62E858228D3044E00248EC5 /* OtherAppsViewController.xib */; };
 		F62E858828D305D500248EC5 /* OtherAppsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62E858628D305D500248EC5 /* OtherAppsCell.swift */; };
 		F62E858928D305D500248EC5 /* OtherAppsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F62E858728D305D500248EC5 /* OtherAppsCell.xib */; };
+		F62E858D28D30F1A00248EC5 /* SmallHomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62E858B28D30F1A00248EC5 /* SmallHomeCell.swift */; };
+		F62E858E28D30F1A00248EC5 /* SmallHomeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F62E858C28D30F1A00248EC5 /* SmallHomeCell.xib */; };
+		F62E859028D4504100248EC5 /* OtherAppsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62E858F28D4504100248EC5 /* OtherAppsCoordinator.swift */; };
+		F62E859428D49AE600248EC5 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62E859328D49AE600248EC5 /* AppCoordinator.swift */; };
+		F62E859628D49D8700248EC5 /* TabBarRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62E859528D49D8700248EC5 /* TabBarRouter.swift */; };
 		F633C86728CF136A00B462BA /* News.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F633C86528CF136A00B462BA /* News.xcdatamodeld */; };
 		F63E661328C7313B000CC541 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F63E661228C7313B000CC541 /* AppDelegate.swift */; };
 		F63E661F28C7313B000CC541 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F63E661E28C7313B000CC541 /* Assets.xcassets */; };
@@ -72,6 +77,11 @@
 		F62E858228D3044E00248EC5 /* OtherAppsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OtherAppsViewController.xib; sourceTree = "<group>"; };
 		F62E858628D305D500248EC5 /* OtherAppsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherAppsCell.swift; sourceTree = "<group>"; };
 		F62E858728D305D500248EC5 /* OtherAppsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OtherAppsCell.xib; sourceTree = "<group>"; };
+		F62E858B28D30F1A00248EC5 /* SmallHomeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallHomeCell.swift; sourceTree = "<group>"; };
+		F62E858C28D30F1A00248EC5 /* SmallHomeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SmallHomeCell.xib; sourceTree = "<group>"; };
+		F62E858F28D4504100248EC5 /* OtherAppsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherAppsCoordinator.swift; sourceTree = "<group>"; };
+		F62E859328D49AE600248EC5 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		F62E859528D49D8700248EC5 /* TabBarRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarRouter.swift; sourceTree = "<group>"; };
 		F633C86628CF136A00B462BA /* News.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = News.xcdatamodel; sourceTree = "<group>"; };
 		F63E660F28C7313B000CC541 /* cs-zadatak2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "cs-zadatak2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F63E661228C7313B000CC541 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -162,6 +172,15 @@
 			path = OtherAppsCell;
 			sourceTree = "<group>";
 		};
+		F62E858A28D30EBA00248EC5 /* SmallHomeCell */ = {
+			isa = PBXGroup;
+			children = (
+				F62E858B28D30F1A00248EC5 /* SmallHomeCell.swift */,
+				F62E858C28D30F1A00248EC5 /* SmallHomeCell.xib */,
+			);
+			path = SmallHomeCell;
+			sourceTree = "<group>";
+		};
 		F63E660628C7313B000CC541 = {
 			isa = PBXGroup;
 			children = (
@@ -248,10 +267,12 @@
 		F63E665728C882B8000CC541 /* Coordinators */ = {
 			isa = PBXGroup;
 			children = (
+				F62E859328D49AE600248EC5 /* AppCoordinator.swift */,
 				F63E66DE28C8C353000CC541 /* TabBarCoordinator.swift */,
 				F63E666C28C884EA000CC541 /* HomeCoordinator.swift */,
 				F62E856728D0778100248EC5 /* NewsWebViewCoordinator.swift */,
 				F62E856928D0BE0F00248EC5 /* SettingsCoordinator.swift */,
+				F62E858F28D4504100248EC5 /* OtherAppsCoordinator.swift */,
 				F62E856B28D0BE1F00248EC5 /* ContactCoordinator.swift */,
 				F62E856D28D0BE2C00248EC5 /* SearchCoordinator.swift */,
 			);
@@ -262,6 +283,7 @@
 			isa = PBXGroup;
 			children = (
 				F63E666628C8848B000CC541 /* AppDelegateRouter.swift */,
+				F62E859528D49D8700248EC5 /* TabBarRouter.swift */,
 				F63E666828C8849C000CC541 /* NavigationRouter.swift */,
 				F63E666A28C884C4000CC541 /* ModalNavigationRouter.swift */,
 			);
@@ -341,11 +363,12 @@
 		F63E66E528C8D15C000CC541 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				F62E858528D3052A00248EC5 /* OtherAppsCell */,
-				F62E857A28D213B900248EC5 /* SettingsCell */,
-				F62E857128D1F28000248EC5 /* ContactCell */,
-				F63E670F28CB1F83000CC541 /* HomeCell */,
 				F63E670E28CB1F73000CC541 /* CategoryCell */,
+				F63E670F28CB1F83000CC541 /* HomeCell */,
+				F62E858A28D30EBA00248EC5 /* SmallHomeCell */,
+				F62E857A28D213B900248EC5 /* SettingsCell */,
+				F62E858528D3052A00248EC5 /* OtherAppsCell */,
+				F62E857128D1F28000248EC5 /* ContactCell */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -454,6 +477,7 @@
 				F62E856628D06B1600248EC5 /* WebViewController.xib in Resources */,
 				F63E66FF28CA14CB000CC541 /* CategoryCell.xib in Resources */,
 				F62E857E28D213DD00248EC5 /* SettingsCell.xib in Resources */,
+				F62E858E28D30F1A00248EC5 /* SmallHomeCell.xib in Resources */,
 				F63E66D728C8C295000CC541 /* SettingsViewController.xib in Resources */,
 				F63E66CE28C8C25D000CC541 /* ContactViewController.xib in Resources */,
 				F62E858928D305D500248EC5 /* OtherAppsCell.xib in Resources */,
@@ -483,6 +507,7 @@
 				F62E856828D0778100248EC5 /* NewsWebViewCoordinator.swift in Sources */,
 				F63E666928C8849C000CC541 /* NavigationRouter.swift in Sources */,
 				F62E858328D3044E00248EC5 /* OtherAppsViewController.swift in Sources */,
+				F62E858D28D30F1A00248EC5 /* SmallHomeCell.swift in Sources */,
 				F62E856528D06B1600248EC5 /* NewsWebViewController.swift in Sources */,
 				F63E666328C88426000CC541 /* Coordinator.swift in Sources */,
 				F63E666B28C884C4000CC541 /* ModalNavigationRouter.swift in Sources */,
@@ -490,6 +515,7 @@
 				F63E66D228C8C27F000CC541 /* SearchViewController.swift in Sources */,
 				F63E66CD28C8C25D000CC541 /* ContactViewController.swift in Sources */,
 				F62E857D28D213DD00248EC5 /* SettingsCell.swift in Sources */,
+				F62E859628D49D8700248EC5 /* TabBarRouter.swift in Sources */,
 				F63E66DF28C8C353000CC541 /* TabBarCoordinator.swift in Sources */,
 				F633C86728CF136A00B462BA /* News.xcdatamodeld in Sources */,
 				F63E665C28C882FA000CC541 /* UIViewController.swift in Sources */,
@@ -499,10 +525,12 @@
 				F63E670D28CB1DF8000CC541 /* NewsModel.swift in Sources */,
 				F62E856E28D0BE2C00248EC5 /* SearchCoordinator.swift in Sources */,
 				F63E672B28CB50F7000CC541 /* DataFunctions.swift in Sources */,
+				F62E859428D49AE600248EC5 /* AppCoordinator.swift in Sources */,
 				F63E66D628C8C295000CC541 /* SettingsViewController.swift in Sources */,
 				F63E66DB28C8C2D2000CC541 /* TabBarController.swift in Sources */,
 				F63E66E428C8CFA7000CC541 /* CategoryModel.swift in Sources */,
 				F63E666528C8842D000CC541 /* Router.swift in Sources */,
+				F62E859028D4504100248EC5 /* OtherAppsCoordinator.swift in Sources */,
 				F62E856128D0668800248EC5 /* News+CoreDataProperties.swift in Sources */,
 				F63E665F28C88359000CC541 /* HomeViewController.swift in Sources */,
 			);

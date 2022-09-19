@@ -9,6 +9,8 @@ import UIKit
 
 class OtherAppsViewController: UIViewController {
     @IBOutlet var tvOtherApps: UITableView!
+    @IBOutlet var nbOtherApps: UINavigationBar!
+    
     
     let apps = ["HRTi", "HRT Radio", "HRT Meteo", "HRT Teletekst"]
     let appsURL = ["https://apps.apple.com/hr/app/hrti-ott/id1412033720", "https://apps.apple.com/hr/app/hrt-radio/id1358478574", "https://apps.apple.com/hr/app/hrtmeteo/id1153570358", "https://apps.apple.com/hr/app/hrt-teletekst/id1220011567"]
@@ -16,6 +18,8 @@ class OtherAppsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.title = "Ostale HRT aplikacije"
+
         tvOtherApps.delegate = self
         tvOtherApps.dataSource = self
         tvOtherApps.register(UINib(nibName: OtherAppsCell.identifier, bundle: Bundle.main), forCellReuseIdentifier: OtherAppsCell.identifier)

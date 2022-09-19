@@ -25,7 +25,7 @@ class HomeViewController: UIViewController {
     @IBOutlet var cvHome: UICollectionView!
     
     var cellCategory: UICollectionViewCell?
-    var categories = [CategoryModel(categoryName: "Naslovnica", isSelected: true), CategoryModel(categoryName: "Sport", isSelected: false), CategoryModel(categoryName: "Magazin", isSelected: false), CategoryModel(categoryName: "Video", isSelected: false)]
+    var categories = [CategoryModel(categoryName: "Naslovnica", isSelected: true, rssUrl: "https://feed.hrt.hr/vijesti/page.xml"), CategoryModel(categoryName: "Sport", isSelected: false, rssUrl: "https://feed.hrt.hr/sport/page.xml"), CategoryModel(categoryName: "Magazin", isSelected: false, rssUrl: "https://feed.hrt.hr/magazin/page.xml"), CategoryModel(categoryName: "Program", isSelected: false, rssUrl: "https://feed.hrt.hr/hrtprikazuje/page.xml")]
     
     var height: Float?
     var width: Float?
@@ -68,10 +68,10 @@ class HomeViewController: UIViewController {
     
     func setupNewsSize(){
         if (UIApplication.shared.statusBarOrientation.isPortrait){
-            newsLayout.itemSize = CGSize(width: cvHome.bounds.width, height: cvHome.bounds.height/2+20)
+            newsLayout.itemSize = CGSize(width: cvHome.bounds.width, height: cvHome.bounds.height/2+65)
         }
         else{
-            newsLayout.itemSize = CGSize(width: cvHome.frame.width/2, height: 330)
+            newsLayout.itemSize = CGSize(width: cvHome.frame.width/2, height: 370)
         }
     }
     
@@ -127,7 +127,7 @@ extension HomeViewController: UICollectionViewDataSource {
         if (collectionView == cvCategories){
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CategoryCell.identifier, for: indexPath) as! CategoryCell
             
-            let categoryModel = CategoryModel(categoryName: categories[indexPath.row].categoryName, isSelected: categories[indexPath.row].isSelected)
+            let categoryModel = CategoryModel(categoryName: categories[indexPath.row].categoryName, isSelected: categories[indexPath.row].isSelected, rssUrl: categories[indexPath.row].rssUrl)
             
             cell.setupCategoryCell(categoryData: categoryModel)
             
@@ -155,8 +155,14 @@ extension HomeViewController: UICollectionViewDelegate {
             }
             categories[indexPath.row].isSelected = true
             let cell = collectionView.cellForItem(at: indexPath) as! CategoryCell
-            cell.setupCategoryCell(categoryData: CategoryModel(categoryName: categories[indexPath.row].categoryName, isSelected: categories[indexPath.row].isSelected))
+            cell.setupCategoryCell(categoryData: CategoryModel(categoryName: categories[indexPath.row].categoryName, isSelected: categories[indexPath.row].isSelected, rssUrl: categories[indexPath.row].rssUrl))
             cvCategories.reloadData()
+            
+            DataFunctions().getNews(url: categories[indexPath.row].rssUrl){
+                DispatchQueue.main.async {
+                    self.cvHome.reloadData()
+                }
+            }
         }
         if(collectionView == cvHome){
             let newsLink = DataFunctions().fetchNewsByIdFromCoreData(newsId: indexPath.row).link

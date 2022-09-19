@@ -11,9 +11,11 @@ import UIKit
 struct CategoryModel {
     var categoryName: String
     var isSelected: Bool
+    var rssUrl: String
     
-    init(categoryName: String, isSelected: Bool){
+    init(categoryName: String, isSelected: Bool, rssUrl: String){
         self.categoryName = categoryName
         self.isSelected = isSelected
+        self.rssUrl = rssUrl
     }
 }

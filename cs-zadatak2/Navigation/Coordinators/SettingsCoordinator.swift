@@ -13,20 +13,24 @@ import Foundation
 //}
 
 public class SettingsCoordinator: Coordinator{
-
     public var childCoordinators: [Coordinator] = []
     public let router: Router
-//    weak var delegate: SettingsCoordinatorDelegate?
+    //weak var delegate: SettingsCoordinatorDelegate?
 
     private lazy var settingsViewController: SettingsViewController = {
         let vc = SettingsViewController.fromNib(bundle: Bundle.main)
         vc.title = "SettingsViewController"
+        vc.delegate = self
+        
         return vc
     }()
 
     public init(router: Router){
         self.router = router
     }
+//    public init(navigationController: UINavigationController){
+//        self.navigationController = navigationController
+//    }
     
     deinit{
         print("Deinited:", self)
@@ -38,8 +42,19 @@ public class SettingsCoordinator: Coordinator{
 }
 
 extension SettingsCoordinator: SettingsViewControllerDelegate{
-    func viewController(didRequestProceed vc: UIViewController) {
-//        self.delegate?.coordinator(didRequestSummary: self, router: router)
+    func viewController(didRequestOtherApps vc: UIViewController) {
+        let navigationController = UINavigationController()
+        let router = NavigationRouter(navigationController: navigationController)
+        //let router = NavigationRouter(navigationController: self.settingsViewController.navigationController)
+        //NavigationRouter(parentViewController: vc)
+        let coordinator = OtherAppsCoordinator(router: router)
+        coordinator.delegate = self
+        presentChild(coordinator, animated: true) { print("fucn tou") }
     }
 }
 
+extension SettingsCoordinator: OtherAppsCoordinatorDelegate{
+    func coordinator(didRequestFinish coordinator: Coordinator, router: Router) {
+        
+    }
+}

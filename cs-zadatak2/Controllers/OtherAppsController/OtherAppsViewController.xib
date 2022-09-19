@@ -19,26 +19,17 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NZO-Jv-QHR" userLabel="nbOtherApps">
-                    <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                    <items>
-                        <navigationItem title="Ostale HRT aplikacije" id="t0f-ag-SPj"/>
-                    </items>
-                </navigationBar>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="hPH-qH-lxb" userLabel="tvOtherApps">
-                    <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </tableView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="NZO-Jv-QHR" secondAttribute="trailing" id="5K8-J9-X5U"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="hPH-qH-lxb" secondAttribute="trailing" id="7C8-aI-uRP"/>
-                <constraint firstItem="NZO-Jv-QHR" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="SHo-Ut-cFi"/>
-                <constraint firstItem="hPH-qH-lxb" firstAttribute="top" secondItem="NZO-Jv-QHR" secondAttribute="bottom" id="amE-Cf-Ee5"/>
-                <constraint firstItem="NZO-Jv-QHR" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="eQw-gz-snG"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="hPH-qH-lxb" secondAttribute="bottom" id="p7W-gY-QEC"/>
+                <constraint firstItem="hPH-qH-lxb" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="t6H-Tt-397"/>
                 <constraint firstItem="hPH-qH-lxb" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="yrm-Di-prb"/>
             </constraints>
             <point key="canvasLocation" x="132" y="87"/>
