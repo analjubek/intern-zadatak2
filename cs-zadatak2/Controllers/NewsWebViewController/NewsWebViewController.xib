@@ -8,11 +8,11 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ViewController" customModule="cs_zadatak2" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NewsWebViewController" customModule="cs_zadatak2" customModuleProvider="target">
             <connections>
-                <outlet property="nbWebViewNavigation" destination="dcI-UG-6xn" id="oz6-Ak-UAD"/>
+                <outlet property="nbWebViewNavigation" destination="Roh-Oh-a4D" id="m7C-aP-OYW"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
-                <outlet property="vwNewsWebView" destination="dcI-UG-6xn" id="SHj-PV-c8x"/>
+                <outlet property="vwNewsWebView" destination="adW-qn-ga8" id="n8Q-fN-MMm"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -20,13 +20,13 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pTr-x7-nIP" userLabel="nbWebView">
+                <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Roh-Oh-a4D" userLabel="nbWebViewNavigation">
                     <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                     <items>
-                        <navigationItem title="Naslovnica" id="beU-pF-CD8"/>
+                        <navigationItem title="Naslovnica" id="fDd-LD-46W" userLabel="lblNaslovnica"/>
                     </items>
                 </navigationBar>
-                <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dcI-UG-6xn" userLabel="vwNews">
+                <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="adW-qn-ga8">
                     <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                     <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <wkWebViewConfiguration key="configuration">
@@ -38,15 +38,15 @@
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="pTr-x7-nIP" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="3UF-2d-z7K"/>
-                <constraint firstItem="pTr-x7-nIP" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="8UI-fO-lvY"/>
-                <constraint firstItem="dcI-UG-6xn" firstAttribute="top" secondItem="pTr-x7-nIP" secondAttribute="bottom" id="CyQ-mE-6JS"/>
-                <constraint firstItem="dcI-UG-6xn" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="J0r-Bi-cmz"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="dcI-UG-6xn" secondAttribute="bottom" id="OmW-Ue-Ogq"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="dcI-UG-6xn" secondAttribute="trailing" id="SZl-MC-sOF"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="pTr-x7-nIP" secondAttribute="trailing" id="Wxp-NE-hBA"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="adW-qn-ga8" secondAttribute="bottom" id="0hh-PR-aYu"/>
+                <constraint firstItem="adW-qn-ga8" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="5rp-BT-Rcv"/>
+                <constraint firstItem="adW-qn-ga8" firstAttribute="top" secondItem="Roh-Oh-a4D" secondAttribute="bottom" id="KQw-Jk-Pt1"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Roh-Oh-a4D" secondAttribute="trailing" id="V7t-Zr-ilu"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="adW-qn-ga8" secondAttribute="trailing" id="gkk-wc-diA"/>
+                <constraint firstItem="Roh-Oh-a4D" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="gxK-Gi-63J"/>
+                <constraint firstItem="Roh-Oh-a4D" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="qrx-mp-572"/>
             </constraints>
-            <point key="canvasLocation" x="132" y="73"/>
+            <point key="canvasLocation" x="133" y="80"/>
         </view>
     </objects>
     <resources>

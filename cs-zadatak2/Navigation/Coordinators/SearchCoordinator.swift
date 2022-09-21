@@ -36,10 +36,3 @@ public class SearchCoordinator: Coordinator{
         router.push(searchViewController, animated: true, onDismissed: onDismissed)
     }
 }
-
-extension SearchCoordinator: SearchViewControllerDelegate{
-    func viewController(didRequestProceed vc: UIViewController) {
-//        self.delegate?.coordinator(didRequestSummary: self, router: router)
-    }
-}
-

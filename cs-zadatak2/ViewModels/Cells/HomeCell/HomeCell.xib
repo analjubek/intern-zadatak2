@@ -17,13 +17,13 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="252" translatesAutoresizingMaskIntoConstraints="NO" id="sE4-vn-1M4" userLabel="image">
-                        <rect key="frame" x="5" y="5" width="482" height="250"/>
+                        <rect key="frame" x="5" y="5" width="482" height="230"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="250" id="x2c-0Q-95O"/>
+                            <constraint firstAttribute="height" constant="230" id="x2c-0Q-95O"/>
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3PC-0g-W7t" userLabel="lblTitle">
-                        <rect key="frame" x="5" y="260" width="482" height="45"/>
+                        <rect key="frame" x="5" y="240" width="482" height="45"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="45" id="Lb1-Qg-ZNf"/>
                         </constraints>
@@ -32,7 +32,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GQj-fy-mkO" userLabel="lblDescription">
-                        <rect key="frame" x="5" y="305" width="482" height="40"/>
+                        <rect key="frame" x="5" y="285" width="482" height="40"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="40" id="MRE-Il-l9D"/>
                         </constraints>
@@ -41,7 +41,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q18-fV-rMK" userLabel="lblDate">
-                        <rect key="frame" x="5" y="350" width="27" height="33"/>
+                        <rect key="frame" x="5" y="330" width="27" height="53"/>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>

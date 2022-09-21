@@ -17,10 +17,11 @@ public class HomeCoordinator: Coordinator{
     public var childCoordinators: [Coordinator] = []
     public let router: Router
     weak var delegate: HomeCoordinatorDelegate?
+    public var navigationController: UINavigationController?
 
     private lazy var homeViewController: HomeViewController = {
         let vc = HomeViewController.fromNib(bundle: Bundle.main)
-        vc.title = "HomeViewController"
+        //vc.title = "Naslovnica"
         vc.delegate = self
         return vc
     }()

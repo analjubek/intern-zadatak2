@@ -49,7 +49,7 @@ extension SettingsCoordinator: SettingsViewControllerDelegate{
         //NavigationRouter(parentViewController: vc)
         let coordinator = OtherAppsCoordinator(router: router)
         coordinator.delegate = self
-        presentChild(coordinator, animated: true) { print("fucn tou") }
+        pushChild(coordinator, animated: true) { print("fucn tou") }
     }
 }
 

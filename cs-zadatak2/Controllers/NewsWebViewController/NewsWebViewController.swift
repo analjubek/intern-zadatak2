@@ -8,21 +8,17 @@
 import UIKit
 import WebKit
 
-class NewsWebViewController: UIViewController {
+public class NewsWebViewController: UIViewController {
     @IBOutlet var nbWebViewNavigation: UINavigationBar!
     @IBOutlet var vwNewsWebView: WKWebView!
     
     var urlString: String?
     var url: URL?
     
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    override func viewDidLoad() {
+    public override func viewDidLoad() {
         super.viewDidLoad()
         
-        url = URL(string: urlString!)
-        vwNewsWebView.load(URLRequest(url: url!))
+        url = URL(string: "https://vijesti.hrt.hr/svijet/ispracaj-kraljice-elizabete-ii-9657561")
+        self.vwNewsWebView.load(URLRequest(url: url!))
     }
 }

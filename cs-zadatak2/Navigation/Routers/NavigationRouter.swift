@@ -14,7 +14,7 @@ protocol NavigationRouterAlias{
 
 public class NavigationRouter: NSObject, NavigationRouterAlias{
     
-    private let navigationController: UINavigationController
+    public var navigationController: UINavigationController
     private let routerRootController: UIViewController?
     private var onDismissForViewController: [UIViewController: completion] = [:]
     

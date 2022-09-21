@@ -37,9 +37,13 @@ class HomeCell: UICollectionViewCell {
             time = Int(elapsedTime/60.0)
             stringTime = ("Prije \(time) m")
         }
-        else {
+        else if (elapsedTime/60/60 < 24) {
             time = Int(elapsedTime/60/60)
             stringTime = ("Prije \(time) h")
+        }
+        else{
+            time = Int(elapsedTime/60/60/24)
+            stringTime = ("Prije \(time) d")
         }
         self.lblDate.text = stringTime
         

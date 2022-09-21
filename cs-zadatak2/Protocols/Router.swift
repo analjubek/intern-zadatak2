@@ -17,6 +17,8 @@ public protocol Router: AnyObject, RouterAlias{
 
     func push(_ viewController: UIViewController, animated: Bool, onDismissed: completion)
     
+    func pushControllers(_ viewControllers: [UIViewController])
+    
     func dismiss(animated: Bool)
 }
 
@@ -24,5 +26,8 @@ extension Router{
     
     public func push(_ viewController: UIViewController, animated: Bool){
         push(viewController, animated: animated, onDismissed: nil)
+    }
+    public func pushControllers(_ viewControllers: [UIViewController]){
+        pushControllers(viewControllers)
     }
 }

@@ -14,7 +14,7 @@ protocol OtherAppsCoordinatorDelegate: AnyObject{
 }
 
 public class OtherAppsCoordinator: Coordinator{
-
+    
     public var childCoordinators: [Coordinator] = []
     public let router: Router
     weak var delegate: OtherAppsCoordinatorDelegate?
@@ -35,5 +35,9 @@ public class OtherAppsCoordinator: Coordinator{
 
     public func push(animated: Bool, onDismissed: completion) {
         router.push(otherAppsViewController, animated: true, onDismissed: onDismissed)
+    }
+    
+    public func pushControllers(viewControllers: [UIViewController]) {
+        // TODO
     }
 }

@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 public protocol CoordinatorAlias{
     typealias completion = (() -> Void)?
@@ -18,9 +19,12 @@ public protocol Coordinator: AnyObject, CoordinatorAlias{
     
     func push(animated: Bool, onDismissed: completion)
     
+    func pushChild(_ child: Coordinator, animated: Bool, onDismissed: completion)
+    
     func dismiss(animated: Bool)
     
-    func presentChild(_ child: Coordinator, animated: Bool, onDismissed: completion)
+    func pushControllers(viewControllers: [UIViewController])
+    
 }
 
 extension Coordinator{
@@ -31,13 +35,17 @@ extension Coordinator{
         router.dismiss(animated: animated)
     }
     
-    public func presentChild(_ child: Coordinator, animated: Bool, onDismissed: completion){
+    public func pushChild(_ child: Coordinator, animated: Bool, onDismissed: completion){
         childCoordinators.append(child)
         child.push(animated: animated) { [weak self, weak child] in
             guard let self = self, let child = child else { return }
             self.removeChild(child)
             onDismissed?()
         }
+    }
+    
+    public func pushControllers(viewControllers: [UIViewController]){
+        router.pushControllers(viewControllers)
     }
     
     //MARK: - Private

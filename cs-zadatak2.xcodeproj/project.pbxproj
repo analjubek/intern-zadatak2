@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		F62E856028D0668800248EC5 /* News+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62E855E28D0668800248EC5 /* News+CoreDataClass.swift */; };
 		F62E856128D0668800248EC5 /* News+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62E855F28D0668800248EC5 /* News+CoreDataProperties.swift */; };
-		F62E856528D06B1600248EC5 /* NewsWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62E856328D06B1600248EC5 /* NewsWebViewController.swift */; };
-		F62E856628D06B1600248EC5 /* WebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F62E856428D06B1600248EC5 /* WebViewController.xib */; };
 		F62E856828D0778100248EC5 /* NewsWebViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62E856728D0778100248EC5 /* NewsWebViewCoordinator.swift */; };
 		F62E856A28D0BE0F00248EC5 /* SettingsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62E856928D0BE0F00248EC5 /* SettingsCoordinator.swift */; };
 		F62E856C28D0BE1F00248EC5 /* ContactCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62E856B28D0BE1F00248EC5 /* ContactCoordinator.swift */; };
@@ -28,6 +26,9 @@
 		F62E859028D4504100248EC5 /* OtherAppsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62E858F28D4504100248EC5 /* OtherAppsCoordinator.swift */; };
 		F62E859428D49AE600248EC5 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62E859328D49AE600248EC5 /* AppCoordinator.swift */; };
 		F62E859628D49D8700248EC5 /* TabBarRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62E859528D49D8700248EC5 /* TabBarRouter.swift */; };
+		F62E859928D8863E00248EC5 /* NewsWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62E859728D8863E00248EC5 /* NewsWebViewController.swift */; };
+		F62E859A28D8863E00248EC5 /* NewsWebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F62E859828D8863E00248EC5 /* NewsWebViewController.xib */; };
+		F62E859C28DAFB4C00248EC5 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62E859B28DAFB4C00248EC5 /* Array.swift */; };
 		F633C86728CF136A00B462BA /* News.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F633C86528CF136A00B462BA /* News.xcdatamodeld */; };
 		F63E661328C7313B000CC541 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F63E661228C7313B000CC541 /* AppDelegate.swift */; };
 		F63E661F28C7313B000CC541 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F63E661E28C7313B000CC541 /* Assets.xcassets */; };
@@ -39,7 +40,6 @@
 		F63E666528C8842D000CC541 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = F63E666428C8842D000CC541 /* Router.swift */; };
 		F63E666728C8848B000CC541 /* AppDelegateRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F63E666628C8848B000CC541 /* AppDelegateRouter.swift */; };
 		F63E666928C8849C000CC541 /* NavigationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F63E666828C8849C000CC541 /* NavigationRouter.swift */; };
-		F63E666B28C884C4000CC541 /* ModalNavigationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F63E666A28C884C4000CC541 /* ModalNavigationRouter.swift */; };
 		F63E666D28C884EA000CC541 /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F63E666C28C884EA000CC541 /* HomeCoordinator.swift */; };
 		F63E66CD28C8C25D000CC541 /* ContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F63E66CB28C8C25D000CC541 /* ContactViewController.swift */; };
 		F63E66CE28C8C25D000CC541 /* ContactViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F63E66CC28C8C25D000CC541 /* ContactViewController.xib */; };
@@ -63,8 +63,6 @@
 /* Begin PBXFileReference section */
 		F62E855E28D0668800248EC5 /* News+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "News+CoreDataClass.swift"; sourceTree = "<group>"; };
 		F62E855F28D0668800248EC5 /* News+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "News+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		F62E856328D06B1600248EC5 /* NewsWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsWebViewController.swift; sourceTree = "<group>"; };
-		F62E856428D06B1600248EC5 /* WebViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WebViewController.xib; sourceTree = "<group>"; };
 		F62E856728D0778100248EC5 /* NewsWebViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsWebViewCoordinator.swift; sourceTree = "<group>"; };
 		F62E856928D0BE0F00248EC5 /* SettingsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCoordinator.swift; sourceTree = "<group>"; };
 		F62E856B28D0BE1F00248EC5 /* ContactCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactCoordinator.swift; sourceTree = "<group>"; };
@@ -82,6 +80,9 @@
 		F62E858F28D4504100248EC5 /* OtherAppsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherAppsCoordinator.swift; sourceTree = "<group>"; };
 		F62E859328D49AE600248EC5 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		F62E859528D49D8700248EC5 /* TabBarRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarRouter.swift; sourceTree = "<group>"; };
+		F62E859728D8863E00248EC5 /* NewsWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsWebViewController.swift; sourceTree = "<group>"; };
+		F62E859828D8863E00248EC5 /* NewsWebViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsWebViewController.xib; sourceTree = "<group>"; };
+		F62E859B28DAFB4C00248EC5 /* Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
 		F633C86628CF136A00B462BA /* News.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = News.xcdatamodel; sourceTree = "<group>"; };
 		F63E660F28C7313B000CC541 /* cs-zadatak2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "cs-zadatak2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F63E661228C7313B000CC541 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -95,7 +96,6 @@
 		F63E666428C8842D000CC541 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		F63E666628C8848B000CC541 /* AppDelegateRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegateRouter.swift; sourceTree = "<group>"; };
 		F63E666828C8849C000CC541 /* NavigationRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationRouter.swift; sourceTree = "<group>"; };
-		F63E666A28C884C4000CC541 /* ModalNavigationRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalNavigationRouter.swift; sourceTree = "<group>"; };
 		F63E666C28C884EA000CC541 /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
 		F63E66CB28C8C25D000CC541 /* ContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactViewController.swift; sourceTree = "<group>"; };
 		F63E66CC28C8C25D000CC541 /* ContactViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContactViewController.xib; sourceTree = "<group>"; };
@@ -127,13 +127,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		F62E856228D06AF000248EC5 /* WebViewController */ = {
+		F62E856228D06AF000248EC5 /* NewsWebViewController */ = {
 			isa = PBXGroup;
 			children = (
-				F62E856328D06B1600248EC5 /* NewsWebViewController.swift */,
-				F62E856428D06B1600248EC5 /* WebViewController.xib */,
+				F62E859728D8863E00248EC5 /* NewsWebViewController.swift */,
+				F62E859828D8863E00248EC5 /* NewsWebViewController.xib */,
 			);
-			path = WebViewController;
+			path = NewsWebViewController;
 			sourceTree = "<group>";
 		};
 		F62E857128D1F28000248EC5 /* ContactCell */ = {
@@ -246,7 +246,7 @@
 			children = (
 				F63E66D928C8C2B0000CC541 /* TabBarController */,
 				F63E666128C8835F000CC541 /* HomeViewController */,
-				F62E856228D06AF000248EC5 /* WebViewController */,
+				F62E856228D06AF000248EC5 /* NewsWebViewController */,
 				F63E66D828C8C299000CC541 /* SettingsViewController */,
 				F62E858028D303E800248EC5 /* OtherAppsController */,
 				F63E66CA28C8C23C000CC541 /* ContactViewController */,
@@ -285,7 +285,6 @@
 				F63E666628C8848B000CC541 /* AppDelegateRouter.swift */,
 				F62E859528D49D8700248EC5 /* TabBarRouter.swift */,
 				F63E666828C8849C000CC541 /* NavigationRouter.swift */,
-				F63E666A28C884C4000CC541 /* ModalNavigationRouter.swift */,
 			);
 			path = Routers;
 			sourceTree = "<group>";
@@ -303,6 +302,7 @@
 			isa = PBXGroup;
 			children = (
 				F63E665B28C882FA000CC541 /* UIViewController.swift */,
+				F62E859B28DAFB4C00248EC5 /* Array.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -474,12 +474,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				F63E662228C7313B000CC541 /* LaunchScreen.storyboard in Resources */,
-				F62E856628D06B1600248EC5 /* WebViewController.xib in Resources */,
 				F63E66FF28CA14CB000CC541 /* CategoryCell.xib in Resources */,
 				F62E857E28D213DD00248EC5 /* SettingsCell.xib in Resources */,
 				F62E858E28D30F1A00248EC5 /* SmallHomeCell.xib in Resources */,
 				F63E66D728C8C295000CC541 /* SettingsViewController.xib in Resources */,
 				F63E66CE28C8C25D000CC541 /* ContactViewController.xib in Resources */,
+				F62E859A28D8863E00248EC5 /* NewsWebViewController.xib in Resources */,
 				F62E858928D305D500248EC5 /* OtherAppsCell.xib in Resources */,
 				F63E661F28C7313B000CC541 /* Assets.xcassets in Resources */,
 				F63E66D328C8C27F000CC541 /* SearchViewController.xib in Resources */,
@@ -508,16 +508,16 @@
 				F63E666928C8849C000CC541 /* NavigationRouter.swift in Sources */,
 				F62E858328D3044E00248EC5 /* OtherAppsViewController.swift in Sources */,
 				F62E858D28D30F1A00248EC5 /* SmallHomeCell.swift in Sources */,
-				F62E856528D06B1600248EC5 /* NewsWebViewController.swift in Sources */,
 				F63E666328C88426000CC541 /* Coordinator.swift in Sources */,
-				F63E666B28C884C4000CC541 /* ModalNavigationRouter.swift in Sources */,
 				F62E857828D2069000248EC5 /* ContactCell.swift in Sources */,
 				F63E66D228C8C27F000CC541 /* SearchViewController.swift in Sources */,
 				F63E66CD28C8C25D000CC541 /* ContactViewController.swift in Sources */,
 				F62E857D28D213DD00248EC5 /* SettingsCell.swift in Sources */,
 				F62E859628D49D8700248EC5 /* TabBarRouter.swift in Sources */,
 				F63E66DF28C8C353000CC541 /* TabBarCoordinator.swift in Sources */,
+				F62E859C28DAFB4C00248EC5 /* Array.swift in Sources */,
 				F633C86728CF136A00B462BA /* News.xcdatamodeld in Sources */,
+				F62E859928D8863E00248EC5 /* NewsWebViewController.swift in Sources */,
 				F63E665C28C882FA000CC541 /* UIViewController.swift in Sources */,
 				F62E856A28D0BE0F00248EC5 /* SettingsCoordinator.swift in Sources */,
 				F63E666D28C884EA000CC541 /* HomeCoordinator.swift in Sources */,

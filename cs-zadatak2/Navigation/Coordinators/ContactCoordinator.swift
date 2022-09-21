@@ -38,7 +38,7 @@ public class ContactCoordinator: Coordinator{
 }
 
 extension ContactCoordinator: ContactViewControllerDelegate{
-    func viewController(didRequestProceed vc: UIViewController) {
+    public func viewController(didRequestProceed vc: UIViewController) {
 //        self.delegate?.coordinator(didRequestSummary: self, router: router)
     }
 }
