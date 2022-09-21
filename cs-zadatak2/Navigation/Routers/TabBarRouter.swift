@@ -19,7 +19,6 @@ public class TabBarRouter: Router{
 
     public func pushControllers(_ viewControllers: [UIViewController]){
         tabBarController.viewControllers = viewControllers
-        
     }
     
     public func push(_ viewController: UIViewController, animated: Bool, onDismissed: completion) {

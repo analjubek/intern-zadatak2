@@ -19,7 +19,8 @@ public class SettingsCoordinator: Coordinator{
 
     private lazy var settingsViewController: SettingsViewController = {
         let vc = SettingsViewController.fromNib(bundle: Bundle.main)
-        vc.title = "SettingsViewController"
+        vc.title = "Postavke"
+        vc.tabBarItem.image = UIImage(systemName: "gearshape")
         vc.delegate = self
         
         return vc

@@ -20,26 +20,17 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="4uw-Ln-iIP" userLabel="tvContacts">
-                    <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </tableView>
-                <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1IC-tI-d3G" userLabel="nbContact">
-                    <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                    <items>
-                        <navigationItem title="Kontakt" id="d6Y-PI-ctD"/>
-                    </items>
-                </navigationBar>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="1IC-tI-d3G" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="BKq-kX-HNA"/>
-                <constraint firstItem="4uw-Ln-iIP" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="SN8-jI-cqk"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="4uw-Ln-iIP" secondAttribute="trailing" id="TmC-QL-eTR"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="4uw-Ln-iIP" secondAttribute="bottom" id="eVy-q0-hLZ"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="1IC-tI-d3G" secondAttribute="trailing" id="nBM-J0-LSa"/>
-                <constraint firstItem="1IC-tI-d3G" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="o5s-9B-5RP"/>
-                <constraint firstItem="4uw-Ln-iIP" firstAttribute="top" secondItem="1IC-tI-d3G" secondAttribute="bottom" id="zwT-LN-ZCg"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="4uw-Ln-iIP" secondAttribute="bottom" id="4Ka-bF-DTO"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="4uw-Ln-iIP" secondAttribute="trailing" id="5qD-RB-y4E"/>
+                <constraint firstItem="4uw-Ln-iIP" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="VYT-UF-rPC"/>
+                <constraint firstItem="4uw-Ln-iIP" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="b9t-Zn-3z5"/>
             </constraints>
             <point key="canvasLocation" x="131.8840579710145" y="111.83035714285714"/>
         </view>

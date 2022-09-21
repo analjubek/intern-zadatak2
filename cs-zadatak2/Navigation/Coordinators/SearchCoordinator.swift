@@ -20,7 +20,8 @@ public class SearchCoordinator: Coordinator{
 
     private lazy var searchViewController: SearchViewController = {
         let vc = SearchViewController.fromNib(bundle: Bundle.main)
-        vc.title = "SearchViewController"
+        vc.title = "Pretraga"
+        vc.tabBarItem.image = UIImage(systemName: "magnifyingglass")
         return vc
     }()
 

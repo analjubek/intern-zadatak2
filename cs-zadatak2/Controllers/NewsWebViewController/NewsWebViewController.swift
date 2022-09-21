@@ -9,7 +9,6 @@ import UIKit
 import WebKit
 
 public class NewsWebViewController: UIViewController {
-    @IBOutlet var nbWebViewNavigation: UINavigationBar!
     @IBOutlet var vwNewsWebView: WKWebView!
     
     var urlString: String?

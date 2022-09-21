@@ -20,7 +20,7 @@ public class HomeViewController: UIViewController {
     
     weak var delegate: HomeViewControllerDelegate?
     
-    @IBOutlet var nbNews: UINavigationBar!
+//    @IBOutlet var nbNews: UINavigationBar!
     @IBOutlet var cvCategories: UICollectionView!
     @IBOutlet var cvHome: UICollectionView!
     
@@ -38,16 +38,14 @@ public class HomeViewController: UIViewController {
     public override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         self.delegate?.viewController(didRequestProceed: self)
-        controllNavBar()
+//        controllNavBar()
         makeCategoryCollection(){
             DispatchQueue.main.async {
                 self.makeNewsCollection()
             }
         }
         
-        self.title = "Naslovnica"
-//        self.tabBarItem.title = "Naslov"
-//        self.tabBarItem.image = UIImage(systemName: "house")
+        
     }
     
     public override func viewDidLoad() {
@@ -61,7 +59,7 @@ public class HomeViewController: UIViewController {
     public override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         super.viewWillTransition(to: size, with: coordinator)
         coordinator.animate(alongsideTransition: nil) { [self] _ in
-            controllNavBar()
+//            controllNavBar()
             setupNewsSize()
             makeCategoryCollection(){
                 DispatchQueue.main.async {
@@ -73,21 +71,21 @@ public class HomeViewController: UIViewController {
     
     func setupNewsSize(){
         if (UIApplication.shared.statusBarOrientation.isPortrait){
-            newsLayout.itemSize = CGSize(width: cvHome.bounds.width, height: cvHome.bounds.height/2+65)
+            newsLayout.itemSize = CGSize(width: cvHome.bounds.width, height: 370)
         }
         else{
-            newsLayout.itemSize = CGSize(width: cvHome.frame.width/2, height: 370)
+            newsLayout.itemSize = CGSize(width: cvHome.bounds.width/2, height: 370)
         }
     }
     
-    func controllNavBar(){
-        if (UIApplication.shared.statusBarOrientation.isPortrait){
-            self.nbNews.isHidden = false
-        }
-        else{
-            self.nbNews.isHidden = true
-        }
-    }
+//    func controllNavBar(){
+//        if (UIApplication.shared.statusBarOrientation.isPortrait){
+//            self.nbNews.isHidden = false
+//        }
+//        else{
+//            self.nbNews.isHidden = true
+//        }
+//    }
     
     func makeCategoryCollection(completion: @escaping () -> ()){
         let flowLayout = UICollectionViewFlowLayout()

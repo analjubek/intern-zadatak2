@@ -20,7 +20,8 @@ public class ContactCoordinator: Coordinator{
 
     private lazy var contactViewController: ContactViewController = {
         let vc = ContactViewController.fromNib(bundle: Bundle.main)
-        vc.title = "ContactViewController"
+        vc.title = "Kontakt"
+        vc.tabBarItem.image = UIImage(systemName: "phone")
         return vc
     }()
 

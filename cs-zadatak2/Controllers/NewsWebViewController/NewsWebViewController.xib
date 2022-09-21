@@ -10,7 +10,6 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NewsWebViewController" customModule="cs_zadatak2" customModuleProvider="target">
             <connections>
-                <outlet property="nbWebViewNavigation" destination="Roh-Oh-a4D" id="m7C-aP-OYW"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
                 <outlet property="vwNewsWebView" destination="adW-qn-ga8" id="n8Q-fN-MMm"/>
             </connections>
@@ -20,14 +19,8 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Roh-Oh-a4D" userLabel="nbWebViewNavigation">
-                    <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                    <items>
-                        <navigationItem title="Naslovnica" id="fDd-LD-46W" userLabel="lblNaslovnica"/>
-                    </items>
-                </navigationBar>
                 <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="adW-qn-ga8">
-                    <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                     <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <wkWebViewConfiguration key="configuration">
                         <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
@@ -38,13 +31,10 @@
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="adW-qn-ga8" secondAttribute="bottom" id="0hh-PR-aYu"/>
-                <constraint firstItem="adW-qn-ga8" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="5rp-BT-Rcv"/>
-                <constraint firstItem="adW-qn-ga8" firstAttribute="top" secondItem="Roh-Oh-a4D" secondAttribute="bottom" id="KQw-Jk-Pt1"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Roh-Oh-a4D" secondAttribute="trailing" id="V7t-Zr-ilu"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="adW-qn-ga8" secondAttribute="trailing" id="gkk-wc-diA"/>
-                <constraint firstItem="Roh-Oh-a4D" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="gxK-Gi-63J"/>
-                <constraint firstItem="Roh-Oh-a4D" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="qrx-mp-572"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="adW-qn-ga8" secondAttribute="bottom" id="Fh5-Gj-g0k"/>
+                <constraint firstItem="adW-qn-ga8" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="Ks6-Ig-V8D"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="adW-qn-ga8" secondAttribute="trailing" id="bUh-6S-NwB"/>
+                <constraint firstItem="adW-qn-ga8" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="xip-Yw-h9e"/>
             </constraints>
             <point key="canvasLocation" x="133" y="80"/>
         </view>
