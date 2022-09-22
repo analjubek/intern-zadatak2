@@ -8,15 +8,10 @@
 import UIKit
 import Foundation
 
-protocol HomeCoordinatorDelegate: AnyObject{
-    func coordinator(didRequestWebView coordinator: Coordinator, router: Router)
-}
-
 public class HomeCoordinator: Coordinator{
 
     public var childCoordinators: [Coordinator] = []
     public let router: Router
-    weak var delegate: HomeCoordinatorDelegate?
     public var navigationController: UINavigationController?
 
     private lazy var homeViewController: HomeViewController = {
@@ -42,7 +37,17 @@ public class HomeCoordinator: Coordinator{
 }
 
 extension HomeCoordinator: HomeViewControllerDelegate{
-    func viewController(didRequestProceed vc: UIViewController) {
-        self.delegate?.coordinator(didRequestWebView: self, router: router)
+    func viewController(didRequestProceed vc: UIViewController, url: String, title: String) {
+        let coordinator = NewsWebViewCoordinator(router: self.router, url: url, title: title)
+        coordinator.delegate = self
+        pushChild(coordinator, animated: true){
+            print("gotovo")
+        }
+    }
+}
+
+extension HomeCoordinator: NewsWebViewCoordinatorDelegate{
+    func coordinator(didRequestFinish coordinator: Coordinator, router: Router) {
+        
     }
 }

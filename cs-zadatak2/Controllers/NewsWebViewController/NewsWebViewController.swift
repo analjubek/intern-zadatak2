@@ -17,7 +17,7 @@ public class NewsWebViewController: UIViewController {
     public override func viewDidLoad() {
         super.viewDidLoad()
         
-        url = URL(string: "https://vijesti.hrt.hr/svijet/ispracaj-kraljice-elizabete-ii-9657561")
+        url = URL(string: urlString!)
         self.vwNewsWebView.load(URLRequest(url: url!))
     }
 }

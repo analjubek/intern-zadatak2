@@ -11,7 +11,7 @@ import UIKit
 import CoreData
 
 protocol HomeViewControllerDelegate: AnyObject{
-    func viewController(didRequestProceed vc: UIViewController)
+    func viewController(didRequestProceed vc: UIViewController, url: String, title: String)
 }
 
 public class HomeViewController: UIViewController {
@@ -20,7 +20,6 @@ public class HomeViewController: UIViewController {
     
     weak var delegate: HomeViewControllerDelegate?
     
-//    @IBOutlet var nbNews: UINavigationBar!
     @IBOutlet var cvCategories: UICollectionView!
     @IBOutlet var cvHome: UICollectionView!
     
@@ -34,18 +33,20 @@ public class HomeViewController: UIViewController {
     
     @IBOutlet var aiIndicator: UIActivityIndicatorView!
     
+    var currentCategoryTitle = "Naslovnica"
     
     public override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        self.delegate?.viewController(didRequestProceed: self)
-//        controllNavBar()
-        makeCategoryCollection(){
-            DispatchQueue.main.async {
-                self.makeNewsCollection()
+        self.navigationController?.becomeFirstResponder()
+//        controllNavBar(){
+        DispatchQueue.main.async {
+            self.makeCategoryCollection(){
+                DispatchQueue.main.async {
+                    self.makeNewsCollection()
+                }
             }
         }
-        
-        
+//        }
     }
     
     public override func viewDidLoad() {
@@ -59,32 +60,38 @@ public class HomeViewController: UIViewController {
     public override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         super.viewWillTransition(to: size, with: coordinator)
         coordinator.animate(alongsideTransition: nil) { [self] _ in
-//            controllNavBar()
-            setupNewsSize()
-            makeCategoryCollection(){
-                DispatchQueue.main.async {
-                    self.makeNewsCollection()
+//            controllNavBar(){
+            DispatchQueue.main.async {
+                setupNewsSize()
+                makeCategoryCollection(){
+                    DispatchQueue.main.async {
+                        self.makeNewsCollection()
+                    }
                 }
             }
+//            }
         }
     }
     
     func setupNewsSize(){
         if (UIApplication.shared.statusBarOrientation.isPortrait){
-            newsLayout.itemSize = CGSize(width: cvHome.bounds.width, height: 370)
+            newsLayout.itemSize = CGSize(width: cvHome.frame.width, height: 370)
         }
         else{
-            newsLayout.itemSize = CGSize(width: cvHome.bounds.width/2, height: 370)
+            newsLayout.itemSize = CGSize(width: cvHome.frame.width/2, height: 370)
         }
     }
-    
-//    func controllNavBar(){
+    // TODO
+    // invalidate collection do dok se ne postavi navbar
+//    func controllNavBar(_ completion: () -> ()){
 //        if (UIApplication.shared.statusBarOrientation.isPortrait){
-//            self.nbNews.isHidden = false
+//            self.navigationController?.navigationBar.isHidden = false
 //        }
 //        else{
-//            self.nbNews.isHidden = true
+//            self.navigationController?.navigationBar.isHidden = true
+//            cvCategories.reloadData()
 //        }
+//        completion()
 //    }
     
     func makeCategoryCollection(completion: @escaping () -> ()){
@@ -151,12 +158,18 @@ extension HomeViewController: UICollectionViewDataSource {
 }
 
 extension HomeViewController: UICollectionViewDelegate {
+
+
     public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+                
         if(collectionView == cvCategories){
             for i in 0...3{
                 categories[i].isSelected = false
             }
             categories[indexPath.row].isSelected = true
+            
+            self.currentCategoryTitle = categories[indexPath.row].categoryName
+            
             let cell = collectionView.cellForItem(at: indexPath) as! CategoryCell
             cell.setupCategoryCell(categoryData: CategoryModel(categoryName: categories[indexPath.row].categoryName, isSelected: categories[indexPath.row].isSelected, rssUrl: categories[indexPath.row].rssUrl))
             cvCategories.reloadData()
@@ -169,11 +182,10 @@ extension HomeViewController: UICollectionViewDelegate {
         }
         if(collectionView == cvHome){
             let newsLink = DataFunctions().fetchNewsByIdFromCoreData(newsId: indexPath.row).link
-            print(newsLink)
             
-            self.delegate?.viewController(didRequestProceed: self)
+            self.delegate?.viewController(didRequestProceed: self, url: newsLink, title: currentCategoryTitle)
             
-            navigationController?.pushViewController(NewsWebViewController(), animated: true)
+            navigationItem.backBarButtonItem = UIBarButtonItem(title: "Naslovnica", style: .plain, target: nil, action: nil)
             
         }
     }
@@ -186,35 +198,3 @@ extension HomeViewController: UICollectionViewDelegate {
 //    }
 }
 
-
-
-class TextPrinter {
-    var formatter: ParagraphFormatterProtocol
-    init(formatter: ParagraphFormatterProtocol) {
-        self.formatter = formatter
-    }
-    
-    func printText(_ paragraphs: [String]) {
-        for text in paragraphs {
-            let formattedText = formatter.formatParagraph(text)
-            print(formattedText)
-        }
-    }
-}
-
-protocol ParagraphFormatterProtocol {
-    func formatParagraph(_ text: String) -> String
-}
-
-class SimpleFormatter: ParagraphFormatterProtocol {
-    func formatParagraph(_ text: String) -> String {
-        guard !text.isEmpty else { return text } // 1
-        var formattedText =
-            text.prefix(1).uppercased() + text.dropFirst() // 2
-        if let lastCharacter = formattedText.last,
-           !lastCharacter.isPunctuation {
-            formattedText += "." // 3
-        }
-        return formattedText
-    }
-}

@@ -16,14 +16,20 @@ class NewsWebViewCoordinator: Coordinator{
     var router: Router
     weak var delegate: NewsWebViewCoordinatorDelegate?
     
+    var title: String
+    var url: String
+    
     private lazy var webViewController: NewsWebViewController = {
         let vc = NewsWebViewController.fromNib(bundle: Bundle.main)
-        vc.urlString = "https://vijesti.hrt.hr/svijet/zelenski-ukrajina-vratila-kontrolu-nad-otprilike-6000-cetvornih-kilometara-teritorija-9541752"
+        vc.title = title
+        vc.urlString = self.url
         return vc
     }()
     
-    init(router: Router){
+    init(router: Router, url: String, title: String){
         self.router = router
+        self.url = url
+        self.title = title
     }
     
     func push(animated: Bool, onDismissed: completion) {
