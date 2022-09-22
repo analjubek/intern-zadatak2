@@ -9,7 +9,6 @@ import UIKit
 import Foundation
 
 public class HomeCoordinator: Coordinator{
-
     public var childCoordinators: [Coordinator] = []
     public let router: Router
     public var navigationController: UINavigationController?

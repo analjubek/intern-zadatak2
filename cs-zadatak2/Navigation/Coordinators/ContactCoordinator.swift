@@ -8,15 +8,10 @@
 import UIKit
 import Foundation
 
-//protocol ContactCoordinatorDelegate: AnyObject{
-//    func coordinator(didRequestSummary coordinator: Coordinator, router: Router)
-//}
-
 public class ContactCoordinator: Coordinator{
 
     public var childCoordinators: [Coordinator] = []
     public let router: Router
-//    weak var delegate: ContactCoordinatorDelegate?
 
     private lazy var contactViewController: ContactViewController = {
         let vc = ContactViewController.fromNib(bundle: Bundle.main)
@@ -40,7 +35,7 @@ public class ContactCoordinator: Coordinator{
 
 extension ContactCoordinator: ContactViewControllerDelegate{
     public func viewController(didRequestProceed vc: UIViewController) {
-//        self.delegate?.coordinator(didRequestSummary: self, router: router)
+        
     }
 }
 

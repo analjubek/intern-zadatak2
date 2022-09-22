@@ -21,8 +21,6 @@
 		F62E858428D3044E00248EC5 /* OtherAppsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F62E858228D3044E00248EC5 /* OtherAppsViewController.xib */; };
 		F62E858828D305D500248EC5 /* OtherAppsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62E858628D305D500248EC5 /* OtherAppsCell.swift */; };
 		F62E858928D305D500248EC5 /* OtherAppsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F62E858728D305D500248EC5 /* OtherAppsCell.xib */; };
-		F62E858D28D30F1A00248EC5 /* SmallHomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62E858B28D30F1A00248EC5 /* SmallHomeCell.swift */; };
-		F62E858E28D30F1A00248EC5 /* SmallHomeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F62E858C28D30F1A00248EC5 /* SmallHomeCell.xib */; };
 		F62E859028D4504100248EC5 /* OtherAppsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62E858F28D4504100248EC5 /* OtherAppsCoordinator.swift */; };
 		F62E859428D49AE600248EC5 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62E859328D49AE600248EC5 /* AppCoordinator.swift */; };
 		F62E859628D49D8700248EC5 /* TabBarRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62E859528D49D8700248EC5 /* TabBarRouter.swift */; };
@@ -75,8 +73,6 @@
 		F62E858228D3044E00248EC5 /* OtherAppsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OtherAppsViewController.xib; sourceTree = "<group>"; };
 		F62E858628D305D500248EC5 /* OtherAppsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherAppsCell.swift; sourceTree = "<group>"; };
 		F62E858728D305D500248EC5 /* OtherAppsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OtherAppsCell.xib; sourceTree = "<group>"; };
-		F62E858B28D30F1A00248EC5 /* SmallHomeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallHomeCell.swift; sourceTree = "<group>"; };
-		F62E858C28D30F1A00248EC5 /* SmallHomeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SmallHomeCell.xib; sourceTree = "<group>"; };
 		F62E858F28D4504100248EC5 /* OtherAppsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherAppsCoordinator.swift; sourceTree = "<group>"; };
 		F62E859328D49AE600248EC5 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		F62E859528D49D8700248EC5 /* TabBarRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarRouter.swift; sourceTree = "<group>"; };
@@ -170,15 +166,6 @@
 				F62E858728D305D500248EC5 /* OtherAppsCell.xib */,
 			);
 			path = OtherAppsCell;
-			sourceTree = "<group>";
-		};
-		F62E858A28D30EBA00248EC5 /* SmallHomeCell */ = {
-			isa = PBXGroup;
-			children = (
-				F62E858B28D30F1A00248EC5 /* SmallHomeCell.swift */,
-				F62E858C28D30F1A00248EC5 /* SmallHomeCell.xib */,
-			);
-			path = SmallHomeCell;
 			sourceTree = "<group>";
 		};
 		F63E660628C7313B000CC541 = {
@@ -365,7 +352,6 @@
 			children = (
 				F63E670E28CB1F73000CC541 /* CategoryCell */,
 				F63E670F28CB1F83000CC541 /* HomeCell */,
-				F62E858A28D30EBA00248EC5 /* SmallHomeCell */,
 				F62E857A28D213B900248EC5 /* SettingsCell */,
 				F62E858528D3052A00248EC5 /* OtherAppsCell */,
 				F62E857128D1F28000248EC5 /* ContactCell */,
@@ -476,7 +462,6 @@
 				F63E662228C7313B000CC541 /* LaunchScreen.storyboard in Resources */,
 				F63E66FF28CA14CB000CC541 /* CategoryCell.xib in Resources */,
 				F62E857E28D213DD00248EC5 /* SettingsCell.xib in Resources */,
-				F62E858E28D30F1A00248EC5 /* SmallHomeCell.xib in Resources */,
 				F63E66D728C8C295000CC541 /* SettingsViewController.xib in Resources */,
 				F63E66CE28C8C25D000CC541 /* ContactViewController.xib in Resources */,
 				F62E859A28D8863E00248EC5 /* NewsWebViewController.xib in Resources */,
@@ -507,7 +492,6 @@
 				F62E856828D0778100248EC5 /* NewsWebViewCoordinator.swift in Sources */,
 				F63E666928C8849C000CC541 /* NavigationRouter.swift in Sources */,
 				F62E858328D3044E00248EC5 /* OtherAppsViewController.swift in Sources */,
-				F62E858D28D30F1A00248EC5 /* SmallHomeCell.swift in Sources */,
 				F63E666328C88426000CC541 /* Coordinator.swift in Sources */,
 				F62E857828D2069000248EC5 /* ContactCell.swift in Sources */,
 				F63E66D228C8C27F000CC541 /* SearchViewController.swift in Sources */,

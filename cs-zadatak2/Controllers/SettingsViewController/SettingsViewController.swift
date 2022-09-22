@@ -33,7 +33,6 @@ extension SettingsViewController: UITableViewDelegate{
             UIApplication.shared.open(URL(string: "https://o-nama.hrt.hr/zastita-privatnosti-i-pravo-na-pristup-informacijama/uvjeti-koristenja-sadrzaja-objavljenog-na-hrt-ovim-digitalnim-platformama-4423")!)
         }
         if (indexPath.row == 1){
-            //self.delegate?.viewController(didRequestOtherApps: self)
             navigationController?.pushViewController(OtherAppsViewController(), animated: true)
         }
     }

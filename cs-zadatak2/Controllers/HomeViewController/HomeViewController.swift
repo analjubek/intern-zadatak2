@@ -129,7 +129,15 @@ extension HomeViewController: UICollectionViewDataSource {
             return 4
         }
         if (collectionView == cvHome){
-            return 10
+            if (currentCategoryTitle == "Naslovnica"){
+                return 12
+            }
+            if (currentCategoryTitle == "Sport" || currentCategoryTitle == "Magazin"){
+                return 24
+            }
+            if (currentCategoryTitle == "Program"){
+                return 14
+            }
         }
         return Int()
     }
@@ -189,12 +197,5 @@ extension HomeViewController: UICollectionViewDelegate {
             
         }
     }
-//    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-//        aiIndicator.startAnimating()
-//    }
-//    func collectionView(_ collectionView: UICollectionView, didEndDisplaying cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-//        aiIndicator.stopAnimating()
-//        aiIndicator.hidesWhenStopped = true
-//    }
 }
 

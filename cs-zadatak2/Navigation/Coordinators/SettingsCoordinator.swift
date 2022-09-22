@@ -8,14 +8,9 @@
 import UIKit
 import Foundation
 
-//protocol SettingsCoordinatorDelegate: AnyObject{
-//    func coordinator(didRequestSummary coordinator: Coordinator, router: Router)
-//}
-
 public class SettingsCoordinator: Coordinator{
     public var childCoordinators: [Coordinator] = []
     public let router: Router
-    //weak var delegate: SettingsCoordinatorDelegate?
 
     private lazy var settingsViewController: SettingsViewController = {
         let vc = SettingsViewController.fromNib(bundle: Bundle.main)
@@ -29,9 +24,6 @@ public class SettingsCoordinator: Coordinator{
     public init(router: Router){
         self.router = router
     }
-//    public init(navigationController: UINavigationController){
-//        self.navigationController = navigationController
-//    }
     
     deinit{
         print("Deinited:", self)
@@ -46,8 +38,6 @@ extension SettingsCoordinator: SettingsViewControllerDelegate{
     func viewController(didRequestOtherApps vc: UIViewController) {
         let navigationController = UINavigationController()
         let router = NavigationRouter(navigationController: navigationController)
-        //let router = NavigationRouter(navigationController: self.settingsViewController.navigationController)
-        //NavigationRouter(parentViewController: vc)
         let coordinator = OtherAppsCoordinator(router: router)
         coordinator.delegate = self
         pushChild(coordinator, animated: true) { print("fucn tou") }

@@ -22,12 +22,12 @@ public class AppDelegateRouter: Router, AppDelegateAlias{
     
     // MARK: - Router
     
-      public func push(_ viewController: UIViewController, animated: Bool, onDismissed: completion) {
-        window.rootViewController = viewController
-        window.makeKeyAndVisible()
-      }
-    
-      public func dismiss(animated: Bool) {
-        // don't do anything
+    public func push(_ viewController: UIViewController, animated: Bool, onDismissed: completion) {
+    window.rootViewController = viewController
+    window.makeKeyAndVisible()
+    }
+
+    public func dismiss(animated: Bool) {
+
     }
 }

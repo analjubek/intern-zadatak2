@@ -8,15 +8,10 @@
 import UIKit
 import Foundation
 
-//protocol SearchCoordinatorDelegate: AnyObject{
-//    func coordinator(didRequestSummary coordinator: Coordinator, router: Router)
-//}
-
 public class SearchCoordinator: Coordinator{
 
     public var childCoordinators: [Coordinator] = []
     public let router: Router
-//    weak var delegate: SearchCoordinatorDelegate?
 
     private lazy var searchViewController: SearchViewController = {
         let vc = SearchViewController.fromNib(bundle: Bundle.main)

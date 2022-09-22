@@ -21,7 +21,6 @@ public class OtherAppsCoordinator: Coordinator{
 
     private lazy var otherAppsViewController: OtherAppsViewController = {
         let vc = OtherAppsViewController.fromNib(bundle: Bundle.main)
-        //vc.isModalInPresentation = true
         return vc
     }()
 
@@ -38,6 +37,6 @@ public class OtherAppsCoordinator: Coordinator{
     }
     
     public func pushControllers(viewControllers: [UIViewController]) {
-        // TODO
+
     }
 }

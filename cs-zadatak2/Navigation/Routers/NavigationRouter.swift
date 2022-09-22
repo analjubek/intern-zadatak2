@@ -50,7 +50,6 @@ extension NavigationRouter: Router{
 }
 
 extension NavigationRouter: UINavigationControllerDelegate{
-    
     public func navigationController(_ navigationController: UINavigationController, didShow viewController: UIViewController, animated: Bool) {
         guard let dismissedViewController = navigationController.transitionCoordinator?.viewController(forKey: .from), !navigationController.viewControllers.contains(dismissedViewController) else { return }
         performOnDismissed(for: dismissedViewController)
