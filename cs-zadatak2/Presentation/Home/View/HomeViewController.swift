@@ -38,7 +38,6 @@ public class HomeViewController: UIViewController {
     public override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         self.navigationController?.becomeFirstResponder()
-//        controllNavBar(){
         DispatchQueue.main.async {
             self.makeCategoryCollection(){
                 DispatchQueue.main.async {
@@ -46,21 +45,15 @@ public class HomeViewController: UIViewController {
                 }
             }
         }
-//        }
     }
     
     public override func viewDidLoad() {
         super.viewDidLoad()
     }
     
-    deinit{
-        print("Deinited:", self)
-    }
-    
     public override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         super.viewWillTransition(to: size, with: coordinator)
         coordinator.animate(alongsideTransition: nil) { [self] _ in
-//            controllNavBar(){
             DispatchQueue.main.async {
                 setupNewsSize()
                 makeCategoryCollection(){
@@ -69,7 +62,6 @@ public class HomeViewController: UIViewController {
                     }
                 }
             }
-//            }
         }
     }
     
@@ -81,18 +73,6 @@ public class HomeViewController: UIViewController {
             newsLayout.itemSize = CGSize(width: cvHome.frame.width/2, height: 370)
         }
     }
-    // TODO
-    // invalidate collection do dok se ne postavi navbar
-//    func controllNavBar(_ completion: () -> ()){
-//        if (UIApplication.shared.statusBarOrientation.isPortrait){
-//            self.navigationController?.navigationBar.isHidden = false
-//        }
-//        else{
-//            self.navigationController?.navigationBar.isHidden = true
-//            cvCategories.reloadData()
-//        }
-//        completion()
-//    }
     
     func makeCategoryCollection(completion: @escaping () -> ()){
         let flowLayout = UICollectionViewFlowLayout()

@@ -56,6 +56,9 @@
 		F63E671728CB2238000CC541 /* HomeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F63E671528CB2238000CC541 /* HomeCell.xib */; };
 		F63E671F28CB44F3000CC541 /* XMLParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F63E671E28CB44F3000CC541 /* XMLParser.swift */; };
 		F63E672B28CB50F7000CC541 /* DataFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F63E672A28CB50F7000CC541 /* DataFunctions.swift */; };
+		F6EC4F5F28E1C0CF00AA9BA2 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6EC4F5E28E1C0CF00AA9BA2 /* HomeViewModel.swift */; };
+		F6EC4F6628E1C4D900AA9BA2 /* ViewNewsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6EC4F6528E1C4D900AA9BA2 /* ViewNewsUseCase.swift */; };
+		F6EC4F6928E1C5D800AA9BA2 /* NewsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6EC4F6828E1C5D800AA9BA2 /* NewsRepository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -109,6 +112,9 @@
 		F63E671528CB2238000CC541 /* HomeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeCell.xib; sourceTree = "<group>"; };
 		F63E671E28CB44F3000CC541 /* XMLParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XMLParser.swift; sourceTree = "<group>"; };
 		F63E672A28CB50F7000CC541 /* DataFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataFunctions.swift; sourceTree = "<group>"; };
+		F6EC4F5E28E1C0CF00AA9BA2 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		F6EC4F6528E1C4D900AA9BA2 /* ViewNewsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewNewsUseCase.swift; sourceTree = "<group>"; };
+		F6EC4F6828E1C5D800AA9BA2 /* NewsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsRepository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -316,16 +322,10 @@
 			isa = PBXGroup;
 			children = (
 				F63E66DD28C8C325000CC541 /* Entities */,
-				F6EC4F4C28E1A20900AA9BA2 /* Repositories */,
+				F6EC4F6128E1C28700AA9BA2 /* UseCases */,
+				F6EC4F6728E1C57200AA9BA2 /* Repository */,
 			);
 			path = Domain;
-			sourceTree = "<group>";
-		};
-		F6EC4F4C28E1A20900AA9BA2 /* Repositories */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Repositories;
 			sourceTree = "<group>";
 		};
 		F6EC4F4D28E1A65B00AA9BA2 /* TabBar */ = {
@@ -339,6 +339,7 @@
 		F6EC4F4E28E1A66D00AA9BA2 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				F6EC4F5D28E1BC2F00AA9BA2 /* ViewModel */,
 				F6EC4F5528E1A6F300AA9BA2 /* View */,
 			);
 			path = Home;
@@ -467,6 +468,30 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		F6EC4F5D28E1BC2F00AA9BA2 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				F6EC4F5E28E1C0CF00AA9BA2 /* HomeViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		F6EC4F6128E1C28700AA9BA2 /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				F6EC4F6528E1C4D900AA9BA2 /* ViewNewsUseCase.swift */,
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
+		F6EC4F6728E1C57200AA9BA2 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				F6EC4F6828E1C5D800AA9BA2 /* NewsRepository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -568,11 +593,13 @@
 				F62E857828D2069000248EC5 /* ContactCell.swift in Sources */,
 				F63E66D228C8C27F000CC541 /* SearchViewController.swift in Sources */,
 				F63E66CD28C8C25D000CC541 /* ContactViewController.swift in Sources */,
+				F6EC4F6928E1C5D800AA9BA2 /* NewsRepository.swift in Sources */,
 				F62E857D28D213DD00248EC5 /* SettingsCell.swift in Sources */,
 				F62E859628D49D8700248EC5 /* TabBarRouter.swift in Sources */,
 				F63E66DF28C8C353000CC541 /* TabBarCoordinator.swift in Sources */,
 				F62E859C28DAFB4C00248EC5 /* Array.swift in Sources */,
 				F633C86728CF136A00B462BA /* News.xcdatamodeld in Sources */,
+				F6EC4F5F28E1C0CF00AA9BA2 /* HomeViewModel.swift in Sources */,
 				F62E859928D8863E00248EC5 /* NewsWebViewController.swift in Sources */,
 				F63E665C28C882FA000CC541 /* UIViewController.swift in Sources */,
 				F62E856A28D0BE0F00248EC5 /* SettingsCoordinator.swift in Sources */,
@@ -582,6 +609,7 @@
 				F62E856E28D0BE2C00248EC5 /* SearchCoordinator.swift in Sources */,
 				F63E672B28CB50F7000CC541 /* DataFunctions.swift in Sources */,
 				F62E859428D49AE600248EC5 /* AppCoordinator.swift in Sources */,
+				F6EC4F6628E1C4D900AA9BA2 /* ViewNewsUseCase.swift in Sources */,
 				F63E66D628C8C295000CC541 /* SettingsViewController.swift in Sources */,
 				F63E66DB28C8C2D2000CC541 /* TabBarController.swift in Sources */,
 				F63E66E428C8CFA7000CC541 /* CategoryModel.swift in Sources */,
