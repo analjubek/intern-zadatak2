@@ -15,25 +15,20 @@ protocol HomeViewControllerDelegate: AnyObject{
 }
 
 public class HomeViewController: UIViewController {
-    
-    private var newsCoreData: [NSManagedObject]?
-    
+        
     weak var delegate: HomeViewControllerDelegate?
     
     @IBOutlet var cvCategories: UICollectionView!
     @IBOutlet var cvHome: UICollectionView!
     
+    private var viewModel = HomeViewModel()
+    
     var cellCategory: UICollectionViewCell?
-    var categories = [CategoryModel(categoryName: "Naslovnica", isSelected: true, rssUrl: "https://feed.hrt.hr/vijesti/page.xml"), CategoryModel(categoryName: "Sport", isSelected: false, rssUrl: "https://feed.hrt.hr/sport/page.xml"), CategoryModel(categoryName: "Magazin", isSelected: false, rssUrl: "https://feed.hrt.hr/magazin/page.xml"), CategoryModel(categoryName: "Program", isSelected: false, rssUrl: "https://feed.hrt.hr/hrtprikazuje/page.xml")]
     
     var height: Float?
     var width: Float?
     
     let newsLayout = UICollectionViewFlowLayout()
-    
-    @IBOutlet var aiIndicator: UIActivityIndicatorView!
-    
-    var currentCategoryTitle = "Naslovnica"
     
     public override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -49,6 +44,10 @@ public class HomeViewController: UIViewController {
     
     public override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    deinit{
+        print("Deinited:", self)
     }
     
     public override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
@@ -109,13 +108,13 @@ extension HomeViewController: UICollectionViewDataSource {
             return 4
         }
         if (collectionView == cvHome){
-            if (currentCategoryTitle == "Naslovnica"){
+            if (viewModel.currentCategoryTitle == "Naslovnica"){
                 return 12
             }
-            if (currentCategoryTitle == "Sport" || currentCategoryTitle == "Magazin"){
+            if (viewModel.currentCategoryTitle == "Sport" || viewModel.currentCategoryTitle == "Magazin"){
                 return 24
             }
-            if (currentCategoryTitle == "Program"){
+            if (viewModel.currentCategoryTitle == "Program"){
                 return 14
             }
         }
@@ -125,7 +124,7 @@ extension HomeViewController: UICollectionViewDataSource {
         if (collectionView == cvCategories){
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CategoryCell.identifier, for: indexPath) as! CategoryCell
             
-            let categoryModel = CategoryModel(categoryName: categories[indexPath.row].categoryName, isSelected: categories[indexPath.row].isSelected, rssUrl: categories[indexPath.row].rssUrl)
+            let categoryModel = CategoryModel(categoryName: viewModel.categories[indexPath.row].categoryName, isSelected: viewModel.categories[indexPath.row].isSelected, rssUrl: viewModel.categories[indexPath.row].rssUrl)
             
             cell.setupCategoryCell(categoryData: categoryModel)
             
@@ -152,17 +151,17 @@ extension HomeViewController: UICollectionViewDelegate {
                 
         if(collectionView == cvCategories){
             for i in 0...3{
-                categories[i].isSelected = false
+                viewModel.categories[i].isSelected = false
             }
-            categories[indexPath.row].isSelected = true
+            viewModel.categories[indexPath.row].isSelected = true
             
-            self.currentCategoryTitle = categories[indexPath.row].categoryName
+            viewModel.currentCategoryTitle = viewModel.categories[indexPath.row].categoryName
             
             let cell = collectionView.cellForItem(at: indexPath) as! CategoryCell
-            cell.setupCategoryCell(categoryData: CategoryModel(categoryName: categories[indexPath.row].categoryName, isSelected: categories[indexPath.row].isSelected, rssUrl: categories[indexPath.row].rssUrl))
+            cell.setupCategoryCell(categoryData: CategoryModel(categoryName: viewModel.categories[indexPath.row].categoryName, isSelected: viewModel.categories[indexPath.row].isSelected, rssUrl: viewModel.categories[indexPath.row].rssUrl))
             cvCategories.reloadData()
             
-            DataFunctions().getNews(url: categories[indexPath.row].rssUrl){
+            DataFunctions().getNews(url: viewModel.categories[indexPath.row].rssUrl){
                 DispatchQueue.main.async {
                     self.cvHome.reloadData()
                 }
@@ -171,7 +170,7 @@ extension HomeViewController: UICollectionViewDelegate {
         if(collectionView == cvHome){
             let newsLink = DataFunctions().fetchNewsByIdFromCoreData(newsId: indexPath.row).link
             
-            self.delegate?.viewController(didRequestProceed: self, url: newsLink, title: currentCategoryTitle)
+            self.delegate?.viewController(didRequestProceed: self, url: newsLink, title: viewModel.currentCategoryTitle)
             
             navigationItem.backBarButtonItem = UIBarButtonItem(title: "Naslovnica", style: .plain, target: nil, action: nil)
             

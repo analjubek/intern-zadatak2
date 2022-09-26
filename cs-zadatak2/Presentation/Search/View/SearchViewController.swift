@@ -14,16 +14,19 @@ protocol SearchViewControllerDelegate: AnyObject{
 
 public class SearchViewController: UIViewController {
     weak var delegate: SearchViewControllerDelegate?
+    
     @IBOutlet var wvSearch: WKWebView!
     @IBOutlet var aiIndicator: UIActivityIndicatorView!
     
-    let url = URL(string: "https://www.hrt.hr/pretraga")
+    private var viewModel = SearchViewModel()
 
     public override func viewDidLoad() {
         super.viewDidLoad()
         
         wvSearch.navigationDelegate = self
-        wvSearch.load(URLRequest(url: url!))
+        
+        viewModel.wvSearch = self.wvSearch
+        viewModel.loadUrl()
     }
 }
 
