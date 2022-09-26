@@ -123,15 +123,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		F62E856228D06AF000248EC5 /* NewsWebViewController */ = {
-			isa = PBXGroup;
-			children = (
-				F62E859728D8863E00248EC5 /* NewsWebViewController.swift */,
-				F62E859828D8863E00248EC5 /* NewsWebViewController.xib */,
-			);
-			path = NewsWebViewController;
-			sourceTree = "<group>";
-		};
 		F62E857128D1F28000248EC5 /* ContactCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -148,15 +139,6 @@
 				F62E857C28D213DD00248EC5 /* SettingsCell.xib */,
 			);
 			path = SettingsCell;
-			sourceTree = "<group>";
-		};
-		F62E858028D303E800248EC5 /* OtherAppsController */ = {
-			isa = PBXGroup;
-			children = (
-				F62E858128D3044E00248EC5 /* OtherAppsViewController.swift */,
-				F62E858228D3044E00248EC5 /* OtherAppsViewController.xib */,
-			);
-			path = OtherAppsController;
 			sourceTree = "<group>";
 		};
 		F62E858528D3052A00248EC5 /* OtherAppsCell */ = {
@@ -187,14 +169,11 @@
 		F63E661128C7313B000CC541 /* cs-zadatak2 */ = {
 			isa = PBXGroup;
 			children = (
-				F63E66E828C8D18D000CC541 /* ViewModels */,
-				F63E66DD28C8C325000CC541 /* Models */,
-				F63E665528C8829F000CC541 /* Controllers */,
+				F63E665128C88268000CC541 /* Application */,
+				F6EC4F4928E196B400AA9BA2 /* Presentation */,
 				F63E665628C882B1000CC541 /* Navigation */,
-				F63E665928C882D8000CC541 /* Protocols */,
+				F6EC4F4B28E19CE900AA9BA2 /* Domain */,
 				F63E665328C8827F000CC541 /* Data */,
-				F63E665A28C882E4000CC541 /* Extensions */,
-				F63E665128C88268000CC541 /* AppDelegate */,
 				F63E665228C88272000CC541 /* Assets */,
 				F63E662328C7313B000CC541 /* Info.plist */,
 				F63E662028C7313B000CC541 /* LaunchScreen.storyboard */,
@@ -202,12 +181,12 @@
 			path = "cs-zadatak2";
 			sourceTree = "<group>";
 		};
-		F63E665128C88268000CC541 /* AppDelegate */ = {
+		F63E665128C88268000CC541 /* Application */ = {
 			isa = PBXGroup;
 			children = (
 				F63E661228C7313B000CC541 /* AppDelegate.swift */,
 			);
-			path = AppDelegate;
+			path = Application;
 			sourceTree = "<group>";
 		};
 		F63E665228C88272000CC541 /* Assets */ = {
@@ -228,25 +207,13 @@
 			path = Data;
 			sourceTree = "<group>";
 		};
-		F63E665528C8829F000CC541 /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				F63E66D928C8C2B0000CC541 /* TabBarController */,
-				F63E666128C8835F000CC541 /* HomeViewController */,
-				F62E856228D06AF000248EC5 /* NewsWebViewController */,
-				F63E66D828C8C299000CC541 /* SettingsViewController */,
-				F62E858028D303E800248EC5 /* OtherAppsController */,
-				F63E66CA28C8C23C000CC541 /* ContactViewController */,
-				F63E66CF28C8C265000CC541 /* SearchViewController */,
-			);
-			path = Controllers;
-			sourceTree = "<group>";
-		};
 		F63E665628C882B1000CC541 /* Navigation */ = {
 			isa = PBXGroup;
 			children = (
 				F63E665828C882C2000CC541 /* Routers */,
 				F63E665728C882B8000CC541 /* Coordinators */,
+				F63E665928C882D8000CC541 /* Protocols */,
+				F63E665A28C882E4000CC541 /* Extensions */,
 			);
 			path = Navigation;
 			sourceTree = "<group>";
@@ -288,83 +255,19 @@
 		F63E665A28C882E4000CC541 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				F63E665B28C882FA000CC541 /* UIViewController.swift */,
 				F62E859B28DAFB4C00248EC5 /* Array.swift */,
+				F63E665B28C882FA000CC541 /* UIViewController.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		F63E666128C8835F000CC541 /* HomeViewController */ = {
-			isa = PBXGroup;
-			children = (
-				F63E665D28C88359000CC541 /* HomeViewController.swift */,
-				F63E665E28C88359000CC541 /* HomeViewController.xib */,
-			);
-			path = HomeViewController;
-			sourceTree = "<group>";
-		};
-		F63E66CA28C8C23C000CC541 /* ContactViewController */ = {
-			isa = PBXGroup;
-			children = (
-				F63E66CB28C8C25D000CC541 /* ContactViewController.swift */,
-				F63E66CC28C8C25D000CC541 /* ContactViewController.xib */,
-			);
-			path = ContactViewController;
-			sourceTree = "<group>";
-		};
-		F63E66CF28C8C265000CC541 /* SearchViewController */ = {
-			isa = PBXGroup;
-			children = (
-				F63E66D028C8C27F000CC541 /* SearchViewController.swift */,
-				F63E66D128C8C27F000CC541 /* SearchViewController.xib */,
-			);
-			path = SearchViewController;
-			sourceTree = "<group>";
-		};
-		F63E66D828C8C299000CC541 /* SettingsViewController */ = {
-			isa = PBXGroup;
-			children = (
-				F63E66D428C8C295000CC541 /* SettingsViewController.swift */,
-				F63E66D528C8C295000CC541 /* SettingsViewController.xib */,
-			);
-			path = SettingsViewController;
-			sourceTree = "<group>";
-		};
-		F63E66D928C8C2B0000CC541 /* TabBarController */ = {
-			isa = PBXGroup;
-			children = (
-				F63E66DA28C8C2D2000CC541 /* TabBarController.swift */,
-			);
-			path = TabBarController;
-			sourceTree = "<group>";
-		};
-		F63E66DD28C8C325000CC541 /* Models */ = {
+		F63E66DD28C8C325000CC541 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
 				F63E66E328C8CFA7000CC541 /* CategoryModel.swift */,
 				F63E670C28CB1DF8000CC541 /* NewsModel.swift */,
 			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		F63E66E528C8D15C000CC541 /* Cells */ = {
-			isa = PBXGroup;
-			children = (
-				F63E670E28CB1F73000CC541 /* CategoryCell */,
-				F63E670F28CB1F83000CC541 /* HomeCell */,
-				F62E857A28D213B900248EC5 /* SettingsCell */,
-				F62E858528D3052A00248EC5 /* OtherAppsCell */,
-				F62E857128D1F28000248EC5 /* ContactCell */,
-			);
-			path = Cells;
-			sourceTree = "<group>";
-		};
-		F63E66E828C8D18D000CC541 /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
-				F63E66E528C8D15C000CC541 /* Cells */,
-			);
-			path = ViewModels;
+			path = Entities;
 			sourceTree = "<group>";
 		};
 		F63E670E28CB1F73000CC541 /* CategoryCell */ = {
@@ -393,6 +296,175 @@
 				F633C86528CF136A00B462BA /* News.xcdatamodeld */,
 			);
 			path = CoreData;
+			sourceTree = "<group>";
+		};
+		F6EC4F4928E196B400AA9BA2 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				F6EC4F4D28E1A65B00AA9BA2 /* TabBar */,
+				F6EC4F4E28E1A66D00AA9BA2 /* Home */,
+				F6EC4F4F28E1A67D00AA9BA2 /* News */,
+				F6EC4F5028E1A68F00AA9BA2 /* Settings */,
+				F6EC4F5128E1A69700AA9BA2 /* OtherApps */,
+				F6EC4F5228E1A6A300AA9BA2 /* Contact */,
+				F6EC4F5328E1A6AC00AA9BA2 /* Search */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		F6EC4F4B28E19CE900AA9BA2 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				F63E66DD28C8C325000CC541 /* Entities */,
+				F6EC4F4C28E1A20900AA9BA2 /* Repositories */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		F6EC4F4C28E1A20900AA9BA2 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		F6EC4F4D28E1A65B00AA9BA2 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				F6EC4F5428E1A6E500AA9BA2 /* View */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+		F6EC4F4E28E1A66D00AA9BA2 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				F6EC4F5528E1A6F300AA9BA2 /* View */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		F6EC4F4F28E1A67D00AA9BA2 /* News */ = {
+			isa = PBXGroup;
+			children = (
+				F6EC4F5628E1A6FB00AA9BA2 /* View */,
+			);
+			path = News;
+			sourceTree = "<group>";
+		};
+		F6EC4F5028E1A68F00AA9BA2 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				F62E857A28D213B900248EC5 /* SettingsCell */,
+				F6EC4F5728E1A70300AA9BA2 /* View */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		F6EC4F5128E1A69700AA9BA2 /* OtherApps */ = {
+			isa = PBXGroup;
+			children = (
+				F62E858528D3052A00248EC5 /* OtherAppsCell */,
+				F6EC4F5828E1A70700AA9BA2 /* View */,
+			);
+			path = OtherApps;
+			sourceTree = "<group>";
+		};
+		F6EC4F5228E1A6A300AA9BA2 /* Contact */ = {
+			isa = PBXGroup;
+			children = (
+				F6EC4F5C28E1B07200AA9BA2 /* Cells */,
+				F6EC4F5928E1A70E00AA9BA2 /* View */,
+			);
+			path = Contact;
+			sourceTree = "<group>";
+		};
+		F6EC4F5328E1A6AC00AA9BA2 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				F6EC4F5A28E1A71300AA9BA2 /* View */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		F6EC4F5428E1A6E500AA9BA2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F63E66DA28C8C2D2000CC541 /* TabBarController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F6EC4F5528E1A6F300AA9BA2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F63E665D28C88359000CC541 /* HomeViewController.swift */,
+				F63E665E28C88359000CC541 /* HomeViewController.xib */,
+				F6EC4F5B28E1AF2200AA9BA2 /* Cells */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F6EC4F5628E1A6FB00AA9BA2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F62E859728D8863E00248EC5 /* NewsWebViewController.swift */,
+				F62E859828D8863E00248EC5 /* NewsWebViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F6EC4F5728E1A70300AA9BA2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F63E66D428C8C295000CC541 /* SettingsViewController.swift */,
+				F63E66D528C8C295000CC541 /* SettingsViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F6EC4F5828E1A70700AA9BA2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F62E858128D3044E00248EC5 /* OtherAppsViewController.swift */,
+				F62E858228D3044E00248EC5 /* OtherAppsViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F6EC4F5928E1A70E00AA9BA2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F63E66CB28C8C25D000CC541 /* ContactViewController.swift */,
+				F63E66CC28C8C25D000CC541 /* ContactViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F6EC4F5A28E1A71300AA9BA2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F63E66D028C8C27F000CC541 /* SearchViewController.swift */,
+				F63E66D128C8C27F000CC541 /* SearchViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F6EC4F5B28E1AF2200AA9BA2 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				F63E670E28CB1F73000CC541 /* CategoryCell */,
+				F63E670F28CB1F83000CC541 /* HomeCell */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		F6EC4F5C28E1B07200AA9BA2 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				F62E857128D1F28000248EC5 /* ContactCell */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
