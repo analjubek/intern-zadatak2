@@ -45,17 +45,9 @@ extension SettingsViewController: UITableViewDataSource{
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: SettingsCell.identifier, for: indexPath) as! SettingsCell
-        
-        cell.lblSetting.text = viewModel.settings[indexPath.row]
-        
-        if(indexPath.row == 2){
-            cell.ivArrow.isHidden = true
-        }
-        
+//        TODO: više vrsta ćelija, enum
+        cell.lblSetting.text = viewModel.settings[indexPath.row].setting
+        cell.setupCellArrow(isArrowVisible: viewModel.settings[indexPath.row].isArrowVisible)
         return cell
     }
-    public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return CGFloat(70)
-    }
-    
 }

@@ -10,8 +10,9 @@ import UIKit
 import SwiftUI
 import CoreData
 
-class DataFunctions {
-    var newsItems: [NewsModel]?
+class NewsStorage {
+    
+    var newsItems: [NewsModel] = []
     
     func start(completion: @escaping () -> ()){
         deleteAllCoreData(entity: "News"){

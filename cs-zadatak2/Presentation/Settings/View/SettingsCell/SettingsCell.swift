@@ -15,13 +15,19 @@ class SettingsCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
-        ivArrow.image = UIImage(systemName: "chevron.forward")
-        ivArrow.tintColor = .darkGray
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
-        //super.setSelected(selected, animated: animated)
+
     }
     
+    func setupCellArrow(isArrowVisible: Bool){
+        if (isArrowVisible){
+            ivArrow.image = UIImage(systemName: "chevron.forward")
+            ivArrow.tintColor = .darkGray
+        }
+        else{
+            ivArrow.isHidden = true
+        }
+    }
 }

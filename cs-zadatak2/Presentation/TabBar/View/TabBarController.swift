@@ -7,10 +7,6 @@
 
 import UIKit
 
-protocol TabBarControllerDelegate: AnyObject{
-    func viewController(didRequestProceed vc: UIViewController)
-}
-
 public class TabBarController: UITabBarController {
     
     public override func viewDidLoad() {

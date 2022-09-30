@@ -9,6 +9,15 @@
           "revision": "9e43e969694be5e374f0067f21685e5385ffadac",
           "version": "1.2.0"
         }
+      },
+      {
+        "package": "SDWebImage",
+        "repositoryURL": "https://github.com/SDWebImage/SDWebImage",
+        "state": {
+          "branch": null,
+          "revision": "9248fe561a2a153916fb9597e3af4434784c6d32",
+          "version": "5.13.4"
+        }
       }
     ]
   },

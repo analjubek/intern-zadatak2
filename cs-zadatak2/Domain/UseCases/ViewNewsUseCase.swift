@@ -6,15 +6,16 @@
 //
 
 import Foundation
-
+import CoreData
+//
 final class ViewNewsUseCase{
     private let newsRepository: NewsRepository
-    
+
     init(newsRepository: NewsRepository){
         self.newsRepository = newsRepository
     }
-    
-    func showNews(category: String) -> [NewsModel]{
-        return newsRepository.fetchNewsList(category: category)
-    }
+
+//    func showNews(category: String) -> [NSManagedObject]{
+//        return newsRepository.fetchNewsFromCoreData()!
+//    }
 }

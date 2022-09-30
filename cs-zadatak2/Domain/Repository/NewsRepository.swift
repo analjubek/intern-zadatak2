@@ -7,6 +7,6 @@
 
 import Foundation
 
-protocol NewsRepository{
-    func fetchNewsList(category: String) -> [NewsModel]
+protocol NewsRepository {
+    func getNews(category: String, completion: @escaping (Result<[NewsModel], Error>) -> Void) -> Cancellable
 }

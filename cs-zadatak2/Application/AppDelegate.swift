@@ -16,7 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     public lazy var coordinator = AppCoordinator(router: router)
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        DataFunctions().start(){
+        NewsStorage().start(){
             DispatchQueue.main.async {
                 self.coordinator.push(animated: true, onDismissed: nil)
             }

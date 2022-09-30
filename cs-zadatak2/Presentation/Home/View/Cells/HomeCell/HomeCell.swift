@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class HomeCell: UICollectionViewCell {
     static let identifier = "HomeCell"
@@ -18,50 +19,9 @@ class HomeCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
     }
+    
     func setupHomeCell(newsData: NewsModel){
-        self.lblTitle.text = newsData.title
-        
-        self.lblDescription.text = newsData.article
-        
-        let formatter = DateFormatter()
-        formatter.locale = Locale(identifier: "en_US_POSIX")
-        formatter.dateFormat = "E, d MMM yyyy HH:mm:ss Z"
-        let date = formatter.date(from: newsData.date)
-        
-        let now = Date()
-        let elapsedTime = now.timeIntervalSince(date!)
-        
-        var time = 0
-        var stringTime = ""
-        if (elapsedTime/60 < 60){
-            time = Int(elapsedTime/60.0)
-            stringTime = ("Prije \(time) m")
-        }
-        else if (elapsedTime/60/60 < 24) {
-            time = Int(elapsedTime/60/60)
-            stringTime = ("Prije \(time) h")
-        }
-        else{
-            time = Int(elapsedTime/60/60/24)
-            stringTime = ("Prije \(time) d")
-        }
-        self.lblDate.text = stringTime
-        
-        self.imgNewsImage.loadFrom(URLAddress: newsData.image)
-    }
-}
-
-extension UIImageView {
-    func loadFrom(URLAddress: String) {
-        guard let url = URL(string: URLAddress) else {
-            return
-        }
-//        DispatchQueue.main.async { [weak self] in
-        if let imageData = try? Data(contentsOf: url) {
-            if let loadedImage = UIImage(data: imageData) {
-                    image = loadedImage
-            }
-        }
-//        }
+        let cellModel = HomeCellViewModel(lblTitle: self.lblTitle, lblDescription: self.lblDescription, lblDate: self.lblDate, imgNewsImage: self.imgNewsImage)
+        cellModel.setup(newsData: newsData)
     }
 }
