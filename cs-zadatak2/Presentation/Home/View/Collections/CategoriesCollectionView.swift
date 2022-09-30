@@ -7,18 +7,15 @@
 
 import UIKit
 
+protocol CategoriesCollectionViewDelegate: AnyObject{
+    func reloadNewsData()
+}
+
 class CategoriesCollectionView: UICollectionView {
     
-    var viewModel = HomeViewModel()
+    weak var categoryDelegate: CategoriesCollectionViewDelegate?
     
-//    init(viewModel: HomeViewModel, cvHome: UICollectionView){
-//        self.viewModel = viewModel
-//        super.init()
-//    }
-//
-//    required init?(coder: NSCoder) {
-//        super.init(coder: coder)
-//    }
+    var viewModel = HomeViewModel()
     
     func makeCategoryCollection() {
         let flowLayout = UICollectionViewFlowLayout()
@@ -68,9 +65,10 @@ extension CategoriesCollectionView: UICollectionViewDataSource, UICollectionView
         
         //TODO: predati neku vrijednost preko ViewControllera, koristiti delegat, ili postaviti StackView, u njega oba Collectiona i na taj način im omogućiti komunikaciju
         NewsStorage().getNews(url: viewModel.categories[indexPath.row].rssUrl){
-//            DispatchQueue.main.async {
+            DispatchQueue.main.async {
+                self.categoryDelegate?.reloadNewsData()
 //                self.cvHome.reloadData()
-//            }
+            }
         }
     }
 }

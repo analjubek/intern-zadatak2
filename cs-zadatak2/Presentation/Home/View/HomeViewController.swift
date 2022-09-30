@@ -12,7 +12,7 @@ protocol HomeViewControllerDelegate: AnyObject{
     func viewController(didRequestProceed vc: UIViewController, url: String, title: String)
 }
 
-public class HomeViewController: UIViewController {
+public class HomeViewController: UIViewController {    
         
     weak var delegate: HomeViewControllerDelegate?
     
@@ -43,6 +43,7 @@ public class HomeViewController: UIViewController {
     public override func viewDidLoad() {
         super.viewDidLoad()
         cvHome.homeDelegate = self
+        cvCategories.categoryDelegate = self
     }
     
     deinit{
@@ -83,5 +84,13 @@ public class HomeViewController: UIViewController {
 extension HomeViewController: HomeCollectionViewDelegate{
     func viewController(didRequestProceed vc: UICollectionView, url: String, title: String) {
         self.delegate?.viewController(didRequestProceed: self, url: url, title: title)
+    }
+}
+
+
+extension HomeViewController: CategoriesCollectionViewDelegate{
+    func reloadNewsData() {
+        print("reloading data")
+        cvHome.reloadData()
     }
 }
