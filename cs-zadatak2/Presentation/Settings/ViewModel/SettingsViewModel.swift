@@ -8,9 +8,11 @@
 import Foundation
 
 final class SettingsViewModel{
-    let settings = [SettingModel(setting: "Pravila korištenja i privatnosti", isArrowVisible: true),
-                    SettingModel(setting: "Ostale HRT aplikacije", isArrowVisible: true),
-                    SettingModel(setting: "Verzija: 1.5.1", isArrowVisible: false)]
+    let settings = [SettingModel(title: "Pravila korištenja i privatnosti", isArrowVisible: true, settingType: .rules),
+                    SettingModel(title: "Ostale HRT aplikacije", isArrowVisible: true, settingType: .others),
+                    SettingModel(title: "Verzija: 1.5.1", isArrowVisible: false, settingType: .version)]
     
     let terms = "https://o-nama.hrt.hr/zastita-privatnosti-i-pravo-na-pristup-informacijama/uvjeti-koristenja-sadrzaja-objavljenog-na-hrt-ovim-digitalnim-platformama-4423"
 }
+
+

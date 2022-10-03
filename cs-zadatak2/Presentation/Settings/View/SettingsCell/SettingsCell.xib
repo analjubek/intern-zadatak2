@@ -17,7 +17,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Setting" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Hk-08-xJp">
-                        <rect key="frame" x="25" y="11.5" width="55" height="21"/>
+                        <rect key="frame" x="20" y="11.5" width="55" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -38,7 +38,7 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <constraints>
                 <constraint firstItem="njF-e1-oar" firstAttribute="trailing" secondItem="V9E-Vw-eMQ" secondAttribute="trailing" constant="25" id="AMu-v2-0Mh"/>
-                <constraint firstItem="6Hk-08-xJp" firstAttribute="leading" secondItem="njF-e1-oar" secondAttribute="leading" constant="25" id="gOK-Jn-q9I"/>
+                <constraint firstItem="6Hk-08-xJp" firstAttribute="leading" secondItem="njF-e1-oar" secondAttribute="leading" constant="20" id="gOK-Jn-q9I"/>
             </constraints>
             <connections>
                 <outlet property="ivArrow" destination="V9E-Vw-eMQ" id="dQE-HE-259"/>

@@ -16,7 +16,7 @@ public class HomeCoordinator: Coordinator{
     private lazy var homeViewController: HomeViewController = {
         let vc = HomeViewController.fromNib(bundle: Bundle.main)
         vc.title = "Vijesti"
-        vc.tabBarItem.title = "Naslov"
+        vc.tabBarItem.title = "Naslovnica"
         vc.tabBarItem.image = UIImage(systemName: "house")
         vc.delegate = self
         return vc
@@ -50,3 +50,4 @@ extension HomeCoordinator: NewsWebViewCoordinatorDelegate{
         
     }
 }
+

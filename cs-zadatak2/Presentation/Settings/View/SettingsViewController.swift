@@ -29,25 +29,25 @@ public class SettingsViewController: UIViewController {
 
 extension SettingsViewController: UITableViewDelegate{
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if (indexPath.row == 0){
+        switch viewModel.settings[indexPath.row].settingType{
+        case .rules:
             UIApplication.shared.open(URL(string: viewModel.terms)!)
-        }
-        if (indexPath.row == 1){
+        case .others:
             navigationController?.pushViewController(OtherAppsViewController(), animated: true)
+        case .version:
+            return
         }
     }
 }
 
 extension SettingsViewController: UITableViewDataSource{
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        3
+        viewModel.settings.count
     }
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: SettingsCell.identifier, for: indexPath) as! SettingsCell
-//        TODO: više vrsta ćelija, enum
-        cell.lblSetting.text = viewModel.settings[indexPath.row].setting
-        cell.setupCellArrow(isArrowVisible: viewModel.settings[indexPath.row].isArrowVisible)
+        cell.configure(viewModel: viewModel.settings[indexPath.row])
         return cell
     }
 }

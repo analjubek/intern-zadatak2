@@ -12,9 +12,15 @@ protocol HomeViewControllerDelegate: AnyObject{
     func viewController(didRequestProceed vc: UIViewController, url: String, title: String)
 }
 
+protocol HomeViewControllerCategoryDelegate: AnyObject{
+    // step #1
+    func updateCurrentCategory(categoryTitle: String)
+}
+
 public class HomeViewController: UIViewController {    
         
     weak var delegate: HomeViewControllerDelegate?
+    weak var delegateCategory: HomeViewControllerCategoryDelegate?
     
     @IBOutlet var svHomeStack: UIStackView!
     @IBOutlet var cvCategories: CategoriesCollectionView!
@@ -22,8 +28,6 @@ public class HomeViewController: UIViewController {
     @IBOutlet var vwCollection: UIView!
     
     private var viewModel = HomeViewModel()
-    
-    var cellCategory: UICollectionViewCell?
     
     var height: Float?
     var width: Float?
@@ -87,10 +91,16 @@ extension HomeViewController: HomeCollectionViewDelegate{
     }
 }
 
-
 extension HomeViewController: CategoriesCollectionViewDelegate{
+    func setupCurrentCategory(categoryTitle: String) {
+        viewModel.currentCategoryTitle = categoryTitle
+        print(viewModel.currentCategoryTitle)
+        
+        // step #2
+        self.delegateCategory?.updateCurrentCategory(categoryTitle: categoryTitle)
+    }
+
     func reloadNewsData() {
-        print("reloading data")
         cvHome.reloadData()
     }
 }

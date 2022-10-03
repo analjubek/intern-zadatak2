@@ -13,8 +13,24 @@ class SettingsCell: UITableViewCell {
     @IBOutlet var lblSetting: UILabel!
     @IBOutlet var ivArrow: UIImageView!
     
+    let viewModel = SettingsViewModel()
+    
     override func awakeFromNib() {
         super.awakeFromNib()
+    }
+    
+    func configure(viewModel: SettingModel){
+        switch viewModel.settingType{
+        case .rules:
+            lblSetting.text = viewModel.title
+            setupCellArrow(isArrowVisible: viewModel.isArrowVisible)
+        case .others:
+            lblSetting.text = viewModel.title
+            setupCellArrow(isArrowVisible: viewModel.isArrowVisible)
+        case .version:
+            lblSetting.text = viewModel.title
+            setupCellArrow(isArrowVisible: viewModel.isArrowVisible)
+        }
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

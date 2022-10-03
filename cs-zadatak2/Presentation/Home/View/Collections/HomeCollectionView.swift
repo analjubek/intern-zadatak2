@@ -16,11 +16,14 @@ class HomeCollectionView: UICollectionView {
     weak var homeDelegate: HomeCollectionViewDelegate?
     
     var viewModel = HomeViewModel()
+    
     var newsLayout = UICollectionViewFlowLayout()
     
     func makeNewsCollection(size: CGSize){
-        newsLayout.itemSize = size
+        // step #4 ???
+        // ?.delegateCategory = self
         
+        newsLayout.itemSize = size
         newsLayout.minimumLineSpacing = 0
         newsLayout.minimumInteritemSpacing = 0
         
@@ -61,7 +64,15 @@ extension HomeCollectionView: UICollectionViewDataSource {
 
 extension HomeCollectionView: UICollectionViewDelegate {
     public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print(viewModel.currentCategoryTitle)
         let newsLink = NewsStorage().fetchNewsByIdFromCoreData(newsId: indexPath.row).link
         self.homeDelegate?.viewController(didRequestProceed: self, url: newsLink, title: viewModel.currentCategoryTitle)
+    }
+}
+
+extension HomeCollectionView: HomeViewControllerCategoryDelegate{    
+    // step #3
+    func updateCurrentCategory(categoryTitle: String) {
+        viewModel.currentCategoryTitle = categoryTitle
     }
 }

@@ -8,6 +8,7 @@
 import UIKit
 
 protocol CategoriesCollectionViewDelegate: AnyObject{
+    func setupCurrentCategory(categoryTitle: String)
     func reloadNewsData()
 }
 
@@ -18,6 +19,7 @@ class CategoriesCollectionView: UICollectionView {
     var viewModel = HomeViewModel()
     
     func makeCategoryCollection() {
+        
         let flowLayout = UICollectionViewFlowLayout()
         flowLayout.itemSize = CGSize(width: self.frame.width/4, height: self.frame.height)
         flowLayout.minimumLineSpacing = 0
@@ -52,22 +54,28 @@ extension CategoriesCollectionView: UICollectionViewDataSource, UICollectionView
     }
 
     public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        for i in 0...3{
-            viewModel.categories[i].isSelected = false
-        }
-        viewModel.categories[indexPath.row].isSelected = true
-
-        viewModel.currentCategoryTitle = viewModel.categories[indexPath.row].categoryName
+        setupSelectedCategory(indexPath: indexPath)
 
         let cell = collectionView.cellForItem(at: indexPath) as! CategoryCell
         cell.setupCategoryCell(categoryData: CategoryModel(categoryName: viewModel.categories[indexPath.row].categoryName, isSelected: viewModel.categories[indexPath.row].isSelected, rssUrl: viewModel.categories[indexPath.row].rssUrl))
         self.reloadData()
         
-        //TODO: predati neku vrijednost preko ViewControllera, koristiti delegat, ili postaviti StackView, u njega oba Collectiona i na taj način im omogućiti komunikaciju
+        getCategoryNews(indexPath: indexPath)
+    }
+    
+    func setupSelectedCategory(indexPath: IndexPath){
+        for i in 0...3{
+            viewModel.categories[i].isSelected = false
+        }
+        viewModel.categories[indexPath.row].isSelected = true
+        viewModel.currentCategoryTitle = viewModel.categories[indexPath.row].categoryName
+        self.categoryDelegate?.setupCurrentCategory(categoryTitle: viewModel.currentCategoryTitle)
+    }
+    
+    func getCategoryNews(indexPath: IndexPath){
         NewsStorage().getNews(url: viewModel.categories[indexPath.row].rssUrl){
             DispatchQueue.main.async {
                 self.categoryDelegate?.reloadNewsData()
-//                self.cvHome.reloadData()
             }
         }
     }

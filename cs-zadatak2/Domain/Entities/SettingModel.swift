@@ -8,11 +8,19 @@
 import Foundation
 
 struct SettingModel {
-    var setting: String
+    var title: String
     var isArrowVisible: Bool
+    var settingType: Setting
     
-    init(setting: String, isArrowVisible: Bool){
-        self.setting = setting
+    init(title: String, isArrowVisible: Bool, settingType: Setting){
+        self.title = title
         self.isArrowVisible = isArrowVisible
+        self.settingType = settingType
     }
+}
+
+enum Setting{
+    case rules
+    case others
+    case version
 }
