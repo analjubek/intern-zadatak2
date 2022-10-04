@@ -13,12 +13,11 @@ protocol HomeViewControllerDelegate: AnyObject{
 }
 
 protocol HomeViewControllerCategoryDelegate: AnyObject{
-    // step #1
     func updateCurrentCategory(categoryTitle: String)
 }
 
-public class HomeViewController: UIViewController {    
-        
+public class HomeViewController: UIViewController {
+
     weak var delegate: HomeViewControllerDelegate?
     weak var delegateCategory: HomeViewControllerCategoryDelegate?
     
@@ -39,6 +38,7 @@ public class HomeViewController: UIViewController {
         self.navigationController?.becomeFirstResponder()
         DispatchQueue.main.async {
             self.cvCategories.makeCategoryCollection()
+            self.delegateCategory = self
             self.cvHome.makeNewsCollection(size: self.setupNewsSize())
             self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "Naslovnica", style: .plain, target: nil, action: nil)
         }
@@ -94,13 +94,16 @@ extension HomeViewController: HomeCollectionViewDelegate{
 extension HomeViewController: CategoriesCollectionViewDelegate{
     func setupCurrentCategory(categoryTitle: String) {
         viewModel.currentCategoryTitle = categoryTitle
-        print(viewModel.currentCategoryTitle)
-        
-        // step #2
         self.delegateCategory?.updateCurrentCategory(categoryTitle: categoryTitle)
     }
 
     func reloadNewsData() {
         cvHome.reloadData()
+    }
+}
+
+extension HomeViewController: HomeViewControllerCategoryDelegate {
+    func updateCurrentCategory(categoryTitle: String) {
+        cvHome.viewModel.currentCategoryTitle = categoryTitle
     }
 }
