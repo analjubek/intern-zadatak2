@@ -8,13 +8,23 @@
 import UIKit
 import Foundation
 
+//protocol HomeCoordinatorDependencies{
+//    func makeHomeViewController() -> HomeViewController
+//}
+
 public class HomeCoordinator: Coordinator{
     public var childCoordinators: [Coordinator] = []
     public let router: Router
     public var navigationController: UINavigationController?
+//    private let dependencies = HomeCoordinatorDependencies()
 
+//    let getNewsUseCase: GetNewsUseCase
+//    var viewModel: HomeViewModel(getNewsUseCase: getNewsUseCase)
+    
     private lazy var homeViewController: HomeViewController = {
-        let vc = HomeViewController.fromNib(bundle: Bundle.main)
+//        let vc = HomeViewController.fromNib(bundle: Bundle.main)
+        let vc = NewsDIContainer().makeHomeViewController()
+//        let vc = dependencies.makeHomeViewController()
         vc.title = "Vijesti"
         vc.tabBarItem.title = "Naslovnica"
         vc.tabBarItem.image = UIImage(systemName: "house")

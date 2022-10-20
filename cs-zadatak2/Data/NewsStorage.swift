@@ -95,19 +95,32 @@ class NewsStorage {
         }
 //        print("One news saved.")
     }
-    
-    func fetchNewsFromCoreData() -> [NSManagedObject]?{
+
+    func fetchNewsFromCoreData(category: Category) -> [NewsModel]{
 //        print("Fetching news from CoreData...")
         let context = persistentContainer.viewContext
+        var news = NewsModel(title: "", article: "", date: "", image: "", link: "")
+        var newsList: [NewsModel] = []
+//        var newsId = 0
         let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "News")
+        let numberNews = category.getNumberOfNews()
         
-        do {
-//            print("News fetched.")
-            return try context.fetch(fetchRequest)
-        } catch let error as NSError {
-            print("Could not fetch. \(error), \(error.userInfo)")
-            return nil
+        for newsId in 0...(numberNews-1){
+            do {
+                let newsDataCore = try context.fetch(fetchRequest)
+                news.title = (newsDataCore[newsId].value(forKey: "title") as? String)!
+                news.article = (newsDataCore[newsId].value(forKey: "article") as? String)!
+                news.date = (newsDataCore[newsId].value(forKey: "date") as? String)!
+                news.image = (newsDataCore[newsId].value(forKey: "image") as? String)!
+                news.link = (newsDataCore[newsId].value(forKey: "link") as? String)!
+                
+                newsList.append(news)
+            } catch {
+                print("Error fetching data")
+            }
         }
+        
+        return newsList
     }
     
     func fetchNewsByIdFromCoreData(newsId: Int) -> NewsModel{

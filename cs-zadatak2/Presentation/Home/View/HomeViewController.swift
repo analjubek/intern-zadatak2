@@ -26,12 +26,20 @@ public class HomeViewController: UIViewController {
     @IBOutlet var cvHome: HomeCollectionView!
     @IBOutlet var vwCollection: UIView!
     
-    private var viewModel = HomeViewModel()
+//    private var viewModel = HomeViewModel()
+    private var viewModel: HomeViewModel!
     
     var height: Float?
     var width: Float?
     
     let newsLayout = UICollectionViewFlowLayout()
+    
+    // ?????
+    static func create(with viewModel: HomeViewModel) -> HomeViewController{
+        let view = HomeViewController()
+        view.viewModel = viewModel
+        return view
+    }
     
     public override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)

@@ -16,10 +16,13 @@ class CategoriesCollectionView: UICollectionView {
     
     weak var categoryDelegate: CategoriesCollectionViewDelegate?
     
-    var viewModel = HomeViewModel()
+    var viewModel = HomeViewModel(getNewsUseCase: NewsDIContainer().getNewsUseCase())
     
     func makeCategoryCollection() {
-        
+///        AL: kako ovako nesto napraviti tu ???
+//        viewModel.load(category: .program)
+//        print(NewsDIContainer().getNewsUseCase().execute(category: .program))
+///        AL: isto to treba napraviti i u HomeCollectionView
         let flowLayout = UICollectionViewFlowLayout()
         flowLayout.itemSize = CGSize(width: self.frame.width/4, height: self.frame.height)
         flowLayout.minimumLineSpacing = 0
@@ -45,7 +48,7 @@ extension CategoriesCollectionView: UICollectionViewDataSource, UICollectionView
 
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CategoryCell.identifier, for: indexPath) as! CategoryCell
 
-            let categoryModel = CategoryModel(categoryName: viewModel.categories[indexPath.row].categoryName, isSelected: viewModel.categories[indexPath.row].isSelected, rssUrl: viewModel.categories[indexPath.row].rssUrl)
+            let categoryModel = CategoryModel(category: viewModel.categories[indexPath.row].category, categoryName: viewModel.categories[indexPath.row].categoryName, isSelected: viewModel.categories[indexPath.row].isSelected, rssUrl: viewModel.categories[indexPath.row].rssUrl)
 
             cell.setupCategoryCell(categoryData: categoryModel)
 
@@ -57,7 +60,7 @@ extension CategoriesCollectionView: UICollectionViewDataSource, UICollectionView
         setupSelectedCategory(indexPath: indexPath)
 
         let cell = collectionView.cellForItem(at: indexPath) as! CategoryCell
-        cell.setupCategoryCell(categoryData: CategoryModel(categoryName: viewModel.categories[indexPath.row].categoryName, isSelected: viewModel.categories[indexPath.row].isSelected, rssUrl: viewModel.categories[indexPath.row].rssUrl))
+        cell.setupCategoryCell(categoryData: CategoryModel(category: viewModel.categories[indexPath.row].category, categoryName: viewModel.categories[indexPath.row].categoryName, isSelected: viewModel.categories[indexPath.row].isSelected, rssUrl: viewModel.categories[indexPath.row].rssUrl))
         self.reloadData()
         
         getCategoryNews(indexPath: indexPath)
@@ -73,6 +76,7 @@ extension CategoriesCollectionView: UICollectionViewDataSource, UICollectionView
     }
     
     func getCategoryNews(indexPath: IndexPath){
+//        TODO
         NewsStorage().getNews(url: viewModel.categories[indexPath.row].rssUrl){
             DispatchQueue.main.async {
                 self.categoryDelegate?.reloadNewsData()

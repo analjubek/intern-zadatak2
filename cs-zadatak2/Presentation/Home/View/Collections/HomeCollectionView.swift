@@ -15,7 +15,7 @@ class HomeCollectionView: UICollectionView {
     
     weak var homeDelegate: HomeCollectionViewDelegate?
     
-    var viewModel = HomeViewModel()
+    var viewModel = HomeViewModel(getNewsUseCase: NewsDIContainer().getNewsUseCase())
     
     var newsLayout = UICollectionViewFlowLayout()
     
@@ -51,6 +51,7 @@ extension HomeCollectionView: UICollectionViewDataSource {
     }
     public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
             let homeCell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeCell.identifier, for: indexPath) as! HomeCell
+//        TODO
             let newsModel = NewsStorage().fetchNewsByIdFromCoreData(newsId: indexPath.row)
 
             homeCell.setupHomeCell(newsData: newsModel)
@@ -62,6 +63,8 @@ extension HomeCollectionView: UICollectionViewDataSource {
 extension HomeCollectionView: UICollectionViewDelegate {
     public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print(viewModel.currentCategoryTitle)
+
+//        TODO
         let newsLink = NewsStorage().fetchNewsByIdFromCoreData(newsId: indexPath.row).link
         self.homeDelegate?.viewController(didRequestProceed: self, url: newsLink, title: viewModel.currentCategoryTitle)
     }
